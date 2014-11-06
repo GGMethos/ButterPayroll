@@ -34,6 +34,8 @@
             this.label_firstName = new System.Windows.Forms.Label();
             this.tbox_firstName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_HoursWorked = new System.Windows.Forms.Label();
+            this.tbox_hours_worked = new System.Windows.Forms.TextBox();
             this.label_routingNum = new System.Windows.Forms.Label();
             this.tbox_routingNum = new System.Windows.Forms.TextBox();
             this.label_accountNum = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_employeeID = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbox_state = new System.Windows.Forms.ComboBox();
             this.label_state = new System.Windows.Forms.Label();
             this.label_zipCode = new System.Windows.Forms.Label();
             this.tbox_zipCode = new System.Windows.Forms.TextBox();
@@ -57,8 +59,6 @@
             this.tbox_city = new System.Windows.Forms.TextBox();
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
-            this.label_HoursWorked = new System.Windows.Forms.Label();
-            this.tbox_hours_worked = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -131,6 +131,24 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Information";
+            // 
+            // label_HoursWorked
+            // 
+            this.label_HoursWorked.AutoSize = true;
+            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
+            this.label_HoursWorked.Name = "label_HoursWorked";
+            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
+            this.label_HoursWorked.TabIndex = 9;
+            this.label_HoursWorked.Text = "Hours";
+            // 
+            // tbox_hours_worked
+            // 
+            this.tbox_hours_worked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_hours_worked.Location = new System.Drawing.Point(218, 49);
+            this.tbox_hours_worked.Name = "tbox_hours_worked";
+            this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
+            this.tbox_hours_worked.TabIndex = 8;
             // 
             // label_routingNum
             // 
@@ -289,7 +307,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.tbox_state);
             this.groupBox3.Controls.Add(this.label_state);
             this.groupBox3.Controls.Add(this.label_zipCode);
             this.groupBox3.Controls.Add(this.tbox_zipCode);
@@ -305,19 +323,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Address";
             // 
-            // comboBox1
+            // tbox_state
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tbox_state.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbox_state.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_state.FormattingEnabled = true;
+            this.tbox_state.Items.AddRange(new object[] {
             "NJ",
             "NY",
             "PA"});
-            this.comboBox1.Location = new System.Drawing.Point(145, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(56, 24);
-            this.comboBox1.TabIndex = 7;
+            this.tbox_state.Location = new System.Drawing.Point(145, 101);
+            this.tbox_state.Name = "tbox_state";
+            this.tbox_state.Size = new System.Drawing.Size(56, 24);
+            this.tbox_state.TabIndex = 7;
             // 
             // label_state
             // 
@@ -383,24 +401,6 @@
             this.tbox_street.Size = new System.Drawing.Size(281, 22);
             this.tbox_street.TabIndex = 0;
             // 
-            // label_HoursWorked
-            // 
-            this.label_HoursWorked.AutoSize = true;
-            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
-            this.label_HoursWorked.Name = "label_HoursWorked";
-            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
-            this.label_HoursWorked.TabIndex = 9;
-            this.label_HoursWorked.Text = "Hours";
-            // 
-            // tbox_hours_worked
-            // 
-            this.tbox_hours_worked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_hours_worked.Location = new System.Drawing.Point(218, 49);
-            this.tbox_hours_worked.Name = "tbox_hours_worked";
-            this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
-            this.tbox_hours_worked.TabIndex = 8;
-            // 
             // AddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,7 +453,7 @@
         private System.Windows.Forms.Label label_lastName;
         private System.Windows.Forms.TextBox tbox_lastName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox tbox_state;
         private System.Windows.Forms.Label label_state;
         private System.Windows.Forms.Label label_zipCode;
         private System.Windows.Forms.TextBox tbox_zipCode;

@@ -38,6 +38,14 @@ namespace ButterPayroll
 
         private void populateTxtBoxes(){
             label_employeeID.Text = Employee.employeeID;
+            tbox_firstName.Text = Employee.firstName;
+            tbox_lastName.Text = Employee.lastName;
+            tbox_street.Text = Employee.street;
+            tbox_city.Text = Employee.city;
+            tbox_state.Text = Employee.state;
+            tbox_zipCode.Text = Employee.zipCode;
+            tbox_accountNum.Text = Employee.accountNum;
+            tbox_routingNum.Text = Employee.routingNum;
         }
 
         private void button_save_Click(object sender, EventArgs e)
