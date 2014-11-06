@@ -43,6 +43,8 @@ namespace ButterPayroll
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.database1DataSet.Employee);
             // TODO: This line of code loads data into the 'directoryDataSet1.Employee' table. You can move, or remove it, as needed.
             payroll = new Payroll();
             payroll.getEmployeeData();
