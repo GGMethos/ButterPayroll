@@ -57,6 +57,8 @@
             this.tbox_city = new System.Windows.Forms.TextBox();
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
+            this.label_HoursWorked = new System.Windows.Forms.Label();
+            this.tbox_hours_worked = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -116,6 +118,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label_HoursWorked);
+            this.groupBox2.Controls.Add(this.tbox_hours_worked);
             this.groupBox2.Controls.Add(this.label_routingNum);
             this.groupBox2.Controls.Add(this.tbox_routingNum);
             this.groupBox2.Controls.Add(this.label_accountNum);
@@ -379,6 +383,24 @@
             this.tbox_street.Size = new System.Drawing.Size(281, 22);
             this.tbox_street.TabIndex = 0;
             // 
+            // label_HoursWorked
+            // 
+            this.label_HoursWorked.AutoSize = true;
+            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
+            this.label_HoursWorked.Name = "label_HoursWorked";
+            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
+            this.label_HoursWorked.TabIndex = 9;
+            this.label_HoursWorked.Text = "Hours";
+            // 
+            // tbox_hours_worked
+            // 
+            this.tbox_hours_worked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_hours_worked.Location = new System.Drawing.Point(218, 49);
+            this.tbox_hours_worked.Name = "tbox_hours_worked";
+            this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
+            this.tbox_hours_worked.TabIndex = 8;
+            // 
             // AddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,5 +471,7 @@
         private System.Windows.Forms.RadioButton radio_check;
         private System.Windows.Forms.Label label_routingNum;
         private System.Windows.Forms.TextBox tbox_routingNum;
+        private System.Windows.Forms.Label label_HoursWorked;
+        private System.Windows.Forms.TextBox tbox_hours_worked;
     }
 }
