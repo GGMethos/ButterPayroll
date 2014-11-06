@@ -192,6 +192,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(708, 428);
             this.dataGridView.TabIndex = 1;
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 

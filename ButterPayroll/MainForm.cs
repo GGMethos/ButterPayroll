@@ -17,10 +17,11 @@ namespace ButterPayroll
             InitializeComponent();
         }
 
-        Payroll payroll;
-
         AddModify addForm;
         AddModify modifyForm;
+
+        DataGridViewRow selectedRow;
+        Employee selectedEmployee = new Employee();
 
         #region non-generated funtions
 
@@ -36,9 +37,27 @@ namespace ButterPayroll
 
         private void button_modify_Click(object sender, EventArgs e)
         {
+            //get data from selected row
+            selectedEmployee.employeeID = selectedRow.Cells["employeeIdDataGridViewTextBoxColumn"].Value.ToString();
+            //selectedEmployee.firstName = selectedRow.Cells["First Name"].Value.ToString();
+            //selectedEmployee.lastName = selectedRow.Cells["Last Name"].Value.ToString();
+            //selectedEmployee.street = selectedRow.Cells["Street"].Value.ToString();
+            //selectedEmployee.city = selectedRow.Cells["City"].Value.ToString();
+            //selectedEmployee.state = selectedRow.Cells["State"].Value.ToString();
+            //selectedEmployee.zipCode = selectedRow.Cells["Zip Code"].Value.ToString();
+            //selectedEmployee.accountNum = selectedRow.Cells["Account #"].Value.ToString();
+            //selectedEmployee.routingNum = selectedRow.Cells["Routing #"].Value.ToString();
+            //selectedEmployee.hours = (double)selectedRow.Cells["Hours"].Value;
+            //selectedEmployee.fullTime = (bool)selectedRow.Cells["Full Time"].Value;
+            //selectedEmployee.directDeposit = (bool)selectedRow.Cells["Direct Deposit"].Value;
+
+            //initialize modify form and show
             modifyForm = new AddModify();
             modifyForm.Mode = "Modify";
+            modifyForm.Employee = selectedEmployee;
             modifyForm.Show();
+
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -64,7 +83,6 @@ namespace ButterPayroll
             DialogResult dr = MessageBox.Show("Do you want to save?", "Goodbye", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                payroll.saveEmployeeData();
                 this.Close();
             }
             else
@@ -72,6 +90,12 @@ namespace ButterPayroll
                 this.Close();
                 
             }
+        }
+
+        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            selectedRow = dataGridView.CurrentRow;
+            MessageBox.Show("selected row is" + selectedRow.Index);
         }
     }
 }

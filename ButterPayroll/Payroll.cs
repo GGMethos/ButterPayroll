@@ -40,7 +40,6 @@ namespace ButterPayroll
         /// adds Employees to employees from database
         /// </summary>
         public void getEmployeeData(){
-            Employee tempEmployee;
         }
 
         public void saveEmployeeData() { 

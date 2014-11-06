@@ -18,7 +18,7 @@ namespace ButterPayroll
         }
 
         public string Mode { get; set; }
-        private Employee employee { get; set; }
+        public Employee Employee { get; set; }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
@@ -31,9 +31,13 @@ namespace ButterPayroll
         private void AddModify_Load(object sender, EventArgs e)
         {
             this.Text = Mode;
-            if (Mode == "Modify") { 
-                
+            if (Mode == "Modify") {
+                populateTxtBoxes();
             }
+        }
+
+        private void populateTxtBoxes(){
+            label_employeeID.Text = Employee.employeeID;
         }
 
         private void button_save_Click(object sender, EventArgs e)

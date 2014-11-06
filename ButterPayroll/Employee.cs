@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace ButterPayroll
 {
-    class Employee
+    public class Employee
     {
-        string employeeID { get; set; }
+        public String employeeID { get; set; }
         //Personal Information
-        string firstName { get; set; }
-        string lastName { get; set; }
+        public String firstName { get; set; }
+        public String lastName { get; set; }
 
         //Payment Information
-        string accountNum { get; set; }
-        string routingNum { get; set; }
-        double hours { get; set; }
+        public String accountNum { get; set; }
+        public String routingNum { get; set; }
+        public double hours { get; set; }
 
         //Address
-        string street { get; set; }
-        string city { get; set; }
-        string state {get;set;}
-        string zipCode{get;set;}
+        public String street { get; set; }
+        public String city { get; set; }
+        public String state { get; set; }
+        public String zipCode { get; set; }
 
-        bool fullTime { get; set; }
-        bool directDeposit { get; set; }
+        public bool fullTime { get; set; }
+        public bool directDeposit { get; set; }
 
-        public Employee(string EmployeeID, string firstName, string lastName, 
-            string street, string city, string state, string zipCode,
-            string accountNum, string routingNum, double hours) 
+        public Employee(String EmployeeID, String firstName, String lastName, 
+            String street, String city, String state, String zipCode,
+            String accountNum, String routingNum, double hours) 
         {
             this.employeeID = employeeID;
             this.firstName = firstName;
@@ -41,6 +41,9 @@ namespace ButterPayroll
             this.accountNum = accountNum;
             this.routingNum = routingNum;
             this.hours = hours;
+        }
+
+        public Employee() { 
         }
     }
 }
