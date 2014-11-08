@@ -50,7 +50,7 @@ namespace ButterPayroll
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            //error checking for all boxes
+            this.Close();
             
         }
 

@@ -1,1 +1,7 @@
 ﻿Created database and Tables
+UPDATE:
+	Database now saves via the update button
+	Database can now delete when something is highlighed and delete is pressed 
+	Ignore Database1.mdf1 in database explorer.
+	Dont touch any database sources or in the explorer, very sensitive.
+	Time elasped: 4 hours 

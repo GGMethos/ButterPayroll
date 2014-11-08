@@ -19,8 +19,8 @@ namespace ButterPayroll
 
         AddModify addForm;
         AddModify modifyForm;
-
         DataGridViewRow selectedRow;
+
         Employee selectedEmployee = new Employee();
 
         #region non-generated funtions
@@ -38,15 +38,15 @@ namespace ButterPayroll
         private void button_modify_Click(object sender, EventArgs e)
         {
             //get data from selected row
-            selectedEmployee.employeeID = selectedRow.Cells["employeeIdDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.firstName = selectedRow.Cells["firstNameDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.lastName = selectedRow.Cells["lastNameDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.street = selectedRow.Cells["streetDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.city = selectedRow.Cells["cityDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.state = selectedRow.Cells["stateDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.zipCode = selectedRow.Cells["zipDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.accountNum = selectedRow.Cells["accountNumberDataGridViewTextBoxColumn"].Value.ToString();
-            selectedEmployee.routingNum = selectedRow.Cells["routingNumberDataGridViewTextBoxColumn"].Value.ToString();
+            selectedEmployee.employeeID = selectedRow.Cells["DataGridViewTextBoxColumn1"].Value.ToString();
+            selectedEmployee.firstName = selectedRow.Cells["DataGridViewTextBoxColumn2"].Value.ToString();
+            selectedEmployee.lastName = selectedRow.Cells["DataGridViewTextBoxColumn3"].Value.ToString();
+            selectedEmployee.street = selectedRow.Cells["DataGridViewTextBoxColumn4"].Value.ToString();
+            selectedEmployee.city = selectedRow.Cells["DataGridViewTextBoxColumn5"].Value.ToString();
+            selectedEmployee.state = selectedRow.Cells["DataGridViewTextBoxColumn6"].Value.ToString();
+            selectedEmployee.zipCode = selectedRow.Cells["DataGridViewTextBoxColumn7"].Value.ToString();
+            selectedEmployee.accountNum = selectedRow.Cells["DataGridViewTextBoxColumn8"].Value.ToString();
+            selectedEmployee.routingNum = selectedRow.Cells["DataGridViewTextBoxColumn9"].Value.ToString();
             //selectedEmployee.hours = (double)selectedRow.Cells["Hours"].Value;
             //selectedEmployee.fullTime = (bool)selectedRow.Cells["Full Time"].Value;
             //selectedEmployee.directDeposit = (bool)selectedRow.Cells["Direct Deposit"].Value;
@@ -62,10 +62,8 @@ namespace ButterPayroll
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.database1DataSet.Employee);
-            // TODO: This line of code loads data into the 'directoryDataSet1.Employee' table. You can move, or remove it, as needed.
-
+            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.goodDataBase.Employee);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,10 +89,28 @@ namespace ButterPayroll
                 
             }
         }
-
-        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
-            selectedRow = dataGridView.CurrentRow;
+            employeeTableAdapter.Update(goodDataBase);
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (employeeDataGridView.SelectedRows.Count > 0)
+            {
+                employeeDataGridView.Rows.RemoveAt(employeeDataGridView.SelectedRows[0].Index);
+                employeeTableAdapter.Update(goodDataBase);
+            } 
+        }
+
+        private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            employeeTableAdapter.Update(goodDataBase);
+        }
+
+        private void employeeDataGridView_SelectionChanged_1(object sender, EventArgs e)
+        {
+            selectedRow = employeeDataGridView.CurrentRow;
         }
     }
 }

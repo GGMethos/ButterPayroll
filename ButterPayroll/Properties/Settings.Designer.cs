@@ -55,5 +55,16 @@ namespace ButterPayroll.Properties {
                 return ((string)(this["Database1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\bin\\Debug\\Database1." +
+            "mdf;Integrated Security=True;Connect Timeout=30")]
+        public string Database1ConnectionString1 {
+            get {
+                return ((string)(this["Database1ConnectionString1"]));
+            }
+        }
     }
 }

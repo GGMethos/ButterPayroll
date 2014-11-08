@@ -281,7 +281,7 @@
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(103, 37);
             this.button_save.TabIndex = 4;
-            this.button_save.Text = "Save";
+            this.button_save.Text = "Done";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
