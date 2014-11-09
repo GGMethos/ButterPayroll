@@ -45,5 +45,9 @@ namespace ButterPayroll
 
         public Employee() { 
         }
+
+        public double pay { get; set; }
+
+        public double tax { get; set; }
     }
 }

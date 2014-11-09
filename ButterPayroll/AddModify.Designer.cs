@@ -34,7 +34,6 @@
             this.label_firstName = new System.Windows.Forms.Label();
             this.tbox_firstName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label_HoursWorked = new System.Windows.Forms.Label();
             this.tbox_hours_worked = new System.Windows.Forms.TextBox();
             this.label_routingNum = new System.Windows.Forms.Label();
             this.tbox_routingNum = new System.Windows.Forms.TextBox();
@@ -47,7 +46,7 @@
             this.radio_directDeposit = new System.Windows.Forms.RadioButton();
             this.radio_check = new System.Windows.Forms.RadioButton();
             this.button_cancel = new System.Windows.Forms.Button();
-            this.button_save = new System.Windows.Forms.Button();
+            this.Done = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label_employeeID = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -59,6 +58,11 @@
             this.tbox_city = new System.Windows.Forms.TextBox();
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
+            this.label_HoursWorked = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbox_pay = new System.Windows.Forms.TextBox();
+            this.tbox_taxes = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -118,6 +122,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.tbox_taxes);
+            this.groupBox2.Controls.Add(this.tbox_pay);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label_HoursWorked);
             this.groupBox2.Controls.Add(this.tbox_hours_worked);
             this.groupBox2.Controls.Add(this.label_routingNum);
@@ -131,16 +139,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Information";
-            // 
-            // label_HoursWorked
-            // 
-            this.label_HoursWorked.AutoSize = true;
-            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
-            this.label_HoursWorked.Name = "label_HoursWorked";
-            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
-            this.label_HoursWorked.TabIndex = 9;
-            this.label_HoursWorked.Text = "Hours";
             // 
             // tbox_hours_worked
             // 
@@ -207,7 +205,6 @@
             this.rbutton_fulltime.Name = "rbutton_fulltime";
             this.rbutton_fulltime.Size = new System.Drawing.Size(82, 20);
             this.rbutton_fulltime.TabIndex = 6;
-            this.rbutton_fulltime.TabStop = true;
             this.rbutton_fulltime.Text = "Full-Time";
             this.rbutton_fulltime.UseVisualStyleBackColor = true;
             // 
@@ -220,7 +217,6 @@
             this.radio_parttime.Name = "radio_parttime";
             this.radio_parttime.Size = new System.Drawing.Size(85, 20);
             this.radio_parttime.TabIndex = 7;
-            this.radio_parttime.TabStop = true;
             this.radio_parttime.Text = "Part-Time";
             this.radio_parttime.UseVisualStyleBackColor = true;
             // 
@@ -274,16 +270,16 @@
             this.button_cancel.UseVisualStyleBackColor = true;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
             // 
-            // button_save
+            // Done
             // 
-            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(493, 12);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(103, 37);
-            this.button_save.TabIndex = 4;
-            this.button_save.Text = "Done";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            this.Done.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Done.Location = new System.Drawing.Point(493, 12);
+            this.Done.Name = "Done";
+            this.Done.Size = new System.Drawing.Size(103, 37);
+            this.Done.TabIndex = 4;
+            this.Done.Text = "Done";
+            this.Done.UseVisualStyleBackColor = true;
+            this.Done.Click += new System.EventHandler(this.button_save_Click);
             // 
             // label1
             // 
@@ -401,6 +397,52 @@
             this.tbox_street.Size = new System.Drawing.Size(281, 22);
             this.tbox_street.TabIndex = 0;
             // 
+            // label_HoursWorked
+            // 
+            this.label_HoursWorked.AutoSize = true;
+            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
+            this.label_HoursWorked.Name = "label_HoursWorked";
+            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
+            this.label_HoursWorked.TabIndex = 9;
+            this.label_HoursWorked.Text = "Hours";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(284, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Pay Rate";
+            // 
+            // tbox_pay
+            // 
+            this.tbox_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_pay.Location = new System.Drawing.Point(286, 49);
+            this.tbox_pay.Name = "tbox_pay";
+            this.tbox_pay.Size = new System.Drawing.Size(62, 22);
+            this.tbox_pay.TabIndex = 11;
+            // 
+            // tbox_taxes
+            // 
+            this.tbox_taxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_taxes.Location = new System.Drawing.Point(354, 49);
+            this.tbox_taxes.Name = "tbox_taxes";
+            this.tbox_taxes.Size = new System.Drawing.Size(62, 22);
+            this.tbox_taxes.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(354, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Tax Rate";
+            // 
             // AddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,7 +455,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label_employeeID);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.Done);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -445,7 +487,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button_cancel;
-        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button Done;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_employeeID;
         private System.Windows.Forms.Label label_firstName;
@@ -471,7 +513,11 @@
         private System.Windows.Forms.RadioButton radio_check;
         private System.Windows.Forms.Label label_routingNum;
         private System.Windows.Forms.TextBox tbox_routingNum;
-        private System.Windows.Forms.Label label_HoursWorked;
         private System.Windows.Forms.TextBox tbox_hours_worked;
+        private System.Windows.Forms.TextBox tbox_pay;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_HoursWorked;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbox_taxes;
     }
 }

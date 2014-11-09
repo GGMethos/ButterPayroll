@@ -17,6 +17,8 @@ namespace ButterPayroll
             string accountNum { get; set; }
             string routingNum { get; set; }
             double hours { get; set; }
+            double pay { get; set; }
+            double tax { get; set; }
 
             //Address
             string street { get; set; }

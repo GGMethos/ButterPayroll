@@ -46,11 +46,42 @@ namespace ButterPayroll
             tbox_zipCode.Text = Employee.zipCode;
             tbox_accountNum.Text = Employee.accountNum;
             tbox_routingNum.Text = Employee.routingNum;
-        }
+            tbox_hours_worked.Text = Employee.hours.ToString();
+            tbox_pay.Text = Employee.pay.ToString();
+            tbox_taxes.Text = Employee.tax.ToString();
+            if (Employee.fullTime == true)
+            {
+                rbutton_fulltime.Checked = true;
+                radio_parttime.Checked = false;
+            }
+            else
+            {
+                rbutton_fulltime.Checked = false;
+                radio_parttime.Checked = true;
+            }
+            if (Employee.directDeposit == true)
+            {
+                radio_check.Checked = false;
+                radio_directDeposit.Checked = true;
+            }
+            else
+            {
+                radio_check.Checked = true;
+                radio_directDeposit.Checked = false;
+            }
 
+        }
         private void button_save_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.Mode == "Modify")
+            {
+                MessageBox.Show("Sucessfully Modified");
+            }
+            if (this.Mode == "Add")
+            {
+                MessageBox.Show("Sucessfully Added");
+            }
+                this.Close();
             
         }
 

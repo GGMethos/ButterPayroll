@@ -33,6 +33,7 @@ namespace ButterPayroll
             addForm = new AddModify();
             addForm.Mode = "Add";
             addForm.Show();
+            
         }
 
         private void button_modify_Click(object sender, EventArgs e)
@@ -45,19 +46,19 @@ namespace ButterPayroll
             selectedEmployee.city = selectedRow.Cells["DataGridViewTextBoxColumn5"].Value.ToString();
             selectedEmployee.state = selectedRow.Cells["DataGridViewTextBoxColumn6"].Value.ToString();
             selectedEmployee.zipCode = selectedRow.Cells["DataGridViewTextBoxColumn7"].Value.ToString();
-            selectedEmployee.accountNum = selectedRow.Cells["DataGridViewTextBoxColumn8"].Value.ToString();
-            selectedEmployee.routingNum = selectedRow.Cells["DataGridViewTextBoxColumn9"].Value.ToString();
-            //selectedEmployee.hours = (double)selectedRow.Cells["Hours"].Value;
-            //selectedEmployee.fullTime = (bool)selectedRow.Cells["Full Time"].Value;
-            //selectedEmployee.directDeposit = (bool)selectedRow.Cells["Direct Deposit"].Value;
+            selectedEmployee.accountNum = selectedRow.Cells["DataGridViewTextBoxColumn11"].Value.ToString();
+            selectedEmployee.routingNum = selectedRow.Cells["DataGridViewTextBoxColumn12"].Value.ToString();
+            selectedEmployee.hours = (double)selectedRow.Cells["DataGridViewTextBoxColumn8"].Value;
+            selectedEmployee.pay= (double)selectedRow.Cells["DataGridViewTextBoxColumn9"].Value;
+            selectedEmployee.tax = (double)selectedRow.Cells["DataGridViewTextBoxColumn10"].Value;
+            selectedEmployee.fullTime = (bool)selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value;
+            selectedEmployee.directDeposit = (bool)selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value;
 
             //initialize modify form and show
             modifyForm = new AddModify();
             modifyForm.Mode = "Modify";
             modifyForm.Employee = selectedEmployee;
             modifyForm.Show();
-
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
