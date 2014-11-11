@@ -105,7 +105,7 @@
             // Update
             // 
             this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update.Location = new System.Drawing.Point(363, 27);
+            this.Update.Location = new System.Drawing.Point(564, 27);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(103, 37);
             this.Update.TabIndex = 6;
@@ -154,10 +154,10 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewCheckBoxColumn2});
             this.employeeDataGridView.DataSource = this.employeeBindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(12, 91);
+            this.employeeDataGridView.Location = new System.Drawing.Point(12, 70);
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.ReadOnly = true;
-            this.employeeDataGridView.Size = new System.Drawing.Size(764, 220);
+            this.employeeDataGridView.Size = new System.Drawing.Size(764, 388);
             this.employeeDataGridView.TabIndex = 7;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged_1);
             // 
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 608);
+            this.ClientSize = new System.Drawing.Size(788, 470);
             this.Controls.Add(this.employeeDataGridView);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.button_generate);

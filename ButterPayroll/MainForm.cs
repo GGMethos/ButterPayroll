@@ -27,10 +27,12 @@ namespace ButterPayroll
 
         #endregion
 
+
+
         private void button_add_Click(object sender, EventArgs e)
         {
             //change
-            addForm = new AddModify();
+            addForm = new AddModify(this);
             addForm.Mode = "Add";
             addForm.Show();
             
@@ -55,7 +57,7 @@ namespace ButterPayroll
             selectedEmployee.directDeposit = (bool)selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value;
 
             //initialize modify form and show
-            modifyForm = new AddModify();
+            modifyForm = new AddModify(this);
             modifyForm.Mode = "Modify";
             modifyForm.Employee = selectedEmployee;
             modifyForm.Show();
@@ -109,9 +111,15 @@ namespace ButterPayroll
             employeeTableAdapter.Update(goodDataBase);
         }
 
+        /// <summary>
+        /// changes selected row when new row selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void employeeDataGridView_SelectionChanged_1(object sender, EventArgs e)
         {
             selectedRow = employeeDataGridView.CurrentRow;
         }
+
     }
 }

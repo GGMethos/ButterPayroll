@@ -12,11 +12,13 @@ namespace ButterPayroll
 {
     public partial class AddModify : Form
     {
-        public AddModify()
+        public AddModify(MainForm mainForm)
         {
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
+        MainForm mainForm;
         public string Mode { get; set; }
         public Employee Employee { get; set; }
 
@@ -52,22 +54,18 @@ namespace ButterPayroll
             if (Employee.fullTime == true)
             {
                 rbutton_fulltime.Checked = true;
-                radio_parttime.Checked = false;
             }
             else
             {
-                rbutton_fulltime.Checked = false;
                 radio_parttime.Checked = true;
             }
             if (Employee.directDeposit == true)
             {
-                radio_check.Checked = false;
                 radio_directDeposit.Checked = true;
             }
             else
             {
                 radio_check.Checked = true;
-                radio_directDeposit.Checked = false;
             }
 
         }
@@ -75,15 +73,33 @@ namespace ButterPayroll
         {
             if (this.Mode == "Modify")
             {
-                MessageBox.Show("Sucessfully Modified");
+                //Error Checking
+                if (textBoxErrorChecking())
+                {
+                    //add data to binding source
+                    MessageBox.Show("Sucessfully Modified");
+                }
             }
+
             if (this.Mode == "Add")
             {
+                if (textBoxErrorChecking()) { 
+                    //send information to datagridview
+                }
                 MessageBox.Show("Sucessfully Added");
             }
                 this.Close();
             
         }
 
+        /// <summary>
+        /// checks all text boxes for errors
+        /// </summary>
+        /// <returns>if all text boxes pass</returns>
+        private bool textBoxErrorChecking() {
+            return true;
+        }
+
+        
     }
 }
