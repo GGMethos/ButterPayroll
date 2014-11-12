@@ -74,14 +74,38 @@ namespace ButterPayroll
             if (this.Mode == "Modify")
             {
                 MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
-                Employee.lastName=tbox_lastName.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn3"].Value = Employee.lastName;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn1"].Value = label_employeeID.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn2"].Value = tbox_lastName.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn3"].Value = tbox_firstName.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn4"].Value = tbox_street.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn5"].Value = tbox_city.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn6"].Value = tbox_state.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn7"].Value = tbox_zipCode.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn11"].Value = tbox_accountNum.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn12"].Value = tbox_routingNum.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn8"].Value = tbox_hours_worked.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn9"].Value = tbox_pay.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn10"].Value = tbox_taxes.Text;
+                if (radio_check.Checked == true)
+                {
+                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value = false;
+                }
+                else
+                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value = true;
+                if (rbutton_fulltime.Checked == true)
+                {
+                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value = Employee.fullTime = true;
+                }
+                else
+                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value = Employee.fullTime = false;
+
+                owningForm.employeeDataGridView.ClearSelection();
                 //Error Checking
                 //if (textBoxErrorChecking())
                 //{
-                    //add data to binding source
-                 //   MessageBox.Show("Sucessfully Modified");
-                //}
+                //add data to binding source
+                //   MessageBox.Show("Sucessfully Modified");
+                //}  
             }
 
             if (this.Mode == "Add")

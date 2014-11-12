@@ -94,6 +94,7 @@ namespace ButterPayroll
         }
         private void Update_Click(object sender, EventArgs e)
         {
+            employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
         }
 
