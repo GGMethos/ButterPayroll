@@ -42,8 +42,8 @@ namespace ButterPayroll
         {
             //get data from selected row
             selectedEmployee.employeeID = selectedRow.Cells["DataGridViewTextBoxColumn1"].Value.ToString();
-            selectedEmployee.firstName = selectedRow.Cells["DataGridViewTextBoxColumn2"].Value.ToString();
-            selectedEmployee.lastName = selectedRow.Cells["DataGridViewTextBoxColumn3"].Value.ToString();
+            selectedEmployee.firstName = selectedRow.Cells["DataGridViewTextBoxColumn3"].Value.ToString();
+            selectedEmployee.lastName = selectedRow.Cells["DataGridViewTextBoxColumn2"].Value.ToString();
             selectedEmployee.street = selectedRow.Cells["DataGridViewTextBoxColumn4"].Value.ToString();
             selectedEmployee.city = selectedRow.Cells["DataGridViewTextBoxColumn5"].Value.ToString();
             selectedEmployee.state = selectedRow.Cells["DataGridViewTextBoxColumn6"].Value.ToString();
