@@ -136,6 +136,7 @@
             // employeeDataGridView
             // 
             this.employeeDataGridView.AllowUserToAddRows = false;
+            this.employeeDataGridView.AllowUserToDeleteRows = false;
             this.employeeDataGridView.AutoGenerateColumns = false;
             this.employeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -293,7 +294,6 @@
         private System.Windows.Forms.Button Update;
         private GoodDataBase goodDataBase;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private GoodDataBaseTableAdapters.EmployeeTableAdapter employeeTableAdapter;
         private GoodDataBaseTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -310,6 +310,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         public System.Windows.Forms.DataGridView employeeDataGridView;
+        public GoodDataBaseTableAdapters.EmployeeTableAdapter employeeTableAdapter;
 
     }
 }

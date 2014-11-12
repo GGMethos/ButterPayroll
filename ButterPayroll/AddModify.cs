@@ -73,12 +73,15 @@ namespace ButterPayroll
         {
             if (this.Mode == "Modify")
             {
+                MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
+                Employee.lastName=tbox_lastName.Text;
+                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn3"].Value = Employee.lastName;
                 //Error Checking
-                if (textBoxErrorChecking())
-                {
+                //if (textBoxErrorChecking())
+                //{
                     //add data to binding source
-                    MessageBox.Show("Sucessfully Modified");
-                }
+                 //   MessageBox.Show("Sucessfully Modified");
+                //}
             }
 
             if (this.Mode == "Add")

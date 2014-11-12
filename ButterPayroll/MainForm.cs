@@ -19,7 +19,7 @@ namespace ButterPayroll
 
         AddModify addForm;
         AddModify modifyForm;
-        DataGridViewRow selectedRow;
+        public DataGridViewRow selectedRow;
 
         Employee selectedEmployee = new Employee();
 
