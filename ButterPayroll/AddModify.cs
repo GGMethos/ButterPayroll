@@ -106,14 +106,9 @@ namespace ButterPayroll
 
             if (this.Mode == "Add")
             {
-                /*
-                string count =owningForm.employeeDataGridView.Rows.Count.ToString();
-                DataTable dt = owningForm.employeeDataGridView.DataSource as DataTable;
-                DataRow row = dt.NewRow();
-                row["EmployeeId"] = count;
-                dt.Rows.Add(row);
-                 */
-
+                int count =owningForm.employeeDataGridView.Rows.Count;
+                owningForm.employeeTableAdapter.Insert(4, "Ruffe", "Ed", "12 test", "SI", "NY", "10310", 5, 5, 17, "00", "00", true, true);
+                owningForm.employeeDataGridView.DataSource=owningForm.employeeBindingSource.DataSource;
             }
                 this.Close();
             
