@@ -65,8 +65,8 @@ namespace ButterPayroll
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee);
+            // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +99,7 @@ namespace ButterPayroll
         {
             employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
+            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -120,6 +121,8 @@ namespace ButterPayroll
         {
             selectedRow = employeeDataGridView.CurrentRow;
         }
+
+        
 
         /// <summary>
         /// changes selected row when new row selected
