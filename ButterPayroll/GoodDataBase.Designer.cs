@@ -305,7 +305,7 @@ namespace ButterPayroll {
             
             private global::System.Data.DataColumn columnDirect_Deposit;
             
-            private global::System.Data.DataColumn columnStatus;
+            private global::System.Data.DataColumn columnFull_Time;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -446,9 +446,9 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StatusColumn {
+            public global::System.Data.DataColumn Full_TimeColumn {
                 get {
-                    return this.columnStatus;
+                    return this.columnFull_Time;
                 }
             }
             
@@ -489,7 +489,7 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EmployeeRow AddEmployeeRow(int EmployeeId, string Last_Name, string First_Name, string Street, string City, string State, string Zip, double Hours, double Rate, double Taxes, string Account_Number, string Routing_Number, bool Direct_Deposit, bool Status) {
+            public EmployeeRow AddEmployeeRow(int EmployeeId, string Last_Name, string First_Name, string Street, string City, string State, string Zip, double Hours, double Rate, double Taxes, string Account_Number, string Routing_Number, bool Direct_Deposit, bool Full_Time) {
                 EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EmployeeId,
@@ -505,7 +505,7 @@ namespace ButterPayroll {
                         Account_Number,
                         Routing_Number,
                         Direct_Deposit,
-                        Status};
+                        Full_Time};
                 rowEmployeeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEmployeeRow);
                 return rowEmployeeRow;
@@ -548,7 +548,7 @@ namespace ButterPayroll {
                 this.columnAccount_Number = base.Columns["Account Number"];
                 this.columnRouting_Number = base.Columns["Routing Number"];
                 this.columnDirect_Deposit = base.Columns["Direct Deposit"];
-                this.columnStatus = base.Columns["Status"];
+                this.columnFull_Time = base.Columns["Full Time"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -580,8 +580,8 @@ namespace ButterPayroll {
                 base.Columns.Add(this.columnRouting_Number);
                 this.columnDirect_Deposit = new global::System.Data.DataColumn("Direct Deposit", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDirect_Deposit);
-                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus);
+                this.columnFull_Time = new global::System.Data.DataColumn("Full Time", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFull_Time);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEmployeeId}, true));
                 this.columnEmployeeId.AllowDBNull = false;
@@ -939,17 +939,17 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Status {
+            public bool Full_Time {
                 get {
                     try {
-                        return ((bool)(this[this.tableEmployee.StatusColumn]));
+                        return ((bool)(this[this.tableEmployee.Full_TimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'Employee\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Full Time\' in table \'Employee\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEmployee.StatusColumn] = value;
+                    this[this.tableEmployee.Full_TimeColumn] = value;
                 }
             }
             
@@ -1099,14 +1099,14 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableEmployee.StatusColumn);
+            public bool IsFull_TimeNull() {
+                return this.IsNull(this.tableEmployee.Full_TimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableEmployee.StatusColumn] = global::System.Convert.DBNull;
+            public void SetFull_TimeNull() {
+                this[this.tableEmployee.Full_TimeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1282,11 +1282,11 @@ namespace ButterPayroll.GoodDataBaseTableAdapters {
             tableMapping.ColumnMappings.Add("Account Number", "Account Number");
             tableMapping.ColumnMappings.Add("Routing Number", "Routing Number");
             tableMapping.ColumnMappings.Add("Direct Deposit", "Direct Deposit");
-            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("Full Time", "Full Time");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ((@IsNull_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name] = @Original_Last_Name)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL) OR ([First Name] = @Original_First_Name)) AND ((@IsNull_Street = 1 AND [Street] IS NULL) OR ([Street] = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR ([City] = @Original_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Original_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([Zip] = @Original_Zip)) AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] = @Original_Hours)) AND ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Original_Rate)) AND ((@IsNull_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Original_Taxes)) AND ((@IsNull_Account_Number = 1 AND [Account Number] IS NULL) OR ([Account Number] = @Original_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND [Routing Number] IS NULL) OR ([Routing Number] = @Original_Routing_Number)) AND ((@IsNull_Direct_Deposit = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] = @Original_Direct_Deposit)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ((@IsNull_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name] = @Original_Last_Name)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL) OR ([First Name] = @Original_First_Name)) AND ((@IsNull_Street = 1 AND [Street] IS NULL) OR ([Street] = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR ([City] = @Original_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Original_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([Zip] = @Original_Zip)) AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] = @Original_Hours)) AND ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Original_Rate)) AND ((@IsNull_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Original_Taxes)) AND ((@IsNull_Account_Number = 1 AND [Account Number] IS NULL) OR ([Account Number] = @Original_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND [Routing Number] IS NULL) OR ([Routing Number] = @Original_Routing_Number)) AND ((@IsNull_Direct_Deposit = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] = @Original_Direct_Deposit)) AND ((@IsNull_Full_Time = 1 AND [Status] IS NULL) OR ([Status] = @Original_Full_Time)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1313,12 +1313,12 @@ namespace ButterPayroll.GoodDataBaseTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Routing_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Routing Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Direct_Deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Direct_Deposit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Full_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Full_Time", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([EmployeeId], [Last Name], [First Name], [Street], [City], [State], [Zip], [Hours], [Rate], [Taxes], [Account Number], [Routing Number], [Direct Deposit], [Status]) VALUES (@EmployeeId, @Last_Name, @First_Name, @Street, @City, @State, @Zip, @Hours, @Rate, @Taxes, @Account_Number, @Routing_Number, @Direct_Deposit, @Status);
-SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status FROM Employee WHERE (EmployeeId = @EmployeeId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([EmployeeId], [Last Name], [First Name], [Street], [City], [State], [Zip], [Hours], [Rate], [Taxes], [Account Number], [Routing Number], [Direct Deposit], [Status]) VALUES (@EmployeeId, @Last_Name, @First_Name, @Street, @City, @State, @Zip, @Hours, @Rate, @Taxes, @Account_Number, @Routing_Number, @Direct_Deposit, @Full_Time);
+SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status AS [Full Time] FROM Employee WHERE (EmployeeId = @EmployeeId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1333,31 +1333,32 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Routing_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Routing Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Direct_Deposit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Full_Time", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Employee] SET [EmployeeId] = @EmployeeId, [Last Name] = @Last_Name," +
                 " [First Name] = @First_Name, [Street] = @Street, [City] = @City, [State] = @Stat" +
                 "e, [Zip] = @Zip, [Hours] = @Hours, [Rate] = @Rate, [Taxes] = @Taxes, [Account Nu" +
                 "mber] = @Account_Number, [Routing Number] = @Routing_Number, [Direct Deposit] = " +
-                "@Direct_Deposit, [Status] = @Status WHERE (([EmployeeId] = @Original_EmployeeId)" +
-                " AND ((@IsNull_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name] = @Origina" +
-                "l_Last_Name)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL) OR ([First " +
-                "Name] = @Original_First_Name)) AND ((@IsNull_Street = 1 AND [Street] IS NULL) OR" +
-                " ([Street] = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR ([" +
-                "City] = @Original_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State" +
-                "] = @Original_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([Zip] = @Orig" +
-                "inal_Zip)) AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] = @Original_" +
-                "Hours)) AND ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Original_Rate))" +
-                " AND ((@IsNull_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Original_Taxes)) AN" +
-                "D ((@IsNull_Account_Number = 1 AND [Account Number] IS NULL) OR ([Account Number" +
-                "] = @Original_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND [Routing Num" +
-                "ber] IS NULL) OR ([Routing Number] = @Original_Routing_Number)) AND ((@IsNull_Di" +
-                "rect_Deposit = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] = @Original_" +
-                "Direct_Deposit)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @" +
-                "Original_Status)));\r\nSELECT EmployeeId, [Last Name], [First Name], Street, City," +
-                " State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Dep" +
-                "osit], Status FROM Employee WHERE (EmployeeId = @EmployeeId)";
+                "@Direct_Deposit, [Status] = @Full_Time WHERE (([EmployeeId] = @Original_Employee" +
+                "Id) AND ((@IsNull_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name] = @Orig" +
+                "inal_Last_Name)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL) OR ([Fir" +
+                "st Name] = @Original_First_Name)) AND ((@IsNull_Street = 1 AND [Street] IS NULL)" +
+                " OR ([Street] = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR" +
+                " ([City] = @Original_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([St" +
+                "ate] = @Original_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([Zip] = @O" +
+                "riginal_Zip)) AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] = @Origin" +
+                "al_Hours)) AND ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Original_Rat" +
+                "e)) AND ((@IsNull_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Original_Taxes))" +
+                " AND ((@IsNull_Account_Number = 1 AND [Account Number] IS NULL) OR ([Account Num" +
+                "ber] = @Original_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND [Routing " +
+                "Number] IS NULL) OR ([Routing Number] = @Original_Routing_Number)) AND ((@IsNull" +
+                "_Direct_Deposit = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] = @Origin" +
+                "al_Direct_Deposit)) AND ((@IsNull_Full_Time = 1 AND [Status] IS NULL) OR ([Statu" +
+                "s] = @Original_Full_Time)));\r\nSELECT EmployeeId, [Last Name], [First Name], Stre" +
+                "et, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [D" +
+                "irect Deposit], Status AS [Full Time] FROM Employee WHERE (EmployeeId = @Employe" +
+                "eId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1372,7 +1373,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Account_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Account Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Routing_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Routing Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Direct_Deposit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Full_Time", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Last_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1398,8 +1399,8 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Routing_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Routing Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Direct_Deposit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Direct_Deposit", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Direct Deposit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Full_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Full_Time", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Full Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1416,8 +1417,8 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Ra" +
-                "te, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status FROM dbo" +
-                ".Employee";
+                "te, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status  as \"Ful" +
+                "l Time\"  FROM dbo.Employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1472,500 +1473,6 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_EmployeeId, string Original_Last_Name, string Original_First_Name, string Original_Street, string Original_City, string Original_State, string Original_Zip, global::System.Nullable<double> Original_Hours, global::System.Nullable<double> Original_Rate, global::System.Nullable<double> Original_Taxes, string Original_Account_Number, string Original_Routing_Number, global::System.Nullable<bool> Original_Direct_Deposit, global::System.Nullable<bool> Original_Status) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EmployeeId));
-            if ((Original_Last_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Last_Name));
-            }
-            if ((Original_First_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_First_Name));
-            }
-            if ((Original_Street == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Street));
-            }
-            if ((Original_City == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_City));
-            }
-            if ((Original_State == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_State));
-            }
-            if ((Original_Zip == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Zip));
-            }
-            if ((Original_Hours.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_Hours.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Rate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_Rate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Taxes.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((double)(Original_Taxes.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Account_Number == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Account_Number));
-            }
-            if ((Original_Routing_Number == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Routing_Number));
-            }
-            if ((Original_Direct_Deposit.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((bool)(Original_Direct_Deposit.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Status.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((bool)(Original_Status.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int EmployeeId, string Last_Name, string First_Name, string Street, string City, string State, string Zip, global::System.Nullable<double> Hours, global::System.Nullable<double> Rate, global::System.Nullable<double> Taxes, string Account_Number, string Routing_Number, global::System.Nullable<bool> Direct_Deposit, global::System.Nullable<bool> Status) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmployeeId));
-            if ((Last_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Last_Name));
-            }
-            if ((First_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(First_Name));
-            }
-            if ((Street == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Street));
-            }
-            if ((City == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(City));
-            }
-            if ((State == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(State));
-            }
-            if ((Zip == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Zip));
-            }
-            if ((Hours.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Hours.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Rate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(Rate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Taxes.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Taxes.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Account_Number == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Account_Number));
-            }
-            if ((Routing_Number == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Routing_Number));
-            }
-            if ((Direct_Deposit.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(Direct_Deposit.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Status.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((bool)(Status.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int EmployeeId, 
-                    string Last_Name, 
-                    string First_Name, 
-                    string Street, 
-                    string City, 
-                    string State, 
-                    string Zip, 
-                    global::System.Nullable<double> Hours, 
-                    global::System.Nullable<double> Rate, 
-                    global::System.Nullable<double> Taxes, 
-                    string Account_Number, 
-                    string Routing_Number, 
-                    global::System.Nullable<bool> Direct_Deposit, 
-                    global::System.Nullable<bool> Status, 
-                    int Original_EmployeeId, 
-                    string Original_Last_Name, 
-                    string Original_First_Name, 
-                    string Original_Street, 
-                    string Original_City, 
-                    string Original_State, 
-                    string Original_Zip, 
-                    global::System.Nullable<double> Original_Hours, 
-                    global::System.Nullable<double> Original_Rate, 
-                    global::System.Nullable<double> Original_Taxes, 
-                    string Original_Account_Number, 
-                    string Original_Routing_Number, 
-                    global::System.Nullable<bool> Original_Direct_Deposit, 
-                    global::System.Nullable<bool> Original_Status) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmployeeId));
-            if ((Last_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Last_Name));
-            }
-            if ((First_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(First_Name));
-            }
-            if ((Street == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Street));
-            }
-            if ((City == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(City));
-            }
-            if ((State == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(State));
-            }
-            if ((Zip == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Zip));
-            }
-            if ((Hours.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Hours.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Rate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Rate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Taxes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Taxes.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Account_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Account_Number));
-            }
-            if ((Routing_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Routing_Number));
-            }
-            if ((Direct_Deposit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Direct_Deposit.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Status.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_EmployeeId));
-            if ((Original_Last_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Last_Name));
-            }
-            if ((Original_First_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_First_Name));
-            }
-            if ((Original_Street == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Street));
-            }
-            if ((Original_City == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_City));
-            }
-            if ((Original_State == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_State));
-            }
-            if ((Original_Zip == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Zip));
-            }
-            if ((Original_Hours.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((double)(Original_Hours.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Rate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((double)(Original_Rate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Taxes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_Taxes.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Account_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Account_Number));
-            }
-            if ((Original_Routing_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Routing_Number));
-            }
-            if ((Original_Direct_Deposit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_Direct_Deposit.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((bool)(Original_Status.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Last_Name, 
-                    string First_Name, 
-                    string Street, 
-                    string City, 
-                    string State, 
-                    string Zip, 
-                    global::System.Nullable<double> Hours, 
-                    global::System.Nullable<double> Rate, 
-                    global::System.Nullable<double> Taxes, 
-                    string Account_Number, 
-                    string Routing_Number, 
-                    global::System.Nullable<bool> Direct_Deposit, 
-                    global::System.Nullable<bool> Status, 
-                    int Original_EmployeeId, 
-                    string Original_Last_Name, 
-                    string Original_First_Name, 
-                    string Original_Street, 
-                    string Original_City, 
-                    string Original_State, 
-                    string Original_Zip, 
-                    global::System.Nullable<double> Original_Hours, 
-                    global::System.Nullable<double> Original_Rate, 
-                    global::System.Nullable<double> Original_Taxes, 
-                    string Original_Account_Number, 
-                    string Original_Routing_Number, 
-                    global::System.Nullable<bool> Original_Direct_Deposit, 
-                    global::System.Nullable<bool> Original_Status) {
-            return this.Update(Original_EmployeeId, Last_Name, First_Name, Street, City, State, Zip, Hours, Rate, Taxes, Account_Number, Routing_Number, Direct_Deposit, Status, Original_EmployeeId, Original_Last_Name, Original_First_Name, Original_Street, Original_City, Original_State, Original_Zip, Original_Hours, Original_Rate, Original_Taxes, Original_Account_Number, Original_Routing_Number, Original_Direct_Deposit, Original_Status);
         }
     }
     

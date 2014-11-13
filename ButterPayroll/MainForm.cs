@@ -76,7 +76,10 @@ namespace ButterPayroll
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            employeeDataGridView.Focus();
+            employeeTableAdapter.Update(goodDataBase);
             ExitProgramSequence();
+
         }
 
         private void ExitProgramSequence()
@@ -103,6 +106,7 @@ namespace ButterPayroll
             if (employeeDataGridView.SelectedRows.Count > 0)
             {
                 employeeDataGridView.Rows.RemoveAt(employeeDataGridView.SelectedRows[0].Index);
+                employeeDataGridView.Focus();
                 employeeTableAdapter.Update(goodDataBase);
             } 
         }
@@ -112,15 +116,17 @@ namespace ButterPayroll
             employeeTableAdapter.Update(goodDataBase);
         }
 
+        private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            selectedRow = employeeDataGridView.CurrentRow;
+        }
+
         /// <summary>
         /// changes selected row when new row selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void employeeDataGridView_SelectionChanged_1(object sender, EventArgs e)
-        {
-            selectedRow = employeeDataGridView.CurrentRow;
-        }
+        
 
     }
 }

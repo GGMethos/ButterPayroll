@@ -71,9 +71,9 @@ namespace ButterPayroll
         }
         private void button_save_Click(object sender, EventArgs e)
         {
+            MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
             if (this.Mode == "Modify")
             {
-                MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
                 owningForm.selectedRow.Cells["DataGridViewTextBoxColumn1"].Value = label_employeeID.Text;
                 owningForm.selectedRow.Cells["DataGridViewTextBoxColumn2"].Value = tbox_lastName.Text;
                 owningForm.selectedRow.Cells["DataGridViewTextBoxColumn3"].Value = tbox_firstName.Text;
@@ -100,20 +100,20 @@ namespace ButterPayroll
                     owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value = Employee.fullTime = false;
 
                 owningForm.employeeDataGridView.ClearSelection();
-                //Error Checking
-                //if (textBoxErrorChecking())
-                //{
-                //add data to binding source
-                //   MessageBox.Show("Sucessfully Modified");
-                //}  
+                MessageBox.Show("Sucessfully Modified");
+                owningForm.employeeDataGridView.Focus();    
             }
 
             if (this.Mode == "Add")
             {
-                if (textBoxErrorChecking()) { 
-                    //send information to datagridview
-                }
-                MessageBox.Show("Sucessfully Added");
+                /*
+                string count =owningForm.employeeDataGridView.Rows.Count.ToString();
+                DataTable dt = owningForm.employeeDataGridView.DataSource as DataTable;
+                DataRow row = dt.NewRow();
+                row["EmployeeId"] = count;
+                dt.Rows.Add(row);
+                 */
+
             }
                 this.Close();
             
