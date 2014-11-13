@@ -81,7 +81,6 @@ namespace ButterPayroll
             ExitProgramSequence();
 
         }
-
         private void ExitProgramSequence()
         {
             DialogResult dr = MessageBox.Show("Do you want to save?", "Goodbye", MessageBoxButtons.YesNo);
@@ -121,15 +120,6 @@ namespace ButterPayroll
         {
             selectedRow = employeeDataGridView.CurrentRow;
         }
-
-        
-
-        /// <summary>
-        /// changes selected row when new row selected
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        
 
     }
 }

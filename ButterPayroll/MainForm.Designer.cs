@@ -150,10 +150,13 @@
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(12, 82);
+            this.employeeDataGridView.Location = new System.Drawing.Point(27, 82);
+            this.employeeDataGridView.MultiSelect = false;
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.ReadOnly = true;
-            this.employeeDataGridView.Size = new System.Drawing.Size(780, 376);
+            this.employeeDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeDataGridView.Size = new System.Drawing.Size(746, 376);
             this.employeeDataGridView.TabIndex = 6;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged);
             // 
@@ -335,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 470);
+            this.ClientSize = new System.Drawing.Size(804, 483);
             this.Controls.Add(this.employeeDataGridView);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.button_generate);

@@ -3,5 +3,10 @@ UPDATE:
 	Database now saves via the update button
 	Database can now delete when something is highlighed and delete is pressed 
 	Ignore Database1.mdf1 in database explorer.
-	Dont touch any database sources or in the explorer, very sensitive.
-	Time elasped: 4 hours 
+	Added Modify Function
+	Employee Medical Benifits - Will
+	Found Employee Benifits - Will
+	Add and Update - Jelzon
+	Design Decisions - Everyone
+	Updated Database Table
+

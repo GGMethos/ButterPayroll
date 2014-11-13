@@ -34,6 +34,11 @@
             this.label_firstName = new System.Windows.Forms.Label();
             this.tbox_firstName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbox_taxes = new System.Windows.Forms.TextBox();
+            this.tbox_pay = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_HoursWorked = new System.Windows.Forms.Label();
             this.tbox_hours_worked = new System.Windows.Forms.TextBox();
             this.label_routingNum = new System.Windows.Forms.Label();
             this.tbox_routingNum = new System.Windows.Forms.TextBox();
@@ -58,16 +63,26 @@
             this.tbox_city = new System.Windows.Forms.TextBox();
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
-            this.label_HoursWorked = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbox_pay = new System.Windows.Forms.TextBox();
-            this.tbox_taxes = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.CompanyCombo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PlanCombo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PriceCombo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DescriptionCombo = new System.Windows.Forms.ComboBox();
+            this.Deductions = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.Deductions.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,7 +94,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(386, 154);
+            this.groupBox1.Size = new System.Drawing.Size(254, 98);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
@@ -133,12 +148,58 @@
             this.groupBox2.Controls.Add(this.label_accountNum);
             this.groupBox2.Controls.Add(this.tbox_accountNum);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 215);
+            this.groupBox2.Location = new System.Drawing.Point(12, 159);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 166);
+            this.groupBox2.Size = new System.Drawing.Size(432, 80);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Information";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(354, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Tax Rate";
+            // 
+            // tbox_taxes
+            // 
+            this.tbox_taxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_taxes.Location = new System.Drawing.Point(354, 49);
+            this.tbox_taxes.Name = "tbox_taxes";
+            this.tbox_taxes.Size = new System.Drawing.Size(62, 22);
+            this.tbox_taxes.TabIndex = 12;
+            // 
+            // tbox_pay
+            // 
+            this.tbox_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_pay.Location = new System.Drawing.Point(286, 49);
+            this.tbox_pay.Name = "tbox_pay";
+            this.tbox_pay.Size = new System.Drawing.Size(62, 22);
+            this.tbox_pay.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(284, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Pay Rate";
+            // 
+            // label_HoursWorked
+            // 
+            this.label_HoursWorked.AutoSize = true;
+            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
+            this.label_HoursWorked.Name = "label_HoursWorked";
+            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
+            this.label_HoursWorked.TabIndex = 9;
+            this.label_HoursWorked.Text = "Hours";
             // 
             // tbox_hours_worked
             // 
@@ -189,7 +250,7 @@
             this.groupBox5.Controls.Add(this.rbutton_fulltime);
             this.groupBox5.Controls.Add(this.radio_parttime);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(538, 301);
+            this.groupBox5.Location = new System.Drawing.Point(602, 339);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(167, 80);
             this.groupBox5.TabIndex = 11;
@@ -225,7 +286,7 @@
             this.groupBox4.Controls.Add(this.radio_directDeposit);
             this.groupBox4.Controls.Add(this.radio_check);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(538, 215);
+            this.groupBox4.Location = new System.Drawing.Point(602, 245);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(167, 80);
             this.groupBox4.TabIndex = 10;
@@ -312,7 +373,7 @@
             this.groupBox3.Controls.Add(this.label_street);
             this.groupBox3.Controls.Add(this.tbox_street);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(404, 55);
+            this.groupBox3.Location = new System.Drawing.Point(462, 55);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(301, 154);
             this.groupBox3.TabIndex = 4;
@@ -397,51 +458,178 @@
             this.tbox_street.Size = new System.Drawing.Size(281, 22);
             this.tbox_street.TabIndex = 0;
             // 
-            // label_HoursWorked
+            // groupBox6
             // 
-            this.label_HoursWorked.AutoSize = true;
-            this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_HoursWorked.Location = new System.Drawing.Point(218, 30);
-            this.label_HoursWorked.Name = "label_HoursWorked";
-            this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
-            this.label_HoursWorked.TabIndex = 9;
-            this.label_HoursWorked.Text = "Hours";
+            this.groupBox6.Controls.Add(this.DescriptionCombo);
+            this.groupBox6.Controls.Add(this.label7);
+            this.groupBox6.Controls.Add(this.PriceCombo);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.PlanCombo);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.CompanyCombo);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox6.Location = new System.Drawing.Point(12, 245);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(531, 80);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Medical Information";
             // 
-            // label2
+            // CompanyCombo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(284, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Pay Rate";
+            this.CompanyCombo.FormattingEnabled = true;
+            this.CompanyCombo.Items.AddRange(new object[] {
+            "Medicare",
+            "Medicaid",
+            "Blue Cross",
+            "HIP",
+            "Aetna",
+            "None"});
+            this.CompanyCombo.Location = new System.Drawing.Point(6, 47);
+            this.CompanyCombo.Name = "CompanyCombo";
+            this.CompanyCombo.Size = new System.Drawing.Size(121, 24);
+            this.CompanyCombo.TabIndex = 0;
             // 
-            // tbox_pay
+            // label4
             // 
-            this.tbox_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_pay.Location = new System.Drawing.Point(286, 49);
-            this.tbox_pay.Name = "tbox_pay";
-            this.tbox_pay.Size = new System.Drawing.Size(62, 22);
-            this.tbox_pay.TabIndex = 11;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Company Name";
             // 
-            // tbox_taxes
+            // label5
             // 
-            this.tbox_taxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_taxes.Location = new System.Drawing.Point(354, 49);
-            this.tbox_taxes.Name = "tbox_taxes";
-            this.tbox_taxes.Size = new System.Drawing.Size(62, 22);
-            this.tbox_taxes.TabIndex = 12;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(132, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Plan Type";
             // 
-            // label3
+            // PlanCombo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(354, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Tax Rate";
+            this.PlanCombo.FormattingEnabled = true;
+            this.PlanCombo.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "A&B",
+            "HMO",
+            "POS",
+            "PPO",
+            "N/A"});
+            this.PlanCombo.Location = new System.Drawing.Point(133, 47);
+            this.PlanCombo.Name = "PlanCombo";
+            this.PlanCombo.Size = new System.Drawing.Size(121, 24);
+            this.PlanCombo.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(258, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 16);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Price";
+            // 
+            // PriceCombo
+            // 
+            this.PriceCombo.FormattingEnabled = true;
+            this.PriceCombo.Items.AddRange(new object[] {
+            "407",
+            "104.90",
+            "511.90",
+            "57",
+            "162",
+            "104",
+            "253",
+            "175",
+            "589",
+            "64",
+            "175",
+            "113",
+            "308",
+            "209",
+            "628",
+            "42",
+            "128",
+            "97",
+            "237",
+            "198",
+            "603"});
+            this.PriceCombo.Location = new System.Drawing.Point(260, 47);
+            this.PriceCombo.Name = "PriceCombo";
+            this.PriceCombo.Size = new System.Drawing.Size(121, 24);
+            this.PriceCombo.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(393, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Description";
+            // 
+            // DescriptionCombo
+            // 
+            this.DescriptionCombo.FormattingEnabled = true;
+            this.DescriptionCombo.Items.AddRange(new object[] {
+            "Individual",
+            "Family"});
+            this.DescriptionCombo.Location = new System.Drawing.Point(387, 47);
+            this.DescriptionCombo.Name = "DescriptionCombo";
+            this.DescriptionCombo.Size = new System.Drawing.Size(121, 24);
+            this.DescriptionCombo.TabIndex = 12;
+            // 
+            // Deductions
+            // 
+            this.Deductions.Controls.Add(this.checkBox3);
+            this.Deductions.Controls.Add(this.checkBox2);
+            this.Deductions.Controls.Add(this.checkBox1);
+            this.Deductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deductions.Location = new System.Drawing.Point(12, 331);
+            this.Deductions.Name = "Deductions";
+            this.Deductions.Size = new System.Drawing.Size(531, 176);
+            this.Deductions.TabIndex = 15;
+            this.Deductions.TabStop = false;
+            this.Deductions.Text = "Deductions";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 37);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 20);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Dental";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(9, 68);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(77, 20);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Optical";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(9, 94);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(149, 20);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Cafeteria Benifits";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // AddModify
             // 
@@ -449,7 +637,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.button_cancel;
-            this.ClientSize = new System.Drawing.Size(717, 391);
+            this.ClientSize = new System.Drawing.Size(781, 519);
+            this.Controls.Add(this.Deductions);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -477,6 +667,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.Deductions.ResumeLayout(false);
+            this.Deductions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +713,18 @@
         private System.Windows.Forms.Label label_HoursWorked;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_taxes;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CompanyCombo;
+        private System.Windows.Forms.ComboBox PlanCombo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox PriceCombo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox DescriptionCombo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox Deductions;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
