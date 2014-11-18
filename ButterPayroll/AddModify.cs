@@ -107,7 +107,7 @@ namespace ButterPayroll
             if (this.Mode == "Add")
             {
                 int count =owningForm.employeeDataGridView.Rows.Count;
-                owningForm.employeeTableAdapter.Insert(count+1, "Ruffe", "Ed", "12 test", "SI", "NY", "10310", 5, 5, 17, "00", "00", true, true,null,null,null,null,null,null,null);
+                owningForm.employeeTableAdapter.Insert(count+1, "Ruffe", "Ed", "12 test", "SI", "NY", "10310", 5, 5, 17, "00", "00", true, true,null,null,null,null,null,null,null,null);
             }
                 this.Close();
             

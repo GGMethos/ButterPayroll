@@ -81,6 +81,7 @@
     <Compile Include="GoodDataBase.cs">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="GoodDataBase.Designer.cs">
       <AutoGen>True</AutoGen>

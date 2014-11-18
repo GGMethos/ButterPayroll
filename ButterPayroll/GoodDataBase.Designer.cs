@@ -804,6 +804,8 @@ namespace ButterPayroll {
             
             private global::System.Data.DataColumn columnDental_Deduction;
             
+            private global::System.Data.DataColumn columnPlan_Id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Employee1DataTable() {
@@ -1007,6 +1009,14 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Plan_IdColumn {
+                get {
+                    return this.columnPlan_Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1063,7 +1073,8 @@ namespace ButterPayroll {
                         string Description, 
                         double Cafeteria_Benifits, 
                         double Optical_Deduction, 
-                        double Dental_Deduction) {
+                        double Dental_Deduction, 
+                        string Plan_Id) {
                 Employee1Row rowEmployee1Row = ((Employee1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EmployeeId,
@@ -1086,7 +1097,8 @@ namespace ButterPayroll {
                         Description,
                         Cafeteria_Benifits,
                         Optical_Deduction,
-                        Dental_Deduction};
+                        Dental_Deduction,
+                        Plan_Id};
                 rowEmployee1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEmployee1Row);
                 return rowEmployee1Row;
@@ -1137,6 +1149,7 @@ namespace ButterPayroll {
                 this.columnCafeteria_Benifits = base.Columns["Cafeteria Benifits"];
                 this.columnOptical_Deduction = base.Columns["Optical Deduction"];
                 this.columnDental_Deduction = base.Columns["Dental Deduction"];
+                this.columnPlan_Id = base.Columns["Plan Id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1184,6 +1197,8 @@ namespace ButterPayroll {
                 base.Columns.Add(this.columnOptical_Deduction);
                 this.columnDental_Deduction = new global::System.Data.DataColumn("Dental Deduction", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDental_Deduction);
+                this.columnPlan_Id = new global::System.Data.DataColumn("Plan Id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlan_Id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEmployeeId}, true));
                 this.columnEmployeeId.AllowDBNull = false;
@@ -1199,6 +1214,7 @@ namespace ButterPayroll {
                 this.columnCompany_Name.MaxLength = 50;
                 this.columnPlan_Name.MaxLength = 50;
                 this.columnDescription.MaxLength = 50;
+                this.columnPlan_Id.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2062,6 +2078,22 @@ namespace ButterPayroll {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Plan_Id {
+                get {
+                    try {
+                        return ((string)(this[this.tableEmployee1.Plan_IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Plan Id\' in table \'Employee1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEmployee1.Plan_IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLast_NameNull() {
                 return this.IsNull(this.tableEmployee1.Last_NameColumn);
             }
@@ -2298,6 +2330,18 @@ namespace ButterPayroll {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDental_DeductionNull() {
                 this[this.tableEmployee1.Dental_DeductionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlan_IdNull() {
+                return this.IsNull(this.tableEmployee1.Plan_IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlan_IdNull() {
+                this[this.tableEmployee1.Plan_IdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3315,6 +3359,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             tableMapping.ColumnMappings.Add("Cafeteria Benifits", "Cafeteria Benifits");
             tableMapping.ColumnMappings.Add("Optical Deduction", "Optical Deduction");
             tableMapping.ColumnMappings.Add("Dental Deduction", "Dental Deduction");
+            tableMapping.ColumnMappings.Add("Plan Id", "Plan Id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3335,14 +3380,15 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                 "eposit)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original" +
                 "_Status)) AND ((@IsNull_Company_Name = 1 AND [Company Name] IS NULL) OR ([Compan" +
                 "y Name] = @Original_Company_Name)) AND ((@IsNull_Plan_Name = 1 AND [Plan Name] I" +
-                "S NULL) OR ([Plan Name] = @Original_Plan_Name)) AND ((@IsNull_Cost = 1 AND [Cost" +
-                "] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_Description = 1 AND [Desc" +
-                "ription] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Cafe" +
-                "teria_Benifits = 1 AND [Cafeteria Benifits] IS NULL) OR ([Cafeteria Benifits] = " +
-                "@Original_Cafeteria_Benifits)) AND ((@IsNull_Optical_Deduction = 1 AND [Optical " +
-                "Deduction] IS NULL) OR ([Optical Deduction] = @Original_Optical_Deduction)) AND " +
-                "((@IsNull_Dental_Deduction = 1 AND [Dental Deduction] IS NULL) OR ([Dental Deduc" +
-                "tion] = @Original_Dental_Deduction)))";
+                "S NULL) OR ([Plan Name] = @Original_Plan_Name)) AND ((@IsNull_Plan_Id = 1 AND [P" +
+                "lan Id] IS NULL) OR ([Plan Id] = @Original_Plan_Id)) AND ((@IsNull_Cost = 1 AND " +
+                "[Cost] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_Description = 1 AND " +
+                "[Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull" +
+                "_Cafeteria_Benifits = 1 AND [Cafeteria Benifits] IS NULL) OR ([Cafeteria Benifit" +
+                "s] = @Original_Cafeteria_Benifits)) AND ((@IsNull_Optical_Deduction = 1 AND [Opt" +
+                "ical Deduction] IS NULL) OR ([Optical Deduction] = @Original_Optical_Deduction))" +
+                " AND ((@IsNull_Dental_Deduction = 1 AND [Dental Deduction] IS NULL) OR ([Dental " +
+                "Deduction] = @Original_Dental_Deduction)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Last_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3375,6 +3421,8 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Company_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plan_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plan_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plan_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plan_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3387,8 +3435,8 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Dental_Deduction", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dental Deduction", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([EmployeeId], [Last Name], [First Name], [Street], [City], [State], [Zip], [Hours], [Rate], [Taxes], [Account Number], [Routing Number], [Direct Deposit], [Status], [Company Name], [Plan Name], [Cost], [Description], [Cafeteria Benifits], [Optical Deduction], [Dental Deduction]) VALUES (@EmployeeId, @Last_Name, @First_Name, @Street, @City, @State, @Zip, @Hours, @Rate, @Taxes, @Account_Number, @Routing_Number, @Direct_Deposit, @Status, @Company_Name, @Plan_Name, @Cost, @Description, @Cafeteria_Benifits, @Optical_Deduction, @Dental_Deduction);
-SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status, [Company Name], [Plan Name], Cost, Description, [Cafeteria Benifits], [Optical Deduction], [Dental Deduction] FROM Employee WHERE (EmployeeId = @EmployeeId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([EmployeeId], [Last Name], [First Name], [Street], [City], [State], [Zip], [Hours], [Rate], [Taxes], [Account Number], [Routing Number], [Direct Deposit], [Status], [Company Name], [Plan Name], [Plan Id], [Cost], [Description], [Cafeteria Benifits], [Optical Deduction], [Dental Deduction]) VALUES (@EmployeeId, @Last_Name, @First_Name, @Street, @City, @State, @Zip, @Hours, @Rate, @Taxes, @Account_Number, @Routing_Number, @Direct_Deposit, @Status, @Company_Name, @Plan_Name, @Plan_Id, @Cost, @Description, @Cafeteria_Benifits, @Optical_Deduction, @Dental_Deduction);
+SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status, [Company Name], [Plan Name], [Plan Id], Cost, Description, [Cafeteria Benifits], [Optical Deduction], [Dental Deduction] FROM Employee WHERE (EmployeeId = @EmployeeId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3406,6 +3454,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Company_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cafeteria_Benifits", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cafeteria Benifits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3418,37 +3467,38 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                 "e, [Zip] = @Zip, [Hours] = @Hours, [Rate] = @Rate, [Taxes] = @Taxes, [Account Nu" +
                 "mber] = @Account_Number, [Routing Number] = @Routing_Number, [Direct Deposit] = " +
                 "@Direct_Deposit, [Status] = @Status, [Company Name] = @Company_Name, [Plan Name]" +
-                " = @Plan_Name, [Cost] = @Cost, [Description] = @Description, [Cafeteria Benifits" +
-                "] = @Cafeteria_Benifits, [Optical Deduction] = @Optical_Deduction, [Dental Deduc" +
-                "tion] = @Dental_Deduction WHERE (([EmployeeId] = @Original_EmployeeId) AND ((@Is" +
-                "Null_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name] = @Original_Last_Nam" +
-                "e)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL) OR ([First Name] = @O" +
-                "riginal_First_Name)) AND ((@IsNull_Street = 1 AND [Street] IS NULL) OR ([Street]" +
-                " = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS NULL) OR ([City] = @O" +
-                "riginal_City)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Origi" +
-                "nal_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([Zip] = @Original_Zip))" +
-                " AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] = @Original_Hours)) AN" +
-                "D ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Original_Rate)) AND ((@Is" +
-                "Null_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Original_Taxes)) AND ((@IsNul" +
-                "l_Account_Number = 1 AND [Account Number] IS NULL) OR ([Account Number] = @Origi" +
-                "nal_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND [Routing Number] IS NU" +
-                "LL) OR ([Routing Number] = @Original_Routing_Number)) AND ((@IsNull_Direct_Depos" +
-                "it = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] = @Original_Direct_Dep" +
-                "osit)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_S" +
-                "tatus)) AND ((@IsNull_Company_Name = 1 AND [Company Name] IS NULL) OR ([Company " +
-                "Name] = @Original_Company_Name)) AND ((@IsNull_Plan_Name = 1 AND [Plan Name] IS " +
-                "NULL) OR ([Plan Name] = @Original_Plan_Name)) AND ((@IsNull_Cost = 1 AND [Cost] " +
-                "IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_Description = 1 AND [Descri" +
-                "ption] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Cafete" +
-                "ria_Benifits = 1 AND [Cafeteria Benifits] IS NULL) OR ([Cafeteria Benifits] = @O" +
-                "riginal_Cafeteria_Benifits)) AND ((@IsNull_Optical_Deduction = 1 AND [Optical De" +
-                "duction] IS NULL) OR ([Optical Deduction] = @Original_Optical_Deduction)) AND ((" +
-                "@IsNull_Dental_Deduction = 1 AND [Dental Deduction] IS NULL) OR ([Dental Deducti" +
-                "on] = @Original_Dental_Deduction)));\r\nSELECT EmployeeId, [Last Name], [First Nam" +
-                "e], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Num" +
-                "ber], [Direct Deposit], Status, [Company Name], [Plan Name], Cost, Description, " +
-                "[Cafeteria Benifits], [Optical Deduction], [Dental Deduction] FROM Employee WHER" +
-                "E (EmployeeId = @EmployeeId)";
+                " = @Plan_Name, [Plan Id] = @Plan_Id, [Cost] = @Cost, [Description] = @Descriptio" +
+                "n, [Cafeteria Benifits] = @Cafeteria_Benifits, [Optical Deduction] = @Optical_De" +
+                "duction, [Dental Deduction] = @Dental_Deduction WHERE (([EmployeeId] = @Original" +
+                "_EmployeeId) AND ((@IsNull_Last_Name = 1 AND [Last Name] IS NULL) OR ([Last Name" +
+                "] = @Original_Last_Name)) AND ((@IsNull_First_Name = 1 AND [First Name] IS NULL)" +
+                " OR ([First Name] = @Original_First_Name)) AND ((@IsNull_Street = 1 AND [Street]" +
+                " IS NULL) OR ([Street] = @Original_Street)) AND ((@IsNull_City = 1 AND [City] IS" +
+                " NULL) OR ([City] = @Original_City)) AND ((@IsNull_State = 1 AND [State] IS NULL" +
+                ") OR ([State] = @Original_State)) AND ((@IsNull_Zip = 1 AND [Zip] IS NULL) OR ([" +
+                "Zip] = @Original_Zip)) AND ((@IsNull_Hours = 1 AND [Hours] IS NULL) OR ([Hours] " +
+                "= @Original_Hours)) AND ((@IsNull_Rate = 1 AND [Rate] IS NULL) OR ([Rate] = @Ori" +
+                "ginal_Rate)) AND ((@IsNull_Taxes = 1 AND [Taxes] IS NULL) OR ([Taxes] = @Origina" +
+                "l_Taxes)) AND ((@IsNull_Account_Number = 1 AND [Account Number] IS NULL) OR ([Ac" +
+                "count Number] = @Original_Account_Number)) AND ((@IsNull_Routing_Number = 1 AND " +
+                "[Routing Number] IS NULL) OR ([Routing Number] = @Original_Routing_Number)) AND " +
+                "((@IsNull_Direct_Deposit = 1 AND [Direct Deposit] IS NULL) OR ([Direct Deposit] " +
+                "= @Original_Direct_Deposit)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR (" +
+                "[Status] = @Original_Status)) AND ((@IsNull_Company_Name = 1 AND [Company Name] " +
+                "IS NULL) OR ([Company Name] = @Original_Company_Name)) AND ((@IsNull_Plan_Name =" +
+                " 1 AND [Plan Name] IS NULL) OR ([Plan Name] = @Original_Plan_Name)) AND ((@IsNul" +
+                "l_Plan_Id = 1 AND [Plan Id] IS NULL) OR ([Plan Id] = @Original_Plan_Id)) AND ((@" +
+                "IsNull_Cost = 1 AND [Cost] IS NULL) OR ([Cost] = @Original_Cost)) AND ((@IsNull_" +
+                "Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Descrip" +
+                "tion)) AND ((@IsNull_Cafeteria_Benifits = 1 AND [Cafeteria Benifits] IS NULL) OR" +
+                " ([Cafeteria Benifits] = @Original_Cafeteria_Benifits)) AND ((@IsNull_Optical_De" +
+                "duction = 1 AND [Optical Deduction] IS NULL) OR ([Optical Deduction] = @Original" +
+                "_Optical_Deduction)) AND ((@IsNull_Dental_Deduction = 1 AND [Dental Deduction] I" +
+                "S NULL) OR ([Dental Deduction] = @Original_Dental_Deduction)));\r\nSELECT Employee" +
+                "Id, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Ac" +
+                "count Number], [Routing Number], [Direct Deposit], Status, [Company Name], [Plan" +
+                " Name], [Plan Id], Cost, Description, [Cafeteria Benifits], [Optical Deduction]," +
+                " [Dental Deduction] FROM Employee WHERE (EmployeeId = @EmployeeId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Last_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Last Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3466,6 +3516,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Company_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plan_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cafeteria_Benifits", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cafeteria Benifits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3502,6 +3553,8 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Company_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plan_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plan_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plan_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plan_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plan Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3527,7 +3580,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status, [Company Name], [Plan Name], Cost, Description, [Cafeteria Benifits], [Optical Deduction], [Dental Deduction] FROM dbo.Employee";
+            this._commandCollection[0].CommandText = @"SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, Rate, Taxes, [Account Number], [Routing Number], [Direct Deposit], Status, [Company Name], [Plan Name], [Plan Id], Cost, Description, [Cafeteria Benifits], [Optical Deduction], [Dental Deduction] FROM dbo.Employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3605,6 +3658,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Original_Status, 
                     string Original_Company_Name, 
                     string Original_Plan_Name, 
+                    string Original_Plan_Id, 
                     global::System.Nullable<double> Original_Cost, 
                     string Original_Description, 
                     global::System.Nullable<double> Original_Cafeteria_Benifits, 
@@ -3731,45 +3785,53 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_Plan_Name));
             }
-            if ((Original_Cost.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_Cost.Value));
-            }
-            else {
+            if ((Original_Plan_Id == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_Description == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_Plan_Id));
+            }
+            if ((Original_Cost.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((double)(Original_Cost.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_Description));
-            }
-            if ((Original_Cafeteria_Benifits.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((double)(Original_Cafeteria_Benifits.Value));
-            }
-            else {
+            if ((Original_Description == null)) {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_Optical_Deduction.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_Description));
+            }
+            if ((Original_Cafeteria_Benifits.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((double)(Original_Optical_Deduction.Value));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((double)(Original_Cafeteria_Benifits.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_Dental_Deduction.HasValue == true)) {
+            if ((Original_Optical_Deduction.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((double)(Original_Dental_Deduction.Value));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((double)(Original_Optical_Deduction.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Dental_Deduction.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((double)(Original_Dental_Deduction.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3808,6 +3870,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Status, 
                     string Company_Name, 
                     string Plan_Name, 
+                    string Plan_Id, 
                     global::System.Nullable<double> Cost, 
                     string Description, 
                     global::System.Nullable<double> Cafeteria_Benifits, 
@@ -3904,35 +3967,41 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Plan_Name));
             }
-            if ((Cost.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Cost.Value));
-            }
-            else {
+            if ((Plan_Id == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Description == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Plan_Id));
+            }
+            if ((Cost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(Cost.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Description));
-            }
-            if ((Cafeteria_Benifits.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(Cafeteria_Benifits.Value));
-            }
-            else {
+            if ((Description == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Optical_Deduction.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(Optical_Deduction.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Description));
+            }
+            if ((Cafeteria_Benifits.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(Cafeteria_Benifits.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Dental_Deduction.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((double)(Dental_Deduction.Value));
+            if ((Optical_Deduction.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((double)(Optical_Deduction.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Dental_Deduction.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(Dental_Deduction.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3971,6 +4040,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Status, 
                     string Company_Name, 
                     string Plan_Name, 
+                    string Plan_Id, 
                     global::System.Nullable<double> Cost, 
                     string Description, 
                     global::System.Nullable<double> Cafeteria_Benifits, 
@@ -3992,6 +4062,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Original_Status, 
                     string Original_Company_Name, 
                     string Original_Plan_Name, 
+                    string Original_Plan_Id, 
                     global::System.Nullable<double> Original_Cost, 
                     string Original_Description, 
                     global::System.Nullable<double> Original_Cafeteria_Benifits, 
@@ -4088,196 +4159,210 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Plan_Name));
             }
-            if ((Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Cost.Value));
-            }
-            else {
+            if ((Plan_Id == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Description == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Plan_Id));
+            }
+            if ((Cost.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Cost.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Description));
-            }
-            if ((Cafeteria_Benifits.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Cafeteria_Benifits.Value));
-            }
-            else {
+            if ((Description == null)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Optical_Deduction.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Optical_Deduction.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Description));
+            }
+            if ((Cafeteria_Benifits.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Cafeteria_Benifits.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Dental_Deduction.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Dental_Deduction.Value));
+            if ((Optical_Deduction.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Optical_Deduction.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_EmployeeId));
-            if ((Original_Last_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            if ((Dental_Deduction.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Dental_Deduction.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Last_Name));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_EmployeeId));
+            if ((Original_Last_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Last_Name));
             }
             if ((Original_First_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_First_Name));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_First_Name));
             }
             if ((Original_Street == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Street));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Street));
             }
             if ((Original_City == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_City));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_City));
             }
             if ((Original_State == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_State));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_State));
             }
             if ((Original_Zip == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Zip));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Zip));
             }
             if ((Original_Hours.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((double)(Original_Hours.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((double)(Original_Hours.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((Original_Rate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(Original_Rate.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((double)(Original_Rate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_Taxes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((double)(Original_Taxes.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((double)(Original_Taxes.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             if ((Original_Account_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Account_Number));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_Account_Number));
             }
             if ((Original_Routing_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_Routing_Number));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Routing_Number));
             }
             if ((Original_Direct_Deposit.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_Direct_Deposit.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((bool)(Original_Direct_Deposit.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_Status.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((bool)(Original_Status.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_Company_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Company_Name));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Company_Name));
             }
             if ((Original_Plan_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_Plan_Name));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Plan_Name));
+            }
+            if ((Original_Plan_Id == null)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_Plan_Id));
             }
             if ((Original_Cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_Cost.Value));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((double)(Original_Cost.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_Description));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_Description));
             }
             if ((Original_Cafeteria_Benifits.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((double)(Original_Cafeteria_Benifits.Value));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_Cafeteria_Benifits.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             if ((Original_Optical_Deduction.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((double)(Original_Optical_Deduction.Value));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((double)(Original_Optical_Deduction.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             if ((Original_Dental_Deduction.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((double)(Original_Dental_Deduction.Value));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((double)(Original_Dental_Deduction.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4315,6 +4400,7 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Status, 
                     string Company_Name, 
                     string Plan_Name, 
+                    string Plan_Id, 
                     global::System.Nullable<double> Cost, 
                     string Description, 
                     global::System.Nullable<double> Cafeteria_Benifits, 
@@ -4336,12 +4422,13 @@ SELECT EmployeeId, [Last Name], [First Name], Street, City, State, Zip, Hours, R
                     global::System.Nullable<bool> Original_Status, 
                     string Original_Company_Name, 
                     string Original_Plan_Name, 
+                    string Original_Plan_Id, 
                     global::System.Nullable<double> Original_Cost, 
                     string Original_Description, 
                     global::System.Nullable<double> Original_Cafeteria_Benifits, 
                     global::System.Nullable<double> Original_Optical_Deduction, 
                     global::System.Nullable<double> Original_Dental_Deduction) {
-            return this.Update(Original_EmployeeId, Last_Name, First_Name, Street, City, State, Zip, Hours, Rate, Taxes, Account_Number, Routing_Number, Direct_Deposit, Status, Company_Name, Plan_Name, Cost, Description, Cafeteria_Benifits, Optical_Deduction, Dental_Deduction, Original_EmployeeId, Original_Last_Name, Original_First_Name, Original_Street, Original_City, Original_State, Original_Zip, Original_Hours, Original_Rate, Original_Taxes, Original_Account_Number, Original_Routing_Number, Original_Direct_Deposit, Original_Status, Original_Company_Name, Original_Plan_Name, Original_Cost, Original_Description, Original_Cafeteria_Benifits, Original_Optical_Deduction, Original_Dental_Deduction);
+            return this.Update(Original_EmployeeId, Last_Name, First_Name, Street, City, State, Zip, Hours, Rate, Taxes, Account_Number, Routing_Number, Direct_Deposit, Status, Company_Name, Plan_Name, Plan_Id, Cost, Description, Cafeteria_Benifits, Optical_Deduction, Dental_Deduction, Original_EmployeeId, Original_Last_Name, Original_First_Name, Original_Street, Original_City, Original_State, Original_Zip, Original_Hours, Original_Rate, Original_Taxes, Original_Account_Number, Original_Routing_Number, Original_Direct_Deposit, Original_Status, Original_Company_Name, Original_Plan_Name, Original_Plan_Id, Original_Cost, Original_Description, Original_Cafeteria_Benifits, Original_Optical_Deduction, Original_Dental_Deduction);
         }
     }
     
