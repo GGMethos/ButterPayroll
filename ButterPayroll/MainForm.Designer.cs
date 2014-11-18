@@ -59,28 +59,28 @@
             this.directDepositDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxesDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routingNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.directDepositDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.statusDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.companyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cafeteriaBenifitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opticalDeductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dentalDeductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routingNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.directdeposit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -148,28 +148,28 @@
             this.employeeDataGridView.AutoGenerateColumns = false;
             this.employeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmployeeIdDataGridViewTextBoxColumn1,
-            this.lastNameDataGridViewTextBoxColumn1,
-            this.firstNameDataGridViewTextBoxColumn1,
-            this.streetDataGridViewTextBoxColumn1,
-            this.cityDataGridViewTextBoxColumn1,
-            this.stateDataGridViewTextBoxColumn1,
-            this.zipDataGridViewTextBoxColumn1,
-            this.hoursDataGridViewTextBoxColumn1,
-            this.rateDataGridViewTextBoxColumn1,
-            this.taxesDataGridViewTextBoxColumn1,
-            this.accountNumberDataGridViewTextBoxColumn1,
-            this.routingNumberDataGridViewTextBoxColumn1,
-            this.directDepositDataGridViewCheckBoxColumn1,
-            this.statusDataGridViewCheckBoxColumn1,
-            this.companyNameDataGridViewTextBoxColumn1,
-            this.planIdDataGridViewTextBoxColumn,
-            this.planNameDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.cafeteriaBenifitsDataGridViewTextBoxColumn,
-            this.opticalDeductionDataGridViewTextBoxColumn,
-            this.dentalDeductionDataGridViewTextBoxColumn});
+            this.employeeId,
+            this.lname,
+            this.fname,
+            this.street,
+            this.city,
+            this.state,
+            this.zip,
+            this.hours,
+            this.rate,
+            this.taxes,
+            this.accountNum,
+            this.routingNum,
+            this.directdeposit,
+            this.status,
+            this.companyName,
+            this.planId,
+            this.planName,
+            this.cost,
+            this.description,
+            this.cafeteriaBenifits,
+            this.opticalDeduction,
+            this.dentalDeduction});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
             this.employeeDataGridView.Location = new System.Drawing.Point(27, 82);
             this.employeeDataGridView.MultiSelect = false;
@@ -332,137 +332,137 @@
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "Company Name";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
             // 
-            // EmployeeIdDataGridViewTextBoxColumn1
+            // employeeId
             // 
-            this.EmployeeIdDataGridViewTextBoxColumn1.DataPropertyName = "EmployeeId";
-            this.EmployeeIdDataGridViewTextBoxColumn1.HeaderText = "EmployeeId";
-            this.EmployeeIdDataGridViewTextBoxColumn1.Name = "EmployeeIdDataGridViewTextBoxColumn1";
+            this.employeeId.DataPropertyName = "EmployeeId";
+            this.employeeId.HeaderText = "EmployeeId";
+            this.employeeId.Name = "employeeId";
             // 
-            // lastNameDataGridViewTextBoxColumn1
+            // lname
             // 
-            this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+            this.lname.DataPropertyName = "Last Name";
+            this.lname.HeaderText = "Last Name";
+            this.lname.Name = "lname";
             // 
-            // firstNameDataGridViewTextBoxColumn1
+            // fname
             // 
-            this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "First Name";
-            this.firstNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+            this.fname.DataPropertyName = "First Name";
+            this.fname.HeaderText = "First Name";
+            this.fname.Name = "fname";
             // 
-            // streetDataGridViewTextBoxColumn1
+            // street
             // 
-            this.streetDataGridViewTextBoxColumn1.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn1.HeaderText = "Street";
-            this.streetDataGridViewTextBoxColumn1.Name = "streetDataGridViewTextBoxColumn1";
+            this.street.DataPropertyName = "Street";
+            this.street.HeaderText = "Street";
+            this.street.Name = "street";
             // 
-            // cityDataGridViewTextBoxColumn1
+            // city
             // 
-            this.cityDataGridViewTextBoxColumn1.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn1.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn1.Name = "cityDataGridViewTextBoxColumn1";
+            this.city.DataPropertyName = "City";
+            this.city.HeaderText = "City";
+            this.city.Name = "city";
             // 
-            // stateDataGridViewTextBoxColumn1
+            // state
             // 
-            this.stateDataGridViewTextBoxColumn1.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn1.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn1.Name = "stateDataGridViewTextBoxColumn1";
+            this.state.DataPropertyName = "State";
+            this.state.HeaderText = "State";
+            this.state.Name = "state";
             // 
-            // zipDataGridViewTextBoxColumn1
+            // zip
             // 
-            this.zipDataGridViewTextBoxColumn1.DataPropertyName = "Zip";
-            this.zipDataGridViewTextBoxColumn1.HeaderText = "Zip";
-            this.zipDataGridViewTextBoxColumn1.Name = "zipDataGridViewTextBoxColumn1";
+            this.zip.DataPropertyName = "Zip";
+            this.zip.HeaderText = "Zip";
+            this.zip.Name = "zip";
             // 
-            // hoursDataGridViewTextBoxColumn1
+            // hours
             // 
-            this.hoursDataGridViewTextBoxColumn1.DataPropertyName = "Hours";
-            this.hoursDataGridViewTextBoxColumn1.HeaderText = "Hours";
-            this.hoursDataGridViewTextBoxColumn1.Name = "hoursDataGridViewTextBoxColumn1";
+            this.hours.DataPropertyName = "Hours";
+            this.hours.HeaderText = "Hours";
+            this.hours.Name = "hours";
             // 
-            // rateDataGridViewTextBoxColumn1
+            // rate
             // 
-            this.rateDataGridViewTextBoxColumn1.DataPropertyName = "Rate";
-            this.rateDataGridViewTextBoxColumn1.HeaderText = "Rate";
-            this.rateDataGridViewTextBoxColumn1.Name = "rateDataGridViewTextBoxColumn1";
+            this.rate.DataPropertyName = "Rate";
+            this.rate.HeaderText = "Rate";
+            this.rate.Name = "rate";
             // 
-            // taxesDataGridViewTextBoxColumn1
+            // taxes
             // 
-            this.taxesDataGridViewTextBoxColumn1.DataPropertyName = "Taxes";
-            this.taxesDataGridViewTextBoxColumn1.HeaderText = "Taxes";
-            this.taxesDataGridViewTextBoxColumn1.Name = "taxesDataGridViewTextBoxColumn1";
+            this.taxes.DataPropertyName = "Taxes";
+            this.taxes.HeaderText = "Taxes";
+            this.taxes.Name = "taxes";
             // 
-            // accountNumberDataGridViewTextBoxColumn1
+            // accountNum
             // 
-            this.accountNumberDataGridViewTextBoxColumn1.DataPropertyName = "Account Number";
-            this.accountNumberDataGridViewTextBoxColumn1.HeaderText = "Account Number";
-            this.accountNumberDataGridViewTextBoxColumn1.Name = "accountNumberDataGridViewTextBoxColumn1";
+            this.accountNum.DataPropertyName = "Account Number";
+            this.accountNum.HeaderText = "Account Number";
+            this.accountNum.Name = "accountNum";
             // 
-            // routingNumberDataGridViewTextBoxColumn1
+            // routingNum
             // 
-            this.routingNumberDataGridViewTextBoxColumn1.DataPropertyName = "Routing Number";
-            this.routingNumberDataGridViewTextBoxColumn1.HeaderText = "Routing Number";
-            this.routingNumberDataGridViewTextBoxColumn1.Name = "routingNumberDataGridViewTextBoxColumn1";
+            this.routingNum.DataPropertyName = "Routing Number";
+            this.routingNum.HeaderText = "Routing Number";
+            this.routingNum.Name = "routingNum";
             // 
-            // directDepositDataGridViewCheckBoxColumn1
+            // directdeposit
             // 
-            this.directDepositDataGridViewCheckBoxColumn1.DataPropertyName = "Direct Deposit";
-            this.directDepositDataGridViewCheckBoxColumn1.HeaderText = "Direct Deposit";
-            this.directDepositDataGridViewCheckBoxColumn1.Name = "directDepositDataGridViewCheckBoxColumn1";
+            this.directdeposit.DataPropertyName = "Direct Deposit";
+            this.directdeposit.HeaderText = "Direct Deposit";
+            this.directdeposit.Name = "directdeposit";
             // 
-            // statusDataGridViewCheckBoxColumn1
+            // status
             // 
-            this.statusDataGridViewCheckBoxColumn1.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn1.HeaderText = "Status";
-            this.statusDataGridViewCheckBoxColumn1.Name = "statusDataGridViewCheckBoxColumn1";
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
             // 
-            // companyNameDataGridViewTextBoxColumn1
+            // companyName
             // 
-            this.companyNameDataGridViewTextBoxColumn1.DataPropertyName = "Company Name";
-            this.companyNameDataGridViewTextBoxColumn1.HeaderText = "Company Name";
-            this.companyNameDataGridViewTextBoxColumn1.Name = "companyNameDataGridViewTextBoxColumn1";
+            this.companyName.DataPropertyName = "Company Name";
+            this.companyName.HeaderText = "Company Name";
+            this.companyName.Name = "companyName";
             // 
-            // planIdDataGridViewTextBoxColumn
+            // planId
             // 
-            this.planIdDataGridViewTextBoxColumn.DataPropertyName = "Plan Id";
-            this.planIdDataGridViewTextBoxColumn.HeaderText = "Plan Id";
-            this.planIdDataGridViewTextBoxColumn.Name = "planIdDataGridViewTextBoxColumn";
+            this.planId.DataPropertyName = "Plan Id";
+            this.planId.HeaderText = "Plan Id";
+            this.planId.Name = "planId";
             // 
-            // planNameDataGridViewTextBoxColumn
+            // planName
             // 
-            this.planNameDataGridViewTextBoxColumn.DataPropertyName = "Plan Name";
-            this.planNameDataGridViewTextBoxColumn.HeaderText = "Plan Name";
-            this.planNameDataGridViewTextBoxColumn.Name = "planNameDataGridViewTextBoxColumn";
+            this.planName.DataPropertyName = "Plan Name";
+            this.planName.HeaderText = "Plan Name";
+            this.planName.Name = "planName";
             // 
-            // costDataGridViewTextBoxColumn
+            // cost
             // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // description
             // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.description.DataPropertyName = "Description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
             // 
-            // cafeteriaBenifitsDataGridViewTextBoxColumn
+            // cafeteriaBenifits
             // 
-            this.cafeteriaBenifitsDataGridViewTextBoxColumn.DataPropertyName = "Cafeteria Benifits";
-            this.cafeteriaBenifitsDataGridViewTextBoxColumn.HeaderText = "Cafeteria Benifits";
-            this.cafeteriaBenifitsDataGridViewTextBoxColumn.Name = "cafeteriaBenifitsDataGridViewTextBoxColumn";
+            this.cafeteriaBenifits.DataPropertyName = "Cafeteria Benifits";
+            this.cafeteriaBenifits.HeaderText = "Cafeteria Benifits";
+            this.cafeteriaBenifits.Name = "cafeteriaBenifits";
             // 
-            // opticalDeductionDataGridViewTextBoxColumn
+            // opticalDeduction
             // 
-            this.opticalDeductionDataGridViewTextBoxColumn.DataPropertyName = "Optical Deduction";
-            this.opticalDeductionDataGridViewTextBoxColumn.HeaderText = "Optical Deduction";
-            this.opticalDeductionDataGridViewTextBoxColumn.Name = "opticalDeductionDataGridViewTextBoxColumn";
+            this.opticalDeduction.DataPropertyName = "Optical Deduction";
+            this.opticalDeduction.HeaderText = "Optical Deduction";
+            this.opticalDeduction.Name = "opticalDeduction";
             // 
-            // dentalDeductionDataGridViewTextBoxColumn
+            // dentalDeduction
             // 
-            this.dentalDeductionDataGridViewTextBoxColumn.DataPropertyName = "Dental Deduction";
-            this.dentalDeductionDataGridViewTextBoxColumn.HeaderText = "Dental Deduction";
-            this.dentalDeductionDataGridViewTextBoxColumn.Name = "dentalDeductionDataGridViewTextBoxColumn";
+            this.dentalDeduction.DataPropertyName = "Dental Deduction";
+            this.dentalDeduction.HeaderText = "Dental Deduction";
+            this.dentalDeduction.Name = "dentalDeduction";
             // 
             // MainForm
             // 
@@ -526,28 +526,28 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn directDepositDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn streetDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zipDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rateDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taxesDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accountNumberDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn routingNumberDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn directDepositDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifitsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeductionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeductionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn routingNum;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn directdeposit;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
 
     }
 }

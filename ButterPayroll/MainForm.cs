@@ -41,20 +41,22 @@ namespace ButterPayroll
         private void button_modify_Click(object sender, EventArgs e)
         {
             //get data from selected row
-            selectedEmployee.employeeID = selectedRow.Cells["DataGridViewTextBoxColumn1"].Value.ToString();
-            selectedEmployee.firstName = selectedRow.Cells["DataGridViewTextBoxColumn3"].Value.ToString();
-            selectedEmployee.lastName = selectedRow.Cells["DataGridViewTextBoxColumn2"].Value.ToString();
-            selectedEmployee.street = selectedRow.Cells["DataGridViewTextBoxColumn4"].Value.ToString();
-            selectedEmployee.city = selectedRow.Cells["DataGridViewTextBoxColumn5"].Value.ToString();
-            selectedEmployee.state = selectedRow.Cells["DataGridViewTextBoxColumn6"].Value.ToString();
-            selectedEmployee.zipCode = selectedRow.Cells["DataGridViewTextBoxColumn7"].Value.ToString();
-            selectedEmployee.accountNum = selectedRow.Cells["DataGridViewTextBoxColumn11"].Value.ToString();
-            selectedEmployee.routingNum = selectedRow.Cells["DataGridViewTextBoxColumn12"].Value.ToString();
-            selectedEmployee.hours = (double)selectedRow.Cells["DataGridViewTextBoxColumn8"].Value;
-            selectedEmployee.pay= (double)selectedRow.Cells["DataGridViewTextBoxColumn9"].Value;
-            selectedEmployee.tax = (double)selectedRow.Cells["DataGridViewTextBoxColumn10"].Value;
-            selectedEmployee.fullTime = (bool)selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value;
-            selectedEmployee.directDeposit = (bool)selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value;
+            selectedEmployee.employeeID = selectedRow.Cells["employeeId"].Value.ToString();
+            selectedEmployee.firstName = selectedRow.Cells["fname"].Value.ToString();
+            selectedEmployee.lastName = selectedRow.Cells["lname"].Value.ToString();
+            selectedEmployee.street = selectedRow.Cells["street"].Value.ToString();
+            selectedEmployee.city = selectedRow.Cells["city"].Value.ToString();
+            selectedEmployee.state = selectedRow.Cells["state"].Value.ToString();
+            selectedEmployee.zipCode = selectedRow.Cells["zip"].Value.ToString();
+            selectedEmployee.accountNum = selectedRow.Cells["accountNum"].Value.ToString();
+            selectedEmployee.routingNum = selectedRow.Cells["routingNum"].Value.ToString();
+            selectedEmployee.hours = (double)selectedRow.Cells["hours"].Value;
+            selectedEmployee.pay= (double)selectedRow.Cells["rate"].Value;
+            selectedEmployee.tax = (double)selectedRow.Cells["taxes"].Value;
+            selectedEmployee.fullTime = (bool)selectedRow.Cells["status"].Value;
+            selectedEmployee.directDeposit = (bool)selectedRow.Cells["directdeposit"].Value;
+            selectedEmployee.company = selectedRow.Cells["companyName"].Value;
+            selectedEmployee.planId = selectedRow.Cells["planId"].Value;
 
             //initialize modify form and show
             modifyForm = new AddModify(this);

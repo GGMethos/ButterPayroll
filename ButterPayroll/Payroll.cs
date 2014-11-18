@@ -26,15 +26,19 @@ namespace ButterPayroll
 
             bool fullTime { get; set; }
             bool directDeposit { get; set; }
+
+            //Insurance Info
+            string company { get; set;}
+            string planId { get; set;}
+            string planType { get; set;}
+            string description { get; set;}
+
         }
-
-        List<Employee> employees;
-
+        
         /// <summary>
         /// Constructor
         /// </summary>
         public Payroll() {
-            employees = new List<Employee>();
         }
 
         /// <summary>
