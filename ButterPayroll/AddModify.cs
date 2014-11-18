@@ -121,6 +121,73 @@ namespace ButterPayroll
             return true;
         }
 
+        private void CompanyCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selection = CompanyCombo.Text.ToString();
+            //plans only given with medicare
+            string[] medicarePlans = new string[] { "A", "B" };
+            //plans given with blue cross, hip, and aetna
+            string[] generalPlans = new string[] { "HMO", "POS", "PPO" };
+
+            switch(selection){
+                case "Medicare":
+                    //show plan (A,B)
+                    label5.Visible = true;
+                    PlanCombo.Visible = true;
+
+                    PlanCombo.Items.Clear();
+                    PlanCombo.Items.AddRange(medicarePlans);
+                    break;
+                case "Medicaid":
+                    //hide all
+                    label5.Visible = false;
+                    PlanCombo.Visible = false;
+                    label6.Visible = false;
+                    PriceCombo.Visible = false;
+                    label7.Visible = false;
+                    TypeCombo.Visible = false;
+                    //show Medicaid ID field
+                    medicaidID_label.Visible = true;
+                    medicaidID_tbox.Visible = true;
+                    break;
+                case "Blue Cross":
+                    //show plan (HMO, POS, PPO)
+                    label5.Visible = true;
+                    PlanCombo.Visible = true;
+
+                    PlanCombo.Items.Clear();
+                    PlanCombo.Items.AddRange(generalPlans);
+                    break;
+                case "HIP":
+                    //show plan (HMO, POS, PPO)
+                    label5.Visible = true;
+                    PlanCombo.Visible = true;
+
+                    PlanCombo.Items.Clear();
+                    PlanCombo.Items.AddRange(generalPlans);
+                    break;
+                case "Aetna":
+                    //show plan (HMO, POS, PPO)
+                    label5.Visible = true;
+                    PlanCombo.Visible = true;
+
+                    PlanCombo.Items.Clear();
+                    PlanCombo.Items.AddRange(generalPlans);
+                    break;
+                case "None":
+                    //hide all fields
+                    label5.Visible = false;
+                    PlanCombo.Visible = false;
+                    label6.Visible = false;
+                    PriceCombo.Visible = false;
+                    label7.Visible = false;
+                    TypeCombo.Visible = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         
     }
 }

@@ -64,7 +64,7 @@
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.DescriptionCombo = new System.Windows.Forms.ComboBox();
+            this.TypeCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PriceCombo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -76,6 +76,8 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.medicaidID_label = new System.Windows.Forms.Label();
+            this.medicaidID_tbox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -460,7 +462,9 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.DescriptionCombo);
+            this.groupBox6.Controls.Add(this.medicaidID_tbox);
+            this.groupBox6.Controls.Add(this.medicaidID_label);
+            this.groupBox6.Controls.Add(this.TypeCombo);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.PriceCombo);
             this.groupBox6.Controls.Add(this.label6);
@@ -476,16 +480,17 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Medical Information";
             // 
-            // DescriptionCombo
+            // TypeCombo
             // 
-            this.DescriptionCombo.FormattingEnabled = true;
-            this.DescriptionCombo.Items.AddRange(new object[] {
+            this.TypeCombo.FormattingEnabled = true;
+            this.TypeCombo.Items.AddRange(new object[] {
             "Individual",
             "Family"});
-            this.DescriptionCombo.Location = new System.Drawing.Point(260, 47);
-            this.DescriptionCombo.Name = "DescriptionCombo";
-            this.DescriptionCombo.Size = new System.Drawing.Size(121, 24);
-            this.DescriptionCombo.TabIndex = 12;
+            this.TypeCombo.Location = new System.Drawing.Point(260, 47);
+            this.TypeCombo.Name = "TypeCombo";
+            this.TypeCombo.Size = new System.Drawing.Size(121, 24);
+            this.TypeCombo.TabIndex = 12;
+            this.TypeCombo.Visible = false;
             // 
             // label7
             // 
@@ -496,6 +501,7 @@
             this.label7.Size = new System.Drawing.Size(40, 16);
             this.label7.TabIndex = 11;
             this.label7.Text = "Type";
+            this.label7.Visible = false;
             // 
             // PriceCombo
             // 
@@ -526,6 +532,7 @@
             this.PriceCombo.Name = "PriceCombo";
             this.PriceCombo.Size = new System.Drawing.Size(121, 24);
             this.PriceCombo.TabIndex = 10;
+            this.PriceCombo.Visible = false;
             // 
             // label6
             // 
@@ -536,6 +543,7 @@
             this.label6.Size = new System.Drawing.Size(39, 16);
             this.label6.TabIndex = 9;
             this.label6.Text = "Price";
+            this.label6.Visible = false;
             // 
             // PlanCombo
             // 
@@ -552,6 +560,7 @@
             this.PlanCombo.Name = "PlanCombo";
             this.PlanCombo.Size = new System.Drawing.Size(121, 24);
             this.PlanCombo.TabIndex = 8;
+            this.PlanCombo.Visible = false;
             // 
             // label5
             // 
@@ -562,6 +571,7 @@
             this.label5.Size = new System.Drawing.Size(35, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Plan";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -587,6 +597,8 @@
             this.CompanyCombo.Name = "CompanyCombo";
             this.CompanyCombo.Size = new System.Drawing.Size(121, 24);
             this.CompanyCombo.TabIndex = 0;
+            this.CompanyCombo.Text = "Select one...";
+            this.CompanyCombo.SelectedIndexChanged += new System.EventHandler(this.CompanyCombo_SelectedIndexChanged);
             // 
             // Deductions
             // 
@@ -630,6 +642,26 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Dental";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // medicaidID_label
+            // 
+            this.medicaidID_label.AutoSize = true;
+            this.medicaidID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medicaidID_label.Location = new System.Drawing.Point(132, 28);
+            this.medicaidID_label.Name = "medicaidID_label";
+            this.medicaidID_label.Size = new System.Drawing.Size(21, 16);
+            this.medicaidID_label.TabIndex = 13;
+            this.medicaidID_label.Text = "ID";
+            this.medicaidID_label.Visible = false;
+            // 
+            // medicaidID_tbox
+            // 
+            this.medicaidID_tbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medicaidID_tbox.Location = new System.Drawing.Point(133, 47);
+            this.medicaidID_tbox.Name = "medicaidID_tbox";
+            this.medicaidID_tbox.Size = new System.Drawing.Size(100, 22);
+            this.medicaidID_tbox.TabIndex = 4;
+            this.medicaidID_tbox.Visible = false;
             // 
             // AddModify
             // 
@@ -720,11 +752,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox PriceCombo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox DescriptionCombo;
+        private System.Windows.Forms.ComboBox TypeCombo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox Deductions;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox medicaidID_tbox;
+        private System.Windows.Forms.Label medicaidID_label;
     }
 }
