@@ -123,69 +123,87 @@ namespace ButterPayroll
 
         private void CompanyCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //clear all insurance related fields
+            insuranceID_tbox.Clear();
+            PlanCombo.Items.Clear();
+            DescriptionCombo.Items.Clear();
+
+            PlanCombo.Text = "Select One...";
+            DescriptionCombo.Text = "Select One...";
+
             string selection = CompanyCombo.Text.ToString();
             //plans only given with medicare
-            string[] medicarePlans = new string[] { "A", "B" };
+            string[] medicarePlans = new string[] { "A", "B", "A & B" };
             //plans given with blue cross, hip, and aetna
             string[] generalPlans = new string[] { "HMO", "POS", "PPO" };
 
-            switch(selection){
-                case "Medicare":
-                    //show plan (A,B)
-                    label5.Visible = true;
-                    PlanCombo.Visible = true;
+            if (selection == "Medicare") {
+                //show plan (A,B)
+                insurancePlan_label.Visible = true;
+                PlanCombo.Visible = true;
+                insuranceID_label.Visible = true;
+                insuranceID_tbox.Visible = true;
 
-                    PlanCombo.Items.Clear();
-                    PlanCombo.Items.AddRange(medicarePlans);
-                    break;
-                case "Medicaid":
-                    //hide all
-                    label5.Visible = false;
-                    PlanCombo.Visible = false;
-                    label6.Visible = false;
-                    PriceCombo.Visible = false;
-                    label7.Visible = false;
-                    TypeCombo.Visible = false;
-                    //show Medicaid ID field
-                    medicaidID_label.Visible = true;
-                    medicaidID_tbox.Visible = true;
-                    break;
-                case "Blue Cross":
-                    //show plan (HMO, POS, PPO)
-                    label5.Visible = true;
-                    PlanCombo.Visible = true;
-
-                    PlanCombo.Items.Clear();
-                    PlanCombo.Items.AddRange(generalPlans);
-                    break;
-                case "HIP":
-                    //show plan (HMO, POS, PPO)
-                    label5.Visible = true;
-                    PlanCombo.Visible = true;
-
-                    PlanCombo.Items.Clear();
-                    PlanCombo.Items.AddRange(generalPlans);
-                    break;
-                case "Aetna":
-                    //show plan (HMO, POS, PPO)
-                    label5.Visible = true;
-                    PlanCombo.Visible = true;
-
-                    PlanCombo.Items.Clear();
-                    PlanCombo.Items.AddRange(generalPlans);
-                    break;
-                case "None":
-                    //hide all fields
-                    label5.Visible = false;
-                    PlanCombo.Visible = false;
-                    label6.Visible = false;
-                    PriceCombo.Visible = false;
-                    label7.Visible = false;
-                    TypeCombo.Visible = false;
-                    break;
-                default:
-                    break;
+                insuranceDescription_label.Visible = false;
+                DescriptionCombo.Visible = false;
+                PlanCombo.Items.Clear();
+                PlanCombo.Items.AddRange(medicarePlans);
             }
+            else if (selection == "Medicaid") {
+                //hide
+                //show
+                insurancePlan_label.Visible = false;
+                PlanCombo.Visible = false;
+                price_label.Visible = true;
+                insuranceDescription_label.Visible = false;
+                DescriptionCombo.Visible = false;
+                insuranceID_label.Visible = true;
+                insuranceID_tbox.Visible = true;
+            }
+            else if (selection == "Blue Cross" || selection == "HIP" || selection == "Aetna") {
+                //hide
+                //show plan (HMO, POS, PPO)
+                insurancePlan_label.Visible = true;
+                PlanCombo.Visible = true;
+
+                PlanCombo.Items.Clear();
+                PlanCombo.Items.AddRange(generalPlans);
+            }
+            else if (selection == "None") {
+                //hide
+                insuranceID_label.Visible = false;
+                insuranceID_tbox.Visible = false;
+                insurancePlan_label.Visible = false;
+                PlanCombo.Visible = false;
+                price_label.Visible = false;
+                insuranceDescription_label.Visible = false;
+                DescriptionCombo.Visible = false;
+                price_label.Visible = false;
+            }
+        }
+
+        private void PlanCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selection = PlanCombo.Text.ToString();
+            string[] descriptions = new string[] { "Individual", "Family"};
+
+            if (PlanCombo.Text.ToString() == "HMO" || PlanCombo.Text.ToString() == "POS" || PlanCombo.Text.ToString() == "PPO") {
+                DescriptionCombo.Text = "Select One...";
+                DescriptionCombo.Items.Clear();
+                DescriptionCombo.Items.AddRange(descriptions);
+
+                insuranceDescription_label.Visible = true;
+                DescriptionCombo.Visible = true;
+            }
+        }
+
+        private void DescriptionCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selection = DescriptionCombo.Text.ToString();
+            //get price from text file based on information
+
+            //show price
+            price_label.Visible = true;
         }
 
         

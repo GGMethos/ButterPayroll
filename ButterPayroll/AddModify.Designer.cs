@@ -64,20 +64,20 @@
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.TypeCombo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.PriceCombo = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.insuranceID_tbox = new System.Windows.Forms.TextBox();
+            this.insuranceID_label = new System.Windows.Forms.Label();
+            this.DescriptionCombo = new System.Windows.Forms.ComboBox();
+            this.insuranceDescription_label = new System.Windows.Forms.Label();
+            this.price_label = new System.Windows.Forms.Label();
             this.PlanCombo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.insurancePlan_label = new System.Windows.Forms.Label();
+            this.provider_label = new System.Windows.Forms.Label();
             this.CompanyCombo = new System.Windows.Forms.ComboBox();
             this.Deductions = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.medicaidID_label = new System.Windows.Forms.Label();
-            this.medicaidID_tbox = new System.Windows.Forms.TextBox();
+            this.Price = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -462,91 +462,83 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.medicaidID_tbox);
-            this.groupBox6.Controls.Add(this.medicaidID_label);
-            this.groupBox6.Controls.Add(this.TypeCombo);
-            this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.PriceCombo);
-            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.Price);
+            this.groupBox6.Controls.Add(this.insuranceID_tbox);
+            this.groupBox6.Controls.Add(this.insuranceID_label);
+            this.groupBox6.Controls.Add(this.DescriptionCombo);
+            this.groupBox6.Controls.Add(this.insuranceDescription_label);
+            this.groupBox6.Controls.Add(this.price_label);
             this.groupBox6.Controls.Add(this.PlanCombo);
-            this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.insurancePlan_label);
+            this.groupBox6.Controls.Add(this.provider_label);
             this.groupBox6.Controls.Add(this.CompanyCombo);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupBox6.Location = new System.Drawing.Point(12, 245);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(531, 80);
+            this.groupBox6.Size = new System.Drawing.Size(262, 174);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Medical Information";
             // 
-            // TypeCombo
+            // insuranceID_tbox
             // 
-            this.TypeCombo.FormattingEnabled = true;
-            this.TypeCombo.Items.AddRange(new object[] {
+            this.insuranceID_tbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insuranceID_tbox.Location = new System.Drawing.Point(133, 51);
+            this.insuranceID_tbox.Name = "insuranceID_tbox";
+            this.insuranceID_tbox.Size = new System.Drawing.Size(121, 22);
+            this.insuranceID_tbox.TabIndex = 4;
+            this.insuranceID_tbox.Visible = false;
+            // 
+            // insuranceID_label
+            // 
+            this.insuranceID_label.AutoSize = true;
+            this.insuranceID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insuranceID_label.Location = new System.Drawing.Point(130, 32);
+            this.insuranceID_label.Name = "insuranceID_label";
+            this.insuranceID_label.Size = new System.Drawing.Size(21, 16);
+            this.insuranceID_label.TabIndex = 13;
+            this.insuranceID_label.Text = "ID";
+            this.insuranceID_label.Visible = false;
+            // 
+            // DescriptionCombo
+            // 
+            this.DescriptionCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionCombo.FormattingEnabled = true;
+            this.DescriptionCombo.Items.AddRange(new object[] {
             "Individual",
             "Family"});
-            this.TypeCombo.Location = new System.Drawing.Point(260, 47);
-            this.TypeCombo.Name = "TypeCombo";
-            this.TypeCombo.Size = new System.Drawing.Size(121, 24);
-            this.TypeCombo.TabIndex = 12;
-            this.TypeCombo.Visible = false;
+            this.DescriptionCombo.Location = new System.Drawing.Point(134, 100);
+            this.DescriptionCombo.Name = "DescriptionCombo";
+            this.DescriptionCombo.Size = new System.Drawing.Size(121, 24);
+            this.DescriptionCombo.TabIndex = 12;
+            this.DescriptionCombo.Visible = false;
+            this.DescriptionCombo.SelectedIndexChanged += new System.EventHandler(this.DescriptionCombo_SelectedIndexChanged);
             // 
-            // label7
+            // insuranceDescription_label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(257, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 16);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Type";
-            this.label7.Visible = false;
+            this.insuranceDescription_label.AutoSize = true;
+            this.insuranceDescription_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insuranceDescription_label.Location = new System.Drawing.Point(131, 81);
+            this.insuranceDescription_label.Name = "insuranceDescription_label";
+            this.insuranceDescription_label.Size = new System.Drawing.Size(76, 16);
+            this.insuranceDescription_label.TabIndex = 11;
+            this.insuranceDescription_label.Text = "Description";
+            this.insuranceDescription_label.Visible = false;
             // 
-            // PriceCombo
+            // price_label
             // 
-            this.PriceCombo.FormattingEnabled = true;
-            this.PriceCombo.Items.AddRange(new object[] {
-            "407",
-            "104.90",
-            "511.90",
-            "57",
-            "162",
-            "104",
-            "253",
-            "175",
-            "589",
-            "64",
-            "175",
-            "113",
-            "308",
-            "209",
-            "628",
-            "42",
-            "128",
-            "97",
-            "237",
-            "198",
-            "603"});
-            this.PriceCombo.Location = new System.Drawing.Point(387, 47);
-            this.PriceCombo.Name = "PriceCombo";
-            this.PriceCombo.Size = new System.Drawing.Size(121, 24);
-            this.PriceCombo.TabIndex = 10;
-            this.PriceCombo.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(384, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Price";
-            this.label6.Visible = false;
+            this.price_label.AutoSize = true;
+            this.price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_label.Location = new System.Drawing.Point(6, 138);
+            this.price_label.Name = "price_label";
+            this.price_label.Size = new System.Drawing.Size(42, 16);
+            this.price_label.TabIndex = 9;
+            this.price_label.Text = "Price:";
+            this.price_label.Visible = false;
             // 
             // PlanCombo
             // 
+            this.PlanCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlanCombo.FormattingEnabled = true;
             this.PlanCombo.Items.AddRange(new object[] {
             "A",
@@ -556,35 +548,37 @@
             "POS",
             "PPO",
             "N/A"});
-            this.PlanCombo.Location = new System.Drawing.Point(133, 47);
+            this.PlanCombo.Location = new System.Drawing.Point(7, 100);
             this.PlanCombo.Name = "PlanCombo";
             this.PlanCombo.Size = new System.Drawing.Size(121, 24);
             this.PlanCombo.TabIndex = 8;
             this.PlanCombo.Visible = false;
+            this.PlanCombo.SelectedIndexChanged += new System.EventHandler(this.PlanCombo_SelectedIndexChanged);
             // 
-            // label5
+            // insurancePlan_label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(132, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Plan";
-            this.label5.Visible = false;
+            this.insurancePlan_label.AutoSize = true;
+            this.insurancePlan_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insurancePlan_label.Location = new System.Drawing.Point(6, 81);
+            this.insurancePlan_label.Name = "insurancePlan_label";
+            this.insurancePlan_label.Size = new System.Drawing.Size(35, 16);
+            this.insurancePlan_label.TabIndex = 7;
+            this.insurancePlan_label.Text = "Plan";
+            this.insurancePlan_label.Visible = false;
             // 
-            // label4
+            // provider_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Provider";
+            this.provider_label.AutoSize = true;
+            this.provider_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.provider_label.Location = new System.Drawing.Point(6, 32);
+            this.provider_label.Name = "provider_label";
+            this.provider_label.Size = new System.Drawing.Size(59, 16);
+            this.provider_label.TabIndex = 6;
+            this.provider_label.Text = "Provider";
             // 
             // CompanyCombo
             // 
+            this.CompanyCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyCombo.FormattingEnabled = true;
             this.CompanyCombo.Items.AddRange(new object[] {
             "Medicare",
@@ -593,7 +587,7 @@
             "HIP",
             "Aetna",
             "None"});
-            this.CompanyCombo.Location = new System.Drawing.Point(6, 47);
+            this.CompanyCombo.Location = new System.Drawing.Point(6, 51);
             this.CompanyCombo.Name = "CompanyCombo";
             this.CompanyCombo.Size = new System.Drawing.Size(121, 24);
             this.CompanyCombo.TabIndex = 0;
@@ -606,12 +600,12 @@
             this.Deductions.Controls.Add(this.checkBox2);
             this.Deductions.Controls.Add(this.checkBox1);
             this.Deductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deductions.Location = new System.Drawing.Point(12, 331);
+            this.Deductions.Location = new System.Drawing.Point(280, 245);
             this.Deductions.Name = "Deductions";
-            this.Deductions.Size = new System.Drawing.Size(531, 176);
+            this.Deductions.Size = new System.Drawing.Size(228, 114);
             this.Deductions.TabIndex = 15;
             this.Deductions.TabStop = false;
-            this.Deductions.Text = "Deductions";
+            this.Deductions.Text = "Other Deductions";
             // 
             // checkBox3
             // 
@@ -643,25 +637,14 @@
             this.checkBox1.Text = "Dental";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // medicaidID_label
+            // Price
             // 
-            this.medicaidID_label.AutoSize = true;
-            this.medicaidID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medicaidID_label.Location = new System.Drawing.Point(132, 28);
-            this.medicaidID_label.Name = "medicaidID_label";
-            this.medicaidID_label.Size = new System.Drawing.Size(21, 16);
-            this.medicaidID_label.TabIndex = 13;
-            this.medicaidID_label.Text = "ID";
-            this.medicaidID_label.Visible = false;
-            // 
-            // medicaidID_tbox
-            // 
-            this.medicaidID_tbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medicaidID_tbox.Location = new System.Drawing.Point(133, 47);
-            this.medicaidID_tbox.Name = "medicaidID_tbox";
-            this.medicaidID_tbox.Size = new System.Drawing.Size(100, 22);
-            this.medicaidID_tbox.TabIndex = 4;
-            this.medicaidID_tbox.Visible = false;
+            this.Price.AutoSize = true;
+            this.Price.Location = new System.Drawing.Point(54, 138);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(0, 16);
+            this.Price.TabIndex = 14;
+            this.Price.Visible = false;
             // 
             // AddModify
             // 
@@ -746,19 +729,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbox_taxes;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label provider_label;
         private System.Windows.Forms.ComboBox CompanyCombo;
         private System.Windows.Forms.ComboBox PlanCombo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox PriceCombo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox TypeCombo;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label insurancePlan_label;
+        private System.Windows.Forms.Label price_label;
+        private System.Windows.Forms.ComboBox DescriptionCombo;
+        private System.Windows.Forms.Label insuranceDescription_label;
         private System.Windows.Forms.GroupBox Deductions;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox medicaidID_tbox;
-        private System.Windows.Forms.Label medicaidID_label;
+        private System.Windows.Forms.TextBox insuranceID_tbox;
+        private System.Windows.Forms.Label insuranceID_label;
+        private System.Windows.Forms.Label Price;
     }
 }
