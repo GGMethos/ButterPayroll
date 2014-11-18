@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_lastName = new System.Windows.Forms.Label();
             this.tbox_lastName = new System.Windows.Forms.TextBox();
             this.label_firstName = new System.Windows.Forms.Label();
@@ -78,28 +77,15 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Price = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.Deductions.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label_lastName);
-            this.groupBox1.Controls.Add(this.tbox_lastName);
-            this.groupBox1.Controls.Add(this.label_firstName);
-            this.groupBox1.Controls.Add(this.tbox_firstName);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 55);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 98);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Personal Information";
             // 
             // label_lastName
             // 
@@ -646,6 +632,20 @@
             this.Price.TabIndex = 14;
             this.Price.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label_lastName);
+            this.groupBox1.Controls.Add(this.tbox_lastName);
+            this.groupBox1.Controls.Add(this.label_firstName);
+            this.groupBox1.Controls.Add(this.tbox_firstName);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 55);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(254, 98);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Personal Information";
+            // 
             // AddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -672,8 +672,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Modify";
             this.Load += new System.EventHandler(this.AddModify_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -686,6 +684,8 @@
             this.groupBox6.PerformLayout();
             this.Deductions.ResumeLayout(false);
             this.Deductions.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,7 +693,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Button Done;
@@ -743,5 +742,6 @@
         private System.Windows.Forms.TextBox insuranceID_tbox;
         private System.Windows.Forms.Label insuranceID_label;
         private System.Windows.Forms.Label Price;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

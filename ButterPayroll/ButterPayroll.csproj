@@ -190,6 +190,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="MichaelRuffe.txt" />
+    <Content Include="PriceData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,23 @@
+﻿Medicare A 407
+Medicare B 104.90
+Medicare AB 511.90
+Blue Cross HMO I 57
+Blue Cross HMO F 162
+Blue Cross POS I 104
+Blue Cross PPO F 253
+HIP HMO I 64
+HIP HMO F 175
+HIP POS I 113
+HIP POS F 308
+HIP PPO I 209
+HIP PPO F 628
+Aetna HMO I 43 
+Aetna HMO F 128
+Aetna POS I 97
+Aetna POS F 237
+Aetna PPO I 198
+Aetna PPO F 603
+Dental I 24
+Dental F 53
+Optical I 23
+Optical F 49

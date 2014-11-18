@@ -166,6 +166,8 @@ namespace ButterPayroll
                 insurancePlan_label.Visible = true;
                 PlanCombo.Visible = true;
 
+                insuranceID_label.Visible = true;
+                insuranceID_tbox.Visible = true;
                 PlanCombo.Items.Clear();
                 PlanCombo.Items.AddRange(generalPlans);
             }
