@@ -47,7 +47,9 @@ namespace ButterPayroll
         }
 
         public double pay { get; set; }
-
         public double tax { get; set; }
+        public object company { get; set; }
+
+        public object planId { get; set; }
     }
 }

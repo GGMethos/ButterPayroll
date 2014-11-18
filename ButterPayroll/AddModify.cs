@@ -51,6 +51,8 @@ namespace ButterPayroll
             tbox_hours_worked.Text = Employee.hours.ToString();
             tbox_pay.Text = Employee.pay.ToString();
             tbox_taxes.Text = Employee.tax.ToString();
+            CompanyCombo.Text = Employee.company.ToString();
+            insuranceID_tbox.Text = Employee.planId.ToString();
             if (Employee.fullTime == true)
             {
                 rbutton_fulltime.Checked = true;
@@ -74,30 +76,32 @@ namespace ButterPayroll
             MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
             if (this.Mode == "Modify")
             {
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn1"].Value = label_employeeID.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn2"].Value = tbox_lastName.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn3"].Value = tbox_firstName.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn4"].Value = tbox_street.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn5"].Value = tbox_city.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn6"].Value = tbox_state.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn7"].Value = tbox_zipCode.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn11"].Value = tbox_accountNum.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn12"].Value = tbox_routingNum.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn8"].Value = tbox_hours_worked.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn9"].Value = tbox_pay.Text;
-                owningForm.selectedRow.Cells["DataGridViewTextBoxColumn10"].Value = tbox_taxes.Text;
+                owningForm.selectedRow.Cells["employeeId"].Value = label_employeeID.Text;
+                owningForm.selectedRow.Cells["lname"].Value = tbox_lastName.Text;
+                owningForm.selectedRow.Cells["fname"].Value = tbox_firstName.Text;
+                owningForm.selectedRow.Cells["street"].Value = tbox_street.Text;
+                owningForm.selectedRow.Cells["city"].Value = tbox_city.Text;
+                owningForm.selectedRow.Cells["state"].Value = tbox_state.Text;
+                owningForm.selectedRow.Cells["zip"].Value = tbox_zipCode.Text;
+                owningForm.selectedRow.Cells["accountNum"].Value = tbox_accountNum.Text;
+                owningForm.selectedRow.Cells["routingNum"].Value = tbox_routingNum.Text;
+                owningForm.selectedRow.Cells["hours"].Value = tbox_hours_worked.Text;
+                owningForm.selectedRow.Cells["rate"].Value = tbox_pay.Text;
+                owningForm.selectedRow.Cells["taxes"].Value = tbox_taxes.Text;
+                owningForm.selectedRow.Cells["companyName"].Value = CompanyCombo.Text;
+                owningForm.selectedRow.Cells["planId"].Value = insuranceID_tbox.Text;
                 if (radio_check.Checked == true)
                 {
-                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value = false;
+                    owningForm.selectedRow.Cells["directdeposit"].Value = false;
                 }
                 else
-                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn1"].Value = true;
+                    owningForm.selectedRow.Cells["directdeposit"].Value = true;
                 if (rbutton_fulltime.Checked == true)
                 {
-                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value = Employee.fullTime = true;
+                    owningForm.selectedRow.Cells["status"].Value = Employee.fullTime = true;
                 }
                 else
-                    owningForm.selectedRow.Cells["dataGridViewCheckBoxColumn2"].Value = Employee.fullTime = false;
+                    owningForm.selectedRow.Cells["status"].Value = Employee.fullTime = false;
 
                 owningForm.employeeDataGridView.ClearSelection();
                 MessageBox.Show("Sucessfully Modified");
@@ -107,7 +111,7 @@ namespace ButterPayroll
             if (this.Mode == "Add")
             {
                 int count =owningForm.employeeDataGridView.Rows.Count;
-                owningForm.employeeTableAdapter.Insert(count+1, "Ruffe", "Ed", "12 test", "SI", "NY", "10310", 5, 5, 17, "00", "00", true, true,null,null,null,null,null,null,null);
+                owningForm.employeeTableAdapter.Insert(count+1, "Ruffe", "Ed", "12 test", "SI", "NY", "10310", 5, 5, 17, "00", "00", true, true,null,null,null,null,null,null,null,null);
             }
                 this.Close();
             
