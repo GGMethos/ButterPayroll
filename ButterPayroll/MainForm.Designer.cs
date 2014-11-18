@@ -61,6 +61,9 @@
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager();
             this.employeeTableAdapter = new ButterPayroll.GoodDataBaseTableAdapters.Employee1TableAdapter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -153,7 +156,6 @@
             this.employeeDataGridView.Location = new System.Drawing.Point(27, 82);
             this.employeeDataGridView.MultiSelect = false;
             this.employeeDataGridView.Name = "employeeDataGridView";
-            this.employeeDataGridView.ReadOnly = true;
             this.employeeDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeDataGridView.Size = new System.Drawing.Size(746, 376);
@@ -334,11 +336,46 @@
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(240, 475);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(181, 22);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 478);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Search By:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Employee Id",
+            "First Name",
+            "Last Name",
+            "State"});
+            this.comboBox1.Location = new System.Drawing.Point(103, 474);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 483);
+            this.ClientSize = new System.Drawing.Size(804, 510);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.employeeDataGridView);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.button_generate);
@@ -357,6 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -394,6 +432,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         public GoodDataBaseTableAdapters.Employee1TableAdapter employeeTableAdapter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
 
     }
 }

@@ -81,6 +81,7 @@ namespace ButterPayroll
             ExitProgramSequence();
 
         }
+        //Askes the user if they want to leave the program
         private void ExitProgramSequence()
         {
             DialogResult dr = MessageBox.Show("Do you want to save?", "Goodbye", MessageBoxButtons.YesNo);
@@ -94,13 +95,15 @@ namespace ButterPayroll
                 
             }
         }
+
+        //Updates the database and gridview
         private void Update_Click(object sender, EventArgs e)
         {
             employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
-
+        //Deletes the selected value from the datagridview and database
         private void btn_delete_Click(object sender, EventArgs e)
         {
             if (employeeDataGridView.SelectedRows.Count > 0)
@@ -110,15 +113,94 @@ namespace ButterPayroll
                 employeeTableAdapter.Update(goodDataBase);
             } 
         }
-
+        //Updates the database on the Form Closing
         private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             employeeTableAdapter.Update(goodDataBase);
         }
-
+        //Gets the current selected row and puts it into cell
         private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             selectedRow = employeeDataGridView.CurrentRow;
+        }
+        //Text box Changed Searches our datagridview for a selected employee
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            employeeDataGridView.CurrentCell = null;
+            comboBox1.Enabled = false;
+            if (comboBox1.Text == "Last Name")
+            {
+                foreach (DataGridViewRow row in employeeDataGridView.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    {
+                        row.Visible = true;
+                    }
+                    else if (textBox1.Text != "")
+                        row.Visible = false;
+                    else
+                    {
+                        row.Visible = true;
+                        comboBox1.Enabled = true;
+                    }
+                }
+            }
+            if (comboBox1.Text == "Employee Id")
+            {
+                foreach (DataGridViewRow row in employeeDataGridView.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    {
+                        row.Visible = true;
+                    }
+                    else if (textBox1.Text != "")
+                        row.Visible = false;
+                    else
+                    {
+                        row.Visible = true;
+                        comboBox1.Enabled = true;
+                    }
+                }
+            }
+            if (comboBox1.Text == "First Name")
+            {
+                foreach (DataGridViewRow row in employeeDataGridView.Rows)
+                {
+                    if (row.Cells[2].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    {
+                        row.Visible = true;
+                    }
+                    else if (textBox1.Text != "")
+                        row.Visible = false;
+                    else
+                    {
+                        row.Visible = true;
+                        comboBox1.Enabled = true;
+                    }
+                }
+            }
+            if (comboBox1.Text == "State")
+            {
+                foreach (DataGridViewRow row in employeeDataGridView.Rows)
+                {
+                    if (row.Cells[5].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    {
+                        row.Visible = true;
+                    }
+                    else if (textBox1.Text != "")
+                        row.Visible = false;
+                    else
+                    {
+                        row.Visible = true;
+                        comboBox1.Enabled = true;
+                    }
+                }
+            }
+        }
+        //Enables the textbox when a value is chosen
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textBox1.Enabled = true;
         }
 
     }
