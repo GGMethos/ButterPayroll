@@ -19,6 +19,7 @@ namespace ButterPayroll
 
         AddModify addForm;
         AddModify modifyForm;
+        AddModify viewForm;
         public DataGridViewRow selectedRow;
 
         Employee selectedEmployee = new Employee();
@@ -74,14 +75,6 @@ namespace ButterPayroll
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
             // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,6 +210,5 @@ namespace ButterPayroll
         {
             textBox1.Enabled = true;
         }
-
     }
 }

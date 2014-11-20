@@ -35,11 +35,11 @@
             this.button_generate = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
+            this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goodDataBase = new ButterPayroll.GoodDataBase();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goodDataBase = new ButterPayroll.GoodDataBase();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager();
             this.employeeTableAdapter = new ButterPayroll.GoodDataBaseTableAdapters.Employee1TableAdapter();
@@ -76,11 +76,11 @@
             this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -165,19 +165,29 @@
             this.companyName,
             this.planId,
             this.planName,
-            this.cost,
             this.description,
             this.cafeteriaBenifits,
             this.opticalDeduction,
-            this.dentalDeduction});
+            this.dentalDeduction,
+            this.cost});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
             this.employeeDataGridView.Location = new System.Drawing.Point(27, 82);
             this.employeeDataGridView.MultiSelect = false;
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeDataGridView.Size = new System.Drawing.Size(746, 376);
+            this.employeeDataGridView.Size = new System.Drawing.Size(746, 386);
             this.employeeDataGridView.TabIndex = 6;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged);
+            // 
+            // employee1BindingSource
+            // 
+            this.employee1BindingSource.DataMember = "Employee1";
+            this.employee1BindingSource.DataSource = this.goodDataBase;
+            // 
+            // goodDataBase
+            // 
+            this.goodDataBase.DataSetName = "GoodDataBase";
+            this.goodDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox1
             // 
@@ -210,16 +220,6 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
-            // 
-            // employee1BindingSource
-            // 
-            this.employee1BindingSource.DataMember = "Employee1";
-            this.employee1BindingSource.DataSource = this.goodDataBase;
-            // 
-            // goodDataBase
-            // 
-            this.goodDataBase.DataSetName = "GoodDataBase";
-            this.goodDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employeeBindingSource
             // 
@@ -434,12 +434,6 @@
             this.planName.HeaderText = "Plan Name";
             this.planName.Name = "planName";
             // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Cost";
-            this.cost.Name = "cost";
-            // 
             // description
             // 
             this.description.DataPropertyName = "Description";
@@ -463,6 +457,12 @@
             this.dentalDeduction.DataPropertyName = "Dental Deduction";
             this.dentalDeduction.HeaderText = "Dental Deduction";
             this.dentalDeduction.Name = "dentalDeduction";
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
             // 
             // MainForm
             // 
@@ -543,11 +543,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn planId;
         private System.Windows.Forms.DataGridViewTextBoxColumn planName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
         private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
 
     }
 }
