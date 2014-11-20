@@ -78,11 +78,11 @@
             this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -91,11 +91,10 @@
             // 
             // button_add
             // 
-            this.button_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.Location = new System.Drawing.Point(12, 408);
+            this.button_add.Location = new System.Drawing.Point(12, 57);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(103, 37);
+            this.button_add.Size = new System.Drawing.Size(240, 37);
             this.button_add.TabIndex = 2;
             this.button_add.Text = "Add";
             this.button_add.UseVisualStyleBackColor = true;
@@ -103,11 +102,10 @@
             // 
             // button_modify
             // 
-            this.button_modify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_modify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modify.Location = new System.Drawing.Point(121, 408);
+            this.button_modify.Location = new System.Drawing.Point(13, 100);
             this.button_modify.Name = "button_modify";
-            this.button_modify.Size = new System.Drawing.Size(103, 37);
+            this.button_modify.Size = new System.Drawing.Size(239, 37);
             this.button_modify.TabIndex = 3;
             this.button_modify.Text = "Modify";
             this.button_modify.UseVisualStyleBackColor = true;
@@ -115,11 +113,10 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(230, 408);
+            this.btn_delete.Location = new System.Drawing.Point(12, 143);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(103, 37);
+            this.btn_delete.Size = new System.Drawing.Size(240, 37);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -127,11 +124,10 @@
             // 
             // button_generate
             // 
-            this.button_generate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_generate.Location = new System.Drawing.Point(814, 408);
+            this.button_generate.Location = new System.Drawing.Point(13, 186);
             this.button_generate.Name = "button_generate";
-            this.button_generate.Size = new System.Drawing.Size(103, 37);
+            this.button_generate.Size = new System.Drawing.Size(239, 37);
             this.button_generate.TabIndex = 5;
             this.button_generate.Text = "Generate";
             this.button_generate.UseVisualStyleBackColor = true;
@@ -174,11 +170,11 @@
             this.companyName,
             this.planId,
             this.planName,
-            this.cost,
             this.description,
             this.cafeteriaBenifits,
             this.opticalDeduction,
-            this.dentalDeduction});
+            this.dentalDeduction,
+            this.cost});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
             this.employeeDataGridView.Location = new System.Drawing.Point(258, 57);
             this.employeeDataGridView.MultiSelect = false;
@@ -357,10 +353,10 @@
             // 
             this.additionalInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.additionalInformation.Location = new System.Drawing.Point(13, 57);
+            this.additionalInformation.Location = new System.Drawing.Point(13, 229);
             this.additionalInformation.Name = "additionalInformation";
             this.additionalInformation.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.additionalInformation.Size = new System.Drawing.Size(239, 345);
+            this.additionalInformation.Size = new System.Drawing.Size(239, 173);
             this.additionalInformation.TabIndex = 11;
             this.additionalInformation.Text = "Select an employee to view additional information...";
             this.additionalInformation.TextChanged += new System.EventHandler(this.additionalInformation_TextChanged);
@@ -486,13 +482,6 @@
             this.planName.Name = "planName";
             this.planName.ReadOnly = true;
             // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Cost";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            // 
             // description
             // 
             this.description.DataPropertyName = "Description";
@@ -520,6 +509,13 @@
             this.dentalDeduction.HeaderText = "Dental Deduction";
             this.dentalDeduction.Name = "dentalDeduction";
             this.dentalDeduction.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -606,11 +602,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn planId;
         private System.Windows.Forms.DataGridViewTextBoxColumn planName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
         private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
 
     }
 }

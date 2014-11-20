@@ -131,6 +131,10 @@ namespace ButterPayroll
         {
             selectedRow = employeeDataGridView.CurrentRow;
 
+            double totalDeductions = (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()));
+            double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
+            double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) -taxes;
+
             //populate additionalinformation richtextbox with information
             additionalInformation.Text = "Name:\n\t" + selectedRow.Cells["lname"].Value.ToString() + "," + selectedRow.Cells["fname"].Value.ToString() +
                 "\nAddress:\n\t" + selectedRow.Cells["street"].Value.ToString() + "\n\t" + selectedRow.Cells["city"].Value.ToString() + ", " + selectedRow.Cells["state"].Value.ToString() + " " + selectedRow.Cells["zip"].Value.ToString() +
@@ -148,16 +152,27 @@ namespace ButterPayroll
 
             }
             else {
-                additionalInformation.Text += "Insurance Information:\n\tNot Available\n\n\n\n";
+                additionalInformation.Text += "Insurance Information:\n\tNot Available\n\n\n";
 
             }
             additionalInformation.Text += "\nDeductions:\n\t" +
                 "Optical: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
                 "\n\tDental: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
                 "\n\tCafeteria: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
-                "\n\tTotal Deductions: " + (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()));
+                "\n\tTotal Deductions: " + totalDeductions.ToString();
 
-            
+            additionalInformation.Text += "\nEarnings:" +
+                "\n\tHours: " + selectedRow.Cells["hours"].Value.ToString() +
+                "\n\tRate: " + selectedRow.Cells["rate"].Value.ToString() +
+                "\n\tTaxes: " + selectedRow.Cells["taxes"].Value.ToString();
+            if ((bool)selectedRow.Cells["status"].Value)
+            {
+                additionalInformation.Text += "\n\tStatus: Full-Time";
+            }
+            else {
+                additionalInformation.Text += "\n\tStatus: Part-Time";
+            }
+            additionalInformation.Text += "\n\tNet Pay: " + netPay;
         }
 
         //Text box Changed Searches our datagridview for a selected employee
