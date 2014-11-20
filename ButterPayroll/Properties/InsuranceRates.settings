@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ButterPayroll.Properties" GeneratedClassName="InsuranceRates">
+  <Profiles />
+  <Settings>
+    <Setting Name="Medicare_A" Type="System.String" Scope="User">
+      <Value Profile="(Default)">407</Value>
+    </Setting>
+    <Setting Name="Medicare_B" Type="System.String" Scope="User">
+      <Value Profile="(Default)">104.9</Value>
+    </Setting>
+    <Setting Name="Medicare_AB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">511.9</Value>
+    </Setting>
+    <Setting Name="BlueCross_HMO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">57</Value>
+    </Setting>
+    <Setting Name="BlueCross_HMO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">162</Value>
+    </Setting>
+    <Setting Name="BlueCross_POS_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BlueCross_POS_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BlueCross_PPO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">253</Value>
+    </Setting>
+    <Setting Name="HIP_HMO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="HIP_HMO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">175</Value>
+    </Setting>
+    <Setting Name="HIP_POS_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">113</Value>
+    </Setting>
+    <Setting Name="HIP_POS_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">308</Value>
+    </Setting>
+    <Setting Name="HIP_PPO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">209</Value>
+    </Setting>
+    <Setting Name="HIP_PPO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">628</Value>
+    </Setting>
+    <Setting Name="Aetna_HMO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">43</Value>
+    </Setting>
+    <Setting Name="Aetna_HMO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">128</Value>
+    </Setting>
+    <Setting Name="Aetna_POS_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">97</Value>
+    </Setting>
+    <Setting Name="Aetna_POS_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">237</Value>
+    </Setting>
+    <Setting Name="Aetna_PPO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">198</Value>
+    </Setting>
+    <Setting Name="Aetna_PPO_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">603</Value>
+    </Setting>
+    <Setting Name="Dental_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="Dental_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">53</Value>
+    </Setting>
+    <Setting Name="Optical_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">23</Value>
+    </Setting>
+    <Setting Name="Optical_F" Type="System.String" Scope="User">
+      <Value Profile="(Default)">49</Value>
+    </Setting>
+    <Setting Name="BlueCross_PPO_I" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

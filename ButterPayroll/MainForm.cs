@@ -215,5 +215,16 @@ namespace ButterPayroll
             textBox1.Enabled = true;
         }
 
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void insuranceBenefitsRatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
+        }
+
     }
 }

@@ -38,12 +38,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goodDataBase = new ButterPayroll.GoodDataBase();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager();
-            this.employeeTableAdapter = new ButterPayroll.GoodDataBaseTableAdapters.Employee1TableAdapter();
-            this.employeeTableAdapter1 = new ButterPayroll.GoodDataBaseTableAdapters.EmployeeTableAdapter();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +53,9 @@
             this.directDepositDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +78,15 @@
             this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goodDataBase = new ButterPayroll.GoodDataBase();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager();
+            this.employeeTableAdapter = new ButterPayroll.GoodDataBaseTableAdapters.Employee1TableAdapter();
+            this.employeeTableAdapter1 = new ButterPayroll.GoodDataBaseTableAdapters.EmployeeTableAdapter();
+            this.insuranceBenefitsRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
@@ -211,37 +216,6 @@
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
-            // employee1BindingSource
-            // 
-            this.employee1BindingSource.DataMember = "Employee1";
-            this.employee1BindingSource.DataSource = this.goodDataBase;
-            // 
-            // goodDataBase
-            // 
-            this.goodDataBase.DataSetName = "GoodDataBase";
-            this.goodDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.goodDataBase;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.Employee1TableAdapter = null;
-            this.tableAdapterManager.EmployeeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // employeeTableAdapter1
-            // 
-            this.employeeTableAdapter1.ClearBeforeFill = true;
-            // 
             // employeeIdDataGridViewTextBoxColumn
             // 
             this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
@@ -331,6 +305,33 @@
             this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "Company Name";
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "Company Name";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insuranceBenefitsRatesToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings...";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // employeeId
             // 
@@ -464,6 +465,44 @@
             this.dentalDeduction.HeaderText = "Dental Deduction";
             this.dentalDeduction.Name = "dentalDeduction";
             // 
+            // employee1BindingSource
+            // 
+            this.employee1BindingSource.DataMember = "Employee1";
+            this.employee1BindingSource.DataSource = this.goodDataBase;
+            // 
+            // goodDataBase
+            // 
+            this.goodDataBase.DataSetName = "GoodDataBase";
+            this.goodDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.goodDataBase;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.Employee1TableAdapter = null;
+            this.tableAdapterManager.EmployeeTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ButterPayroll.GoodDataBaseTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // insuranceBenefitsRatesToolStripMenuItem
+            // 
+            this.insuranceBenefitsRatesToolStripMenuItem.Name = "insuranceBenefitsRatesToolStripMenuItem";
+            this.insuranceBenefitsRatesToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.insuranceBenefitsRatesToolStripMenuItem.Text = "Insurance/Benefits Rates";
+            this.insuranceBenefitsRatesToolStripMenuItem.Click += new System.EventHandler(this.insuranceBenefitsRatesToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -478,7 +517,9 @@
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.button_modify);
             this.Controls.Add(this.button_add);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -486,6 +527,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing_1);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
@@ -548,6 +591,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
         private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insuranceBenefitsRatesToolStripMenuItem;
 
     }
 }
