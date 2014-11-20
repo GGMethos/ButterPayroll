@@ -72,9 +72,6 @@ namespace ButterPayroll
         {
             // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +106,7 @@ namespace ButterPayroll
         {
             employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
+            employeeTableAdapter.ClearBeforeFill = false;
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
         //Deletes the selected value from the datagridview and database
@@ -157,9 +155,9 @@ namespace ButterPayroll
             }
             additionalInformation.Text += "\nDeductions:\n\t" +
                 "Optical: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
-                "\n\tDental: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
+                "\n\tDental: " + selectedRow.Cells["dentalDeduction"].Value.ToString() +
                 "\n\tCafeteria: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
-                "\n\tTotal Deductions: " + totalDeductions.ToString();
+                "\n\tTotal Deductions: " +totalDeductions.ToString();
 
             additionalInformation.Text += "\nEarnings:" +
                 "\n\tHours: " + selectedRow.Cells["hours"].Value.ToString() +

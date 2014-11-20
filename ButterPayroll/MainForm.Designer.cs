@@ -76,13 +76,13 @@
             this.directdeposit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -168,13 +168,13 @@
             this.directdeposit,
             this.status,
             this.companyName,
-            this.planId,
             this.planName,
+            this.cost,
             this.description,
             this.cafeteriaBenifits,
             this.opticalDeduction,
             this.dentalDeduction,
-            this.cost});
+            this.planId});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
             this.employeeDataGridView.Location = new System.Drawing.Point(258, 57);
             this.employeeDataGridView.MultiSelect = false;
@@ -384,12 +384,10 @@
             // 
             // street
             // 
-            this.street.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.street.DataPropertyName = "Street";
             this.street.HeaderText = "Street";
             this.street.Name = "street";
             this.street.ReadOnly = true;
-            this.street.Width = 68;
             // 
             // city
             // 
@@ -468,19 +466,19 @@
             this.companyName.Name = "companyName";
             this.companyName.ReadOnly = true;
             // 
-            // planId
-            // 
-            this.planId.DataPropertyName = "Plan Id";
-            this.planId.HeaderText = "Plan Id";
-            this.planId.Name = "planId";
-            this.planId.ReadOnly = true;
-            // 
             // planName
             // 
             this.planName.DataPropertyName = "Plan Name";
             this.planName.HeaderText = "Plan Name";
             this.planName.Name = "planName";
             this.planName.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
             // 
             // description
             // 
@@ -510,12 +508,12 @@
             this.dentalDeduction.Name = "dentalDeduction";
             this.dentalDeduction.ReadOnly = true;
             // 
-            // cost
+            // planId
             // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Cost";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
+            this.planId.DataPropertyName = "Plan Id";
+            this.planId.HeaderText = "Plan Id";
+            this.planId.Name = "planId";
+            this.planId.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -600,13 +598,13 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn directdeposit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
         private System.Windows.Forms.DataGridViewTextBoxColumn planName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
         private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
 
     }
 }
