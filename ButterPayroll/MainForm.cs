@@ -74,14 +74,7 @@ namespace ButterPayroll
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
             // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
-            // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,7 +130,36 @@ namespace ButterPayroll
         private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             selectedRow = employeeDataGridView.CurrentRow;
+
+            //populate additionalinformation richtextbox with information
+            additionalInformation.Text = "Name:\n\t" + selectedRow.Cells["lname"].Value.ToString() + "," + selectedRow.Cells["fname"].Value.ToString() +
+                "\nAddress:\n\t" + selectedRow.Cells["street"].Value.ToString() + "\n\t" + selectedRow.Cells["city"].Value.ToString() + ", " + selectedRow.Cells["state"].Value.ToString() + " " + selectedRow.Cells["zip"].Value.ToString() +
+                "\nBank Information:\n\t" + "Account #: " + selectedRow.Cells["accountNum"].Value.ToString() + "\n\tRouting #: " + selectedRow.Cells["routingNum"].Value.ToString();
+            if ((bool)selectedRow.Cells["directdeposit"].Value)
+            {
+                additionalInformation.Text += "\n\tMethod: Direct Deposit\n";
+            }
+            else {
+                additionalInformation.Text += "\n\tMethod: Check\n";
+            }
+            if (selectedRow.Cells["companyname"].Value.ToString() != "")
+            {
+                additionalInformation.Text += "Insurance Information:\n\t" + "Provider: " + selectedRow.Cells["companyName"].Value.ToString() + "\n\tID: " + selectedRow.Cells["planId"].Value.ToString() + "\n\tPlan: "+ selectedRow.Cells["planName"].Value.ToString() + "\n\tType: "+ selectedRow.Cells["description"].Value.ToString();
+
+            }
+            else {
+                additionalInformation.Text += "Insurance Information:\n\tNot Available\n\n\n\n";
+
+            }
+            additionalInformation.Text += "\nDeductions:\n\t" +
+                "Optical: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
+                "\n\tDental: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
+                "\n\tCafeteria: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
+                "\n\tTotal Deductions: " + (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()));
+
+            
         }
+
         //Text box Changed Searches our datagridview for a selected employee
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -216,6 +238,11 @@ namespace ButterPayroll
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             textBox1.Enabled = true;
+        }
+
+        private void additionalInformation_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
