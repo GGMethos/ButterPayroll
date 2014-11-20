@@ -63,6 +63,7 @@
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Price = new System.Windows.Forms.Label();
             this.insuranceID_tbox = new System.Windows.Forms.TextBox();
             this.insuranceID_label = new System.Windows.Forms.Label();
             this.DescriptionCombo = new System.Windows.Forms.ComboBox();
@@ -76,8 +77,9 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.Price = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Price_Value = new System.Windows.Forms.Label();
+            this.MoneySign = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -448,6 +450,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.MoneySign);
+            this.groupBox6.Controls.Add(this.Price_Value);
             this.groupBox6.Controls.Add(this.Price);
             this.groupBox6.Controls.Add(this.insuranceID_tbox);
             this.groupBox6.Controls.Add(this.insuranceID_label);
@@ -465,6 +469,15 @@
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Medical Information";
+            // 
+            // Price
+            // 
+            this.Price.AutoSize = true;
+            this.Price.Location = new System.Drawing.Point(54, 138);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(0, 16);
+            this.Price.TabIndex = 14;
+            this.Price.Visible = false;
             // 
             // insuranceID_tbox
             // 
@@ -616,21 +629,12 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 37);
+            this.checkBox1.Location = new System.Drawing.Point(6, 37);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 20);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Dental";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // Price
-            // 
-            this.Price.AutoSize = true;
-            this.Price.Location = new System.Drawing.Point(54, 138);
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(0, 16);
-            this.Price.TabIndex = 14;
-            this.Price.Visible = false;
             // 
             // groupBox1
             // 
@@ -645,6 +649,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
+            // 
+            // Price_Value
+            // 
+            this.Price_Value.AutoSize = true;
+            this.Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Price_Value.Location = new System.Drawing.Point(76, 138);
+            this.Price_Value.Name = "Price_Value";
+            this.Price_Value.Size = new System.Drawing.Size(45, 16);
+            this.Price_Value.TabIndex = 15;
+            this.Price_Value.Text = "label4";
+            // 
+            // MoneySign
+            // 
+            this.MoneySign.AutoSize = true;
+            this.MoneySign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.MoneySign.Location = new System.Drawing.Point(60, 138);
+            this.MoneySign.Name = "MoneySign";
+            this.MoneySign.Size = new System.Drawing.Size(15, 16);
+            this.MoneySign.TabIndex = 16;
+            this.MoneySign.Text = "$";
             // 
             // AddModify
             // 
@@ -743,5 +767,7 @@
         private System.Windows.Forms.Label insuranceID_label;
         private System.Windows.Forms.Label Price;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label Price_Value;
+        private System.Windows.Forms.Label MoneySign;
     }
 }

@@ -53,6 +53,9 @@ namespace ButterPayroll
             tbox_taxes.Text = Employee.tax.ToString();
             CompanyCombo.Text = Employee.company.ToString();
             insuranceID_tbox.Text = Employee.planId.ToString();
+            PlanCombo.Text = Employee.planName.ToString();
+            DescriptionCombo.Text = Employee.description.ToString();
+            Price_Value.Text = Employee.cost.ToString();
             if (Employee.fullTime == true)
             {
                 rbutton_fulltime.Checked = true;
@@ -90,6 +93,9 @@ namespace ButterPayroll
                 owningForm.selectedRow.Cells["taxes"].Value = tbox_taxes.Text;
                 owningForm.selectedRow.Cells["companyName"].Value = CompanyCombo.Text;
                 owningForm.selectedRow.Cells["planId"].Value = insuranceID_tbox.Text;
+                owningForm.selectedRow.Cells["planName"].Value = PlanCombo.Text;
+                owningForm.selectedRow.Cells["description"].Value = DescriptionCombo.Text;
+                owningForm.selectedRow.Cells["cost"].Value = Price_Value.Text;
                 if (radio_check.Checked == true)
                 {
                     owningForm.selectedRow.Cells["directdeposit"].Value = false;

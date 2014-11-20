@@ -51,5 +51,11 @@ namespace ButterPayroll
         public object company { get; set; }
 
         public object planId { get; set; }
+
+        public object planName { get; set; }
+
+        public object description { get; set; }
+
+        public object cost { get; set; }
     }
 }

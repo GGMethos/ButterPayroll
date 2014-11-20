@@ -57,6 +57,9 @@ namespace ButterPayroll
             selectedEmployee.directDeposit = (bool)selectedRow.Cells["directdeposit"].Value;
             selectedEmployee.company = selectedRow.Cells["companyName"].Value;
             selectedEmployee.planId = selectedRow.Cells["planId"].Value;
+            selectedEmployee.planName = selectedRow.Cells["planName"].Value;
+            selectedEmployee.description = selectedRow.Cells["description"].Value;
+            selectedEmployee.cost = selectedRow.Cells["cost"].Value;
 
             //initialize modify form and show
             modifyForm = new AddModify(this);
