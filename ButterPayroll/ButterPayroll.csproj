@@ -82,13 +82,11 @@
     <Compile Include="GoodDataBase.cs">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="GoodDataBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\InsuranceRates.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -154,17 +152,14 @@
     </None>
     <None Include="GoodDataBase.xsc">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="GoodDataBase.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GoodDataBase.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="GoodDataBase.xss">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\InsuranceRates.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

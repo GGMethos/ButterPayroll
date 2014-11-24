@@ -63,6 +63,8 @@
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.MoneySign = new System.Windows.Forms.Label();
+            this.Price_Value = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.insuranceID_tbox = new System.Windows.Forms.TextBox();
             this.insuranceID_label = new System.Windows.Forms.Label();
@@ -78,8 +80,6 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Price_Value = new System.Windows.Forms.Label();
-            this.MoneySign = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -470,6 +470,26 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Medical Information";
             // 
+            // MoneySign
+            // 
+            this.MoneySign.AutoSize = true;
+            this.MoneySign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.MoneySign.Location = new System.Drawing.Point(60, 138);
+            this.MoneySign.Name = "MoneySign";
+            this.MoneySign.Size = new System.Drawing.Size(15, 16);
+            this.MoneySign.TabIndex = 16;
+            this.MoneySign.Text = "$";
+            // 
+            // Price_Value
+            // 
+            this.Price_Value.AutoSize = true;
+            this.Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Price_Value.Location = new System.Drawing.Point(76, 138);
+            this.Price_Value.Name = "Price_Value";
+            this.Price_Value.Size = new System.Drawing.Size(45, 16);
+            this.Price_Value.TabIndex = 15;
+            this.Price_Value.Text = "label4";
+            // 
             // Price
             // 
             this.Price.AutoSize = true;
@@ -649,26 +669,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
-            // 
-            // Price_Value
-            // 
-            this.Price_Value.AutoSize = true;
-            this.Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Price_Value.Location = new System.Drawing.Point(76, 138);
-            this.Price_Value.Name = "Price_Value";
-            this.Price_Value.Size = new System.Drawing.Size(45, 16);
-            this.Price_Value.TabIndex = 15;
-            this.Price_Value.Text = "label4";
-            // 
-            // MoneySign
-            // 
-            this.MoneySign.AutoSize = true;
-            this.MoneySign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.MoneySign.Location = new System.Drawing.Point(60, 138);
-            this.MoneySign.Name = "MoneySign";
-            this.MoneySign.Size = new System.Drawing.Size(15, 16);
-            this.MoneySign.TabIndex = 16;
-            this.MoneySign.Text = "$";
             // 
             // AddModify
             // 
