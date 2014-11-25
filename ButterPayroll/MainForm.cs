@@ -119,7 +119,9 @@ namespace ButterPayroll
                 employeeDataGridView.Rows.RemoveAt(employeeDataGridView.SelectedRows[0].Index);
                 employeeDataGridView.Focus();
                 employeeTableAdapter.Update(goodDataBase);
-            } 
+            }
+            else
+                return;
         }
         //Updates the database on the Form Closing
         private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
@@ -253,11 +255,6 @@ namespace ButterPayroll
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             textBox1.Enabled = true;
-        }
-
-        private void additionalInformation_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void insuranceDeductionRatesToolStripMenuItem_Click(object sender, EventArgs e)
