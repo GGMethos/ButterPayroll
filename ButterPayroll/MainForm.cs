@@ -60,6 +60,8 @@ namespace ButterPayroll
             selectedEmployee.planName = selectedRow.Cells["planName"].Value;
             selectedEmployee.description = selectedRow.Cells["description"].Value;
             selectedEmployee.cost = selectedRow.Cells["cost"].Value;
+            selectedEmployee.optical = selectedRow.Cells["opticalDeduction"].Value;
+            selectedEmployee.dental = selectedRow.Cells["dentalDeduction"].Value;
 
             //initialize modify form and show
             modifyForm = new AddModify(this);
@@ -134,8 +136,8 @@ namespace ButterPayroll
         private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             selectedRow = employeeDataGridView.CurrentRow;
-
-            double totalDeductions = (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString()));
+            //Pay checks are every 2 weeks so divide optical and dental by 24 because yearly price and by two on insurance price (monthly value)
+            double totalDeductions = ((Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString())/2));
             double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
             double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) -taxes;
 

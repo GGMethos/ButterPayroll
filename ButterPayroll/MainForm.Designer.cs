@@ -545,7 +545,6 @@
             this.additionalInformation.Size = new System.Drawing.Size(239, 173);
             this.additionalInformation.TabIndex = 11;
             this.additionalInformation.Text = "Select an employee to view additional information...";
-   
             // 
             // MainForm
             // 

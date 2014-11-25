@@ -57,5 +57,9 @@ namespace ButterPayroll
         public object description { get; set; }
 
         public object cost { get; set; }
+
+        public object optical { get; set; }
+
+        public object dental { get; set; }
     }
 }

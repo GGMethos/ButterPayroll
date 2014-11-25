@@ -78,7 +78,32 @@ namespace ButterPayroll
             {
                 radio_check.Checked = true;
             }
+            if (Properties.InsuranceRates.Default.Dental_I == owningForm.selectedRow.Cells["dentalDeduction"].Value.ToString())
+            {
+                cbox_dental.Checked = true;
+                combo_Dental.Text = "Individual";
+            }
+            else if (Properties.InsuranceRates.Default.Dental_F == owningForm.selectedRow.Cells["dentalDeduction"].Value.ToString())
+            {
+                cbox_dental.Checked = true;
+                combo_Dental.Text = "Family";
+            }
+            else
+                cbox_dental.Checked = false;
 
+            if (Properties.InsuranceRates.Default.Optical_I == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
+            {
+                cbox_optical.Checked = true;
+                combo_optical.Text = "Individual";
+            }
+            else if (Properties.InsuranceRates.Default.Optical_F == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
+            {
+                cbox_optical.Checked = true;
+                combo_optical.Text = "Family";
+            }
+            else
+                cbox_optical.Checked = false;
+            
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -114,6 +139,24 @@ namespace ButterPayroll
                 else
                     owningForm.selectedRow.Cells["status"].Value = Employee.fullTime = false;
 
+                if (cbox_dental.Checked == true)
+                {
+                    if (combo_Dental.Text == "Individual")
+                        owningForm.selectedRow.Cells["dentalDeduction"].Value = dental_price.Text.ToString();
+                    if (combo_Dental.Text == "Family")
+                        owningForm.selectedRow.Cells["dentalDeduction"].Value = dental_price.Text.ToString();
+                }
+                else
+                    owningForm.selectedRow.Cells["dentalDeduction"].Value = 0;
+                if (cbox_optical.Checked == true)
+                {
+                    if (combo_optical.Text == "Individual")
+                        owningForm.selectedRow.Cells["opticalDeduction"].Value = optical_price.Text.ToString();
+                    if (combo_optical.Text == "Family")
+                        owningForm.selectedRow.Cells["opticalDeduction"].Value = optical_price.Text.ToString();
+                }
+                else
+                    owningForm.selectedRow.Cells["opticalDeduction"].Value = 0;
                 owningForm.employeeDataGridView.ClearSelection();
                 MessageBox.Show("Sucessfully Modified");
                 owningForm.employeeDataGridView.Focus();    
@@ -331,7 +374,8 @@ namespace ButterPayroll
             string selection = PlanCombo.Text.ToString();
             string[] descriptions = new string[] { "Individual", "Family"};
 
-            if (PlanCombo.Text.ToString() == "HMO" || PlanCombo.Text.ToString() == "POS" || PlanCombo.Text.ToString() == "PPO") {
+            if (PlanCombo.Text.ToString() == "HMO" || PlanCombo.Text.ToString() == "POS" || PlanCombo.Text.ToString() == "PPO")
+            {
                 DescriptionCombo.Text = "Select One...";
                 DescriptionCombo.Items.Clear();
                 DescriptionCombo.Items.AddRange(descriptions);
@@ -403,10 +447,10 @@ namespace ButterPayroll
             dental_price.Visible = true;
 
             if (combo_Dental.Text == "Individual") {
-                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_I;
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_I;
             }
             else if (combo_Dental.Text == "Family") {
-                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_F;
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_F;
             }
         }
 
@@ -415,9 +459,9 @@ namespace ButterPayroll
             optical_price.Visible = true;
 
             if (combo_optical.Text == "Individual")
-                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_I;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_I;
             else if (combo_optical.Text == "Family")
-                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_F;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_F;
         }
 
         
