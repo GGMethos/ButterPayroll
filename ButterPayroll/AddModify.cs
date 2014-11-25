@@ -21,7 +21,7 @@ namespace ButterPayroll
         MainForm mainForm;
         public string Mode { get; set; }
         public Employee Employee { get; set; }
-
+        MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
         private void button_cancel_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Close without saving?", "Cancel", MessageBoxButtons.YesNo);
@@ -35,6 +35,12 @@ namespace ButterPayroll
             this.Text = Mode;
             if (Mode == "Modify") {
                 populateTxtBoxes();
+            }
+            if (Mode == "Add")
+            {
+                int MaxID = owningForm.employeeDataGridView.Rows.Cast<DataGridViewRow>()
+                        .Max(r => Convert.ToInt32(r.Cells["employeeId"].Value));
+                label_employeeID.Text = (MaxID + 1).ToString();
             }
         }
 
@@ -76,7 +82,6 @@ namespace ButterPayroll
         }
         private void button_save_Click(object sender, EventArgs e)
         {
-            MainForm owningForm = (MainForm)Application.OpenForms["MainForm"];
             if (this.Mode == "Modify")
             {
                 owningForm.selectedRow.Cells["employeeId"].Value = label_employeeID.Text;
