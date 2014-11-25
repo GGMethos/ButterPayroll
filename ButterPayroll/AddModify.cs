@@ -340,6 +340,62 @@ namespace ButterPayroll
             }
         }
 
+        private void cbox_dental_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_dental.Checked) {
+                combo_Dental.Visible = true;
+            }
+            else if (!cbox_dental.Checked) {
+                combo_Dental.Visible = false;
+                dental_price.Visible = false;
+            }
+        }
+
+        private void cbox_optical_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_optical.Checked) {
+                combo_optical.Visible = true;
+            }
+            else if (!cbox_optical.Checked) {
+                combo_optical.Visible = false;
+                optical_price.Visible = false;
+            }
+        }
+
+        private void cbox_cafeteria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbox_cafeteria.Checked) {
+                tbox_cafeteria.Visible = true;
+                label6.Visible = true;
+            }
+            if (!cbox_cafeteria.Checked) {
+                tbox_cafeteria.Visible = false;
+                label6.Visible = false;
+            }
+        }
+
+        private void combo_Dental_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dental_price.Visible = true;
+
+            if (combo_Dental.Text == "Individual") {
+                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_I;
+            }
+            else if (combo_Dental.Text == "Family") {
+                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_F;
+            }
+        }
+
+        private void combo_optical_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            optical_price.Visible = true;
+
+            if (combo_optical.Text == "Individual")
+                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_I;
+            else if (combo_optical.Text == "Family")
+                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_F;
+        }
+
         
     }
 }

@@ -114,12 +114,16 @@ namespace ButterPayroll
         //Deletes the selected value from the datagridview and database
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (employeeDataGridView.SelectedRows.Count > 0)
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this Employee?", "Delete", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
             {
-                employeeDataGridView.Rows.RemoveAt(employeeDataGridView.SelectedRows[0].Index);
-                employeeDataGridView.Focus();
-                employeeTableAdapter.Update(goodDataBase);
-            } 
+                if (employeeDataGridView.SelectedRows.Count > 0)
+                {
+                    employeeDataGridView.Rows.RemoveAt(employeeDataGridView.SelectedRows[0].Index);
+                    employeeDataGridView.Focus();
+                    employeeTableAdapter.Update(goodDataBase);
+                }
+            }
         }
         //Updates the database on the Form Closing
         private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
