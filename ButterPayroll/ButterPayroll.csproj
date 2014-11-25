@@ -71,6 +71,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Database1DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -82,11 +83,13 @@
     <Compile Include="GoodDataBase.cs">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="GoodDataBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\InsuranceRates.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -127,14 +130,17 @@
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Database1DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Database1DataSet.xss">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Database1DataSet1.xsc">
       <DependentUpon>Database1DataSet1.xsd</DependentUpon>
@@ -152,14 +158,17 @@
     </None>
     <None Include="GoodDataBase.xsc">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="GoodDataBase.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GoodDataBase.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="GoodDataBase.xss">
       <DependentUpon>GoodDataBase.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\InsuranceRates.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -200,8 +209,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MichaelRuffe.txt" />
     <Content Include="PriceData.txt" />

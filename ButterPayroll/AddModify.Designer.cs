@@ -521,6 +521,7 @@
             // 
             // DescriptionCombo
             // 
+            this.DescriptionCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DescriptionCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescriptionCombo.FormattingEnabled = true;
             this.DescriptionCombo.Items.AddRange(new object[] {
@@ -557,6 +558,7 @@
             // 
             // PlanCombo
             // 
+            this.PlanCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PlanCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlanCombo.FormattingEnabled = true;
             this.PlanCombo.Items.AddRange(new object[] {
@@ -597,6 +599,7 @@
             // 
             // CompanyCombo
             // 
+            this.CompanyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CompanyCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyCombo.FormattingEnabled = true;
             this.CompanyCombo.Items.AddRange(new object[] {
@@ -610,7 +613,6 @@
             this.CompanyCombo.Name = "CompanyCombo";
             this.CompanyCombo.Size = new System.Drawing.Size(121, 24);
             this.CompanyCombo.TabIndex = 0;
-            this.CompanyCombo.Text = "Select one...";
             this.CompanyCombo.SelectedIndexChanged += new System.EventHandler(this.CompanyCombo_SelectedIndexChanged);
             // 
             // Deductions
