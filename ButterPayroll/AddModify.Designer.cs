@@ -373,7 +373,7 @@
             // 
             // tbox_state
             // 
-            this.tbox_state.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbox_state.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tbox_state.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbox_state.FormattingEnabled = true;
             this.tbox_state.Items.AddRange(new object[] {
