@@ -133,7 +133,7 @@ namespace ButterPayroll
         {
             selectedRow = employeeDataGridView.CurrentRow;
 
-            double totalDeductions = (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()));
+            double totalDeductions = (Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()) + Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString()));
             double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
             double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) -taxes;
 
