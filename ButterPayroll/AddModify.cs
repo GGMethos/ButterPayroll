@@ -131,6 +131,106 @@ namespace ButterPayroll
             return true;
         }
 
+        /// <summary>
+        /// get price from rate settings file
+        /// </summary>
+        /// <returns></returns>
+        private void updateInsurancePrice(string provider, string plan, string description) {
+            if (CompanyCombo.Text != "" && PlanCombo.Text != "" && DescriptionCombo.Text != "")
+            {
+                
+                if (provider == "Blue Cross")
+                {
+                    if (plan == "HMO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_F);
+                    }
+                    else if (plan == "POS")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_F);
+                    }
+                    else if (plan == "PPO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_F);
+                    }
+                }
+                else if (provider == "HIP")
+                {
+                    if (plan == "HMO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_F);
+                    }
+                    else if (plan == "POS")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_F);
+                    }
+                    else if (plan == "PPO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_F);
+                    }
+                }
+                else if (provider == "Aetna")
+                {
+                    if (plan == "HMO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_F);
+                    }
+                    else if (plan == "POS")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_F);
+                    }
+                    else if (plan == "PPO")
+                    {
+                        if (description == "Individual")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_I);
+                        else if (description == "Family")
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_F);
+                    }
+                }
+            }
+            else if (provider == "Medicare" && plan != "")
+            {
+                if (plan == "A")
+                    Price_Value.Text = Properties.InsuranceRates.Default.Medicare_A;
+                else if (plan == "B")
+                    Price_Value.Text = (Properties.InsuranceRates.Default.Medicare_B);
+                else if (plan == "A & B") {
+                    Price_Value.Text = (Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_A) + Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_B)).ToString();
+                }
+            }
+            else if (provider == "Medicaid") {
+                Price_Value.Text = "0";
+            }
+            else
+            {
+                Price_Value.Text = "-";
+            }
+        }
+
         private void CompanyCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             //clear all insurance related fields
@@ -192,6 +292,9 @@ namespace ButterPayroll
                 DescriptionCombo.Visible = false;
                 price_label.Visible = false;
             }
+
+            updateInsurancePrice(CompanyCombo.Text.ToString(), PlanCombo.Text.ToString(), DescriptionCombo.Text.ToString());
+
         }
 
         private void PlanCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,6 +310,9 @@ namespace ButterPayroll
                 insuranceDescription_label.Visible = true;
                 DescriptionCombo.Visible = true;
             }
+
+            updateInsurancePrice(CompanyCombo.Text.ToString(), PlanCombo.Text.ToString(), DescriptionCombo.Text.ToString());
+
         }
 
         private void DescriptionCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,8 +320,19 @@ namespace ButterPayroll
             string selection = DescriptionCombo.Text.ToString();
             //get price from text file based on information
 
-            //show price
-            price_label.Visible = true;
+            updateInsurancePrice(CompanyCombo.Text.ToString(), PlanCombo.Text.ToString(), DescriptionCombo.Text.ToString());
+        }
+
+        private void rbutton_fulltime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbutton_fulltime.Checked) {
+                //enable insurance info
+                groupBox6.Enabled = true;
+            }
+            else if (radio_parttime.Checked) {
+                //disable insurance info
+                groupBox6.Enabled = false;
+            }
         }
 
         

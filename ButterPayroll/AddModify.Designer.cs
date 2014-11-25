@@ -258,6 +258,7 @@
             this.rbutton_fulltime.TabIndex = 6;
             this.rbutton_fulltime.Text = "Full-Time";
             this.rbutton_fulltime.UseVisualStyleBackColor = true;
+            this.rbutton_fulltime.CheckedChanged += new System.EventHandler(this.rbutton_fulltime_CheckedChanged);
             // 
             // radio_parttime
             // 
@@ -474,7 +475,7 @@
             // 
             this.MoneySign.AutoSize = true;
             this.MoneySign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.MoneySign.Location = new System.Drawing.Point(60, 138);
+            this.MoneySign.Location = new System.Drawing.Point(50, 138);
             this.MoneySign.Name = "MoneySign";
             this.MoneySign.Size = new System.Drawing.Size(15, 16);
             this.MoneySign.TabIndex = 16;
@@ -484,11 +485,10 @@
             // 
             this.Price_Value.AutoSize = true;
             this.Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Price_Value.Location = new System.Drawing.Point(76, 138);
+            this.Price_Value.Location = new System.Drawing.Point(71, 138);
             this.Price_Value.Name = "Price_Value";
-            this.Price_Value.Size = new System.Drawing.Size(45, 16);
+            this.Price_Value.Size = new System.Drawing.Size(0, 16);
             this.Price_Value.TabIndex = 15;
-            this.Price_Value.Text = "label4";
             // 
             // Price
             // 
@@ -554,7 +554,6 @@
             this.price_label.Size = new System.Drawing.Size(42, 16);
             this.price_label.TabIndex = 9;
             this.price_label.Text = "Price:";
-            this.price_label.Visible = false;
             // 
             // PlanCombo
             // 
