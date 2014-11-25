@@ -35,6 +35,28 @@
             this.button_generate = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
+            this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routingNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.directdeposit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodDataBase = new ButterPayroll.GoodDataBase();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,32 +83,14 @@
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.additionalInformation = new System.Windows.Forms.RichTextBox();
-            this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hours = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routingNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.directdeposit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cafeteriaBenifits = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opticalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dentalDeduction = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insuranceDeductionRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_add
@@ -168,13 +172,13 @@
             this.directdeposit,
             this.status,
             this.companyName,
+            this.planId,
             this.planName,
-            this.cost,
             this.description,
             this.cafeteriaBenifits,
             this.opticalDeduction,
             this.dentalDeduction,
-            this.planId});
+            this.cost});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
             this.employeeDataGridView.Location = new System.Drawing.Point(258, 57);
             this.employeeDataGridView.MultiSelect = false;
@@ -184,6 +188,162 @@
             this.employeeDataGridView.Size = new System.Drawing.Size(659, 345);
             this.employeeDataGridView.TabIndex = 6;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged);
+            // 
+            // employeeId
+            // 
+            this.employeeId.DataPropertyName = "EmployeeId";
+            this.employeeId.HeaderText = "EmployeeId";
+            this.employeeId.Name = "employeeId";
+            this.employeeId.ReadOnly = true;
+            // 
+            // lname
+            // 
+            this.lname.DataPropertyName = "Last Name";
+            this.lname.HeaderText = "Last Name";
+            this.lname.Name = "lname";
+            this.lname.ReadOnly = true;
+            // 
+            // fname
+            // 
+            this.fname.DataPropertyName = "First Name";
+            this.fname.HeaderText = "First Name";
+            this.fname.Name = "fname";
+            this.fname.ReadOnly = true;
+            // 
+            // street
+            // 
+            this.street.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.street.DataPropertyName = "Street";
+            this.street.HeaderText = "Street";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            this.street.Width = 68;
+            // 
+            // city
+            // 
+            this.city.DataPropertyName = "City";
+            this.city.HeaderText = "City";
+            this.city.Name = "city";
+            this.city.ReadOnly = true;
+            // 
+            // state
+            // 
+            this.state.DataPropertyName = "State";
+            this.state.HeaderText = "State";
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            // 
+            // zip
+            // 
+            this.zip.DataPropertyName = "Zip";
+            this.zip.HeaderText = "Zip";
+            this.zip.Name = "zip";
+            this.zip.ReadOnly = true;
+            // 
+            // hours
+            // 
+            this.hours.DataPropertyName = "Hours";
+            this.hours.HeaderText = "Hours";
+            this.hours.Name = "hours";
+            this.hours.ReadOnly = true;
+            // 
+            // rate
+            // 
+            this.rate.DataPropertyName = "Rate";
+            this.rate.HeaderText = "Rate";
+            this.rate.Name = "rate";
+            this.rate.ReadOnly = true;
+            // 
+            // taxes
+            // 
+            this.taxes.DataPropertyName = "Taxes";
+            this.taxes.HeaderText = "Taxes";
+            this.taxes.Name = "taxes";
+            this.taxes.ReadOnly = true;
+            // 
+            // accountNum
+            // 
+            this.accountNum.DataPropertyName = "Account Number";
+            this.accountNum.HeaderText = "Account Number";
+            this.accountNum.Name = "accountNum";
+            this.accountNum.ReadOnly = true;
+            // 
+            // routingNum
+            // 
+            this.routingNum.DataPropertyName = "Routing Number";
+            this.routingNum.HeaderText = "Routing Number";
+            this.routingNum.Name = "routingNum";
+            this.routingNum.ReadOnly = true;
+            // 
+            // directdeposit
+            // 
+            this.directdeposit.DataPropertyName = "Direct Deposit";
+            this.directdeposit.HeaderText = "Direct Deposit";
+            this.directdeposit.Name = "directdeposit";
+            this.directdeposit.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // companyName
+            // 
+            this.companyName.DataPropertyName = "Company Name";
+            this.companyName.HeaderText = "Company Name";
+            this.companyName.Name = "companyName";
+            this.companyName.ReadOnly = true;
+            // 
+            // planId
+            // 
+            this.planId.DataPropertyName = "Plan Id";
+            this.planId.HeaderText = "Plan Id";
+            this.planId.Name = "planId";
+            this.planId.ReadOnly = true;
+            // 
+            // planName
+            // 
+            this.planName.DataPropertyName = "Plan Name";
+            this.planName.HeaderText = "Plan Name";
+            this.planName.Name = "planName";
+            this.planName.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "Description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // cafeteriaBenifits
+            // 
+            this.cafeteriaBenifits.DataPropertyName = "Cafeteria Benifits";
+            this.cafeteriaBenifits.HeaderText = "Cafeteria Benifits";
+            this.cafeteriaBenifits.Name = "cafeteriaBenifits";
+            this.cafeteriaBenifits.ReadOnly = true;
+            // 
+            // opticalDeduction
+            // 
+            this.opticalDeduction.DataPropertyName = "Optical Deduction";
+            this.opticalDeduction.HeaderText = "Optical Deduction";
+            this.opticalDeduction.Name = "opticalDeduction";
+            this.opticalDeduction.ReadOnly = true;
+            // 
+            // dentalDeduction
+            // 
+            this.dentalDeduction.DataPropertyName = "Dental Deduction";
+            this.dentalDeduction.HeaderText = "Dental Deduction";
+            this.dentalDeduction.Name = "dentalDeduction";
+            this.dentalDeduction.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Cost";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
             // 
             // employee1BindingSource
             // 
@@ -343,6 +503,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(929, 24);
@@ -361,159 +523,28 @@
             this.additionalInformation.Text = "Select an employee to view additional information...";
             this.additionalInformation.TextChanged += new System.EventHandler(this.additionalInformation_TextChanged);
             // 
-            // employeeId
+            // fileToolStripMenuItem
             // 
-            this.employeeId.DataPropertyName = "EmployeeId";
-            this.employeeId.HeaderText = "EmployeeId";
-            this.employeeId.Name = "employeeId";
-            this.employeeId.ReadOnly = true;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // lname
+            // settingsToolStripMenuItem
             // 
-            this.lname.DataPropertyName = "Last Name";
-            this.lname.HeaderText = "Last Name";
-            this.lname.Name = "lname";
-            this.lname.ReadOnly = true;
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insuranceDeductionRatesToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // fname
+            // insuranceDeductionRatesToolStripMenuItem
             // 
-            this.fname.DataPropertyName = "First Name";
-            this.fname.HeaderText = "First Name";
-            this.fname.Name = "fname";
-            this.fname.ReadOnly = true;
-            // 
-            // street
-            // 
-            this.street.DataPropertyName = "Street";
-            this.street.HeaderText = "Street";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
-            // 
-            // city
-            // 
-            this.city.DataPropertyName = "City";
-            this.city.HeaderText = "City";
-            this.city.Name = "city";
-            this.city.ReadOnly = true;
-            // 
-            // state
-            // 
-            this.state.DataPropertyName = "State";
-            this.state.HeaderText = "State";
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            // 
-            // zip
-            // 
-            this.zip.DataPropertyName = "Zip";
-            this.zip.HeaderText = "Zip";
-            this.zip.Name = "zip";
-            this.zip.ReadOnly = true;
-            // 
-            // hours
-            // 
-            this.hours.DataPropertyName = "Hours";
-            this.hours.HeaderText = "Hours";
-            this.hours.Name = "hours";
-            this.hours.ReadOnly = true;
-            // 
-            // rate
-            // 
-            this.rate.DataPropertyName = "Rate";
-            this.rate.HeaderText = "Rate";
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
-            // 
-            // taxes
-            // 
-            this.taxes.DataPropertyName = "Taxes";
-            this.taxes.HeaderText = "Taxes";
-            this.taxes.Name = "taxes";
-            this.taxes.ReadOnly = true;
-            // 
-            // accountNum
-            // 
-            this.accountNum.DataPropertyName = "Account Number";
-            this.accountNum.HeaderText = "Account Number";
-            this.accountNum.Name = "accountNum";
-            this.accountNum.ReadOnly = true;
-            // 
-            // routingNum
-            // 
-            this.routingNum.DataPropertyName = "Routing Number";
-            this.routingNum.HeaderText = "Routing Number";
-            this.routingNum.Name = "routingNum";
-            this.routingNum.ReadOnly = true;
-            // 
-            // directdeposit
-            // 
-            this.directdeposit.DataPropertyName = "Direct Deposit";
-            this.directdeposit.HeaderText = "Direct Deposit";
-            this.directdeposit.Name = "directdeposit";
-            this.directdeposit.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // companyName
-            // 
-            this.companyName.DataPropertyName = "Company Name";
-            this.companyName.HeaderText = "Company Name";
-            this.companyName.Name = "companyName";
-            this.companyName.ReadOnly = true;
-            // 
-            // planName
-            // 
-            this.planName.DataPropertyName = "Plan Name";
-            this.planName.HeaderText = "Plan Name";
-            this.planName.Name = "planName";
-            this.planName.ReadOnly = true;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Cost";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // cafeteriaBenifits
-            // 
-            this.cafeteriaBenifits.DataPropertyName = "Cafeteria Benifits";
-            this.cafeteriaBenifits.HeaderText = "Cafeteria Benifits";
-            this.cafeteriaBenifits.Name = "cafeteriaBenifits";
-            this.cafeteriaBenifits.ReadOnly = true;
-            // 
-            // opticalDeduction
-            // 
-            this.opticalDeduction.DataPropertyName = "Optical Deduction";
-            this.opticalDeduction.HeaderText = "Optical Deduction";
-            this.opticalDeduction.Name = "opticalDeduction";
-            this.opticalDeduction.ReadOnly = true;
-            // 
-            // dentalDeduction
-            // 
-            this.dentalDeduction.DataPropertyName = "Dental Deduction";
-            this.dentalDeduction.HeaderText = "Dental Deduction";
-            this.dentalDeduction.Name = "dentalDeduction";
-            this.dentalDeduction.ReadOnly = true;
-            // 
-            // planId
-            // 
-            this.planId.DataPropertyName = "Plan Id";
-            this.planId.HeaderText = "Plan Id";
-            this.planId.Name = "planId";
-            this.planId.ReadOnly = true;
+            this.insuranceDeductionRatesToolStripMenuItem.Name = "insuranceDeductionRatesToolStripMenuItem";
+            this.insuranceDeductionRatesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.insuranceDeductionRatesToolStripMenuItem.Text = "Insurance/Deduction Rates";
+            this.insuranceDeductionRatesToolStripMenuItem.Click += new System.EventHandler(this.insuranceDeductionRatesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -544,6 +575,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,13 +631,16 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn directdeposit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
         private System.Windows.Forms.DataGridViewTextBoxColumn planName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn cafeteriaBenifits;
         private System.Windows.Forms.DataGridViewTextBoxColumn opticalDeduction;
         private System.Windows.Forms.DataGridViewTextBoxColumn dentalDeduction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn planId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insuranceDeductionRatesToolStripMenuItem;
 
     }
 }
