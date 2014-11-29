@@ -75,6 +75,8 @@
             this.provider_label = new System.Windows.Forms.Label();
             this.CompanyCombo = new System.Windows.Forms.ComboBox();
             this.Deductions = new System.Windows.Forms.GroupBox();
+            this.optical_price = new System.Windows.Forms.Label();
+            this.dental_price = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbox_cafeteria = new System.Windows.Forms.TextBox();
             this.combo_optical = new System.Windows.Forms.ComboBox();
@@ -83,8 +85,6 @@
             this.cbox_optical = new System.Windows.Forms.CheckBox();
             this.cbox_dental = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dental_price = new System.Windows.Forms.Label();
-            this.optical_price = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -204,6 +204,7 @@
             this.tbox_hours_worked.Name = "tbox_hours_worked";
             this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
             this.tbox_hours_worked.TabIndex = 8;
+            this.tbox_hours_worked.TextChanged += new System.EventHandler(this.tbox_hours_worked_TextChanged);
             // 
             // label_routingNum
             // 
@@ -621,6 +622,28 @@
             this.Deductions.TabStop = false;
             this.Deductions.Text = "Other Deductions";
             // 
+            // optical_price
+            // 
+            this.optical_price.AutoSize = true;
+            this.optical_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optical_price.Location = new System.Drawing.Point(232, 68);
+            this.optical_price.Name = "optical_price";
+            this.optical_price.Size = new System.Drawing.Size(62, 16);
+            this.optical_price.TabIndex = 22;
+            this.optical_price.Text = "(remove)";
+            this.optical_price.Visible = false;
+            // 
+            // dental_price
+            // 
+            this.dental_price.AutoSize = true;
+            this.dental_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dental_price.Location = new System.Drawing.Point(232, 38);
+            this.dental_price.Name = "dental_price";
+            this.dental_price.Size = new System.Drawing.Size(62, 16);
+            this.dental_price.TabIndex = 17;
+            this.dental_price.Text = "(remove)";
+            this.dental_price.Visible = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -716,28 +739,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
-            // 
-            // dental_price
-            // 
-            this.dental_price.AutoSize = true;
-            this.dental_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dental_price.Location = new System.Drawing.Point(232, 38);
-            this.dental_price.Name = "dental_price";
-            this.dental_price.Size = new System.Drawing.Size(62, 16);
-            this.dental_price.TabIndex = 17;
-            this.dental_price.Text = "(remove)";
-            this.dental_price.Visible = false;
-            // 
-            // optical_price
-            // 
-            this.optical_price.AutoSize = true;
-            this.optical_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optical_price.Location = new System.Drawing.Point(232, 68);
-            this.optical_price.Name = "optical_price";
-            this.optical_price.Size = new System.Drawing.Size(62, 16);
-            this.optical_price.TabIndex = 22;
-            this.optical_price.Text = "(remove)";
-            this.optical_price.Visible = false;
             // 
             // groupBox3
             // 

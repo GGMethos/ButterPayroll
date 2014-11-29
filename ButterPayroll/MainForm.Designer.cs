@@ -140,11 +140,11 @@
             // 
             this.Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update.Location = new System.Drawing.Point(705, 408);
+            this.Update.Location = new System.Drawing.Point(791, 408);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(103, 37);
+            this.Update.Size = new System.Drawing.Size(126, 37);
             this.Update.TabIndex = 6;
-            this.Update.Text = "Update";
+            this.Update.Text = "Refresh";
             this.Update.UseVisualStyleBackColor = true;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
