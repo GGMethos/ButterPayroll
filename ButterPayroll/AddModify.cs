@@ -83,33 +83,38 @@ namespace ButterPayroll
             else
             {
                 radio_check.Checked = true;
-            }
+            }    
             if (Properties.InsuranceRates.Default.Dental_I == owningForm.selectedRow.Cells["dentalDeduction"].Value.ToString())
-            {
-                cbox_dental.Checked = true;
-                combo_Dental.Text = "Individual";
-            }
-            else if (Properties.InsuranceRates.Default.Dental_F == owningForm.selectedRow.Cells["dentalDeduction"].Value.ToString())
-            {
-                cbox_dental.Checked = true;
-                combo_Dental.Text = "Family";
-            }
-            else
-                cbox_dental.Checked = false;
+                {
+                    cbox_dental.Checked = true;
+                    combo_Dental.Text = "Individual";
+                }
+                else if (Properties.InsuranceRates.Default.Dental_F == owningForm.selectedRow.Cells["dentalDeduction"].Value.ToString())
+                {
+                    cbox_dental.Checked = true;
+                    combo_Dental.Text = "Family";
+                }
+                else
+                    cbox_dental.Checked = false;
 
-            if (Properties.InsuranceRates.Default.Optical_I == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
-            {
-                cbox_optical.Checked = true;
-                combo_optical.Text = "Individual";
-            }
-            else if (Properties.InsuranceRates.Default.Optical_F == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
-            {
-                cbox_optical.Checked = true;
-                combo_optical.Text = "Family";
-            }
-            else
-                cbox_optical.Checked = false;
-            
+                if (Properties.InsuranceRates.Default.Optical_I == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
+                {
+                    cbox_optical.Checked = true;
+                    combo_optical.Text = "Individual";
+                }
+                else if (Properties.InsuranceRates.Default.Optical_F == owningForm.selectedRow.Cells["opticalDeduction"].Value.ToString())
+                {
+                    cbox_optical.Checked = true;
+                    combo_optical.Text = "Family";
+                }
+                else
+                    cbox_optical.Checked = false;
+                if (Employee.hours < 20)
+                {
+                    groupBox6.Enabled = false;
+                    rbutton_fulltime.Checked = false;
+                    Deductions.Enabled = false;
+                }
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -475,6 +480,29 @@ namespace ButterPayroll
         private void tbox_cafeteria_TextChanged(object sender, EventArgs e)
         {
             adjustTotalDeductionCost();
+        }
+
+        private void tbox_hours_worked_TextChanged(object sender, EventArgs e)
+        {
+            if (tbox_hours_worked.Text == "")
+            {
+                return;
+            }
+            else if (Convert.ToDouble(tbox_hours_worked.Text.ToString()) >= 20)
+            {
+                groupBox6.Enabled = true;
+                rbutton_fulltime.Checked = true;
+                radio_parttime.Checked = false;
+                Deductions.Enabled = true;
+            }
+            else
+            {
+                groupBox6.Enabled = false;
+                rbutton_fulltime.Checked = false;
+                radio_parttime.Checked = true;
+                Deductions.Enabled = false;
+            }
+               
         }
 
         
