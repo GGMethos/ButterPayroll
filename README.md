@@ -3,7 +3,7 @@
 <p>Created By Michael Ruffe, Jelzon Melzon, William Diaz, Kevin Mac</p?
 <p>This project is a Payroll system that uses a local database to store, modify and view employees for a buisness</p>
 <h2>Fuctionality Includes:</h2>
-  Adding an Employee.
+  <h6>Adding an Employee.</h6>
   Modifing an Employee.
   Deleting an Employee.
   Print Preview as psydo-check and direct deposit slip.
