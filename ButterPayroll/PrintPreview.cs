@@ -26,5 +26,15 @@ namespace ButterPayroll
             directDeposit_rtb.Text = directDepost;
             checks_rtb.Text = checks;
         }
+
+        private void button_Print_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Now Printing");
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

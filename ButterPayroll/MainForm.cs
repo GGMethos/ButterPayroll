@@ -62,7 +62,7 @@ namespace ButterPayroll
             selectedEmployee.cost = selectedRow.Cells["cost"].Value;
             selectedEmployee.optical = selectedRow.Cells["opticalDeduction"].Value;
             selectedEmployee.dental = selectedRow.Cells["dentalDeduction"].Value;
-
+            selectedEmployee.cafe = selectedRow.Cells["cafeteriaBenifits"].Value;
             //initialize modify form and show
             modifyForm = new AddModify(this);
             modifyForm.Mode = "Modify";
@@ -138,8 +138,8 @@ namespace ButterPayroll
             selectedRow = employeeDataGridView.CurrentRow;
             //Pay checks are every 2 weeks so divide optical and dental by 24 because yearly price and by two on insurance price (monthly value)
             double totalDeductions = ((Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString())/2));
-            double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
-            double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - totalDeductions)) -taxes;
+            double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()))) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
+            double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - taxes)) -totalDeductions;
 
             //populate additionalinformation richtextbox with information
             additionalInformation.Text = "Name:\n\t" + selectedRow.Cells["lname"].Value.ToString() + "," + selectedRow.Cells["fname"].Value.ToString() +
@@ -296,9 +296,8 @@ namespace ButterPayroll
                 taxes = Convert.ToDouble(row.Cells["taxes"].Value) / 100;
                 taxAmount = hours * rate * taxes;
                 payInt = Convert.ToInt32(hours * rate - taxAmount);
-                pay = hours * rate - taxAmount;
-
-                pay = 
+                double deductions=((Convert.ToDouble(row.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(row.Cells["cost"].Value.ToString())/2));
+                pay = (hours * rate - taxAmount)-( deductions);
                 cents = pay - payInt;
 
                 paymentString = payToWords(pay.ToString());
@@ -313,21 +312,22 @@ namespace ButterPayroll
                         "\nRouting Number: " + row.Cells["routingNum"].Value.ToString() +
                         "\nWeekly Hours: " + row.Cells["hours"].Value.ToString() +
                         "\nTax Withholdings: $" + taxAmount +
+                        "\nDeductions: $" +  deductions.ToString() +
                         "\nHourly Rate: $" + row.Cells["rate"].Value.ToString() +
                         "\nPay: $" + pay + "\nProcessing Date and Time: " + dateTime +
-                        "\n_________________________________\n\n";
+                        "\n____________________________________________________________________________________________\n\n";
                 }
                 else if (!(bool)row.Cells["directdeposit"].Value)
                 {
                     checkNumber++;
-                    checkPrintString += "____________________________\n\n" +
+                    checkPrintString += "____________________________________________________________________________________________\n\n" +
                         "Company Name \t\t\t\t\t\tCheck Number: " + checkNumber +
                         "\nCompany Address" + 
                         "\nCompany City, State, Zip Code\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
                         "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay +
                         "\n" + paymentString + " " + cents + "/100" + "---------------" + 
-                        "\n\nMemo _______________" + "\t\t\t\t\t\t\t\tSig _________________________" +
-                        "\n_______________________________________________\n\n";
+                        "\n\nMemo _______________" + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSig _________________________" +
+                        "\n____________________________________________________________________________________________\n\n";
                 }
             }
             PrintPreview preview = new PrintPreview();

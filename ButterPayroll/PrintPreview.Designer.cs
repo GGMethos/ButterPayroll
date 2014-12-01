@@ -64,6 +64,7 @@
             this.button_Cancel.TabIndex = 7;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // button_Print
             // 
@@ -74,12 +75,13 @@
             this.button_Print.TabIndex = 8;
             this.button_Print.Text = "Print";
             this.button_Print.UseVisualStyleBackColor = true;
+            this.button_Print.Click += new System.EventHandler(this.button_Print_Click);
             // 
             // PrintPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 620);
+            this.ClientSize = new System.Drawing.Size(607, 599);
             this.Controls.Add(this.button_Print);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.checks_rtb);

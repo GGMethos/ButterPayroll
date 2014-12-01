@@ -61,5 +61,7 @@ namespace ButterPayroll
         public object optical { get; set; }
 
         public object dental { get; set; }
+
+        public object cafe { get; set; }
     }
 }

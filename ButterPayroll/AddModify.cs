@@ -115,6 +115,11 @@ namespace ButterPayroll
                     rbutton_fulltime.Checked = false;
                     Deductions.Enabled = false;
                 }
+                if(Convert.ToInt32(Employee.cafe)>0)
+                {
+                    cbox_cafeteria.Checked = true;
+                    tbox_cafeteria.Text = Employee.cafe.ToString();
+                }
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -168,6 +173,12 @@ namespace ButterPayroll
                 }
                 else
                     owningForm.selectedRow.Cells["opticalDeduction"].Value = 0;
+                if (cbox_cafeteria.Checked == true)
+                {
+                    owningForm.selectedRow.Cells["cafeteriaBenifits"].Value = tbox_cafeteria.Text;
+                }
+                else
+                    owningForm.selectedRow.Cells["cafeteriaBenifits"].Value = 0;
                 owningForm.employeeDataGridView.ClearSelection();
                 MessageBox.Show("Sucessfully Modified");
                 owningForm.employeeDataGridView.Focus();    
@@ -175,6 +186,9 @@ namespace ButterPayroll
 
             if (this.Mode == "Add")
             {
+                double opt=0; 
+                double den=0; 
+                double caf=0;
                 bool check;
                 bool status;
                 if (radio_check.Checked == true)
@@ -195,10 +209,32 @@ namespace ButterPayroll
                 }
                 else
                     status = false;
+                if (cbox_dental.Checked == true)
+                {
+                    if (combo_Dental.Text == "Individual")
+                        den = Convert.ToDouble(dental_price.Text.ToString());
+                    if (combo_Dental.Text == "Family")
+                        den = Convert.ToDouble(dental_price.Text.ToString());
+                }
+                else
+                    owningForm.selectedRow.Cells["dentalDeduction"].Value = 0;
+                if (cbox_optical.Checked == true)
+                {
+                    if (combo_optical.Text == "Individual")
+                        opt = Convert.ToDouble(optical_price.Text.ToString());
+                    if (combo_optical.Text == "Family")
+                        opt = Convert.ToDouble(optical_price.Text.ToString());
+                }
+                else
+                    owningForm.selectedRow.Cells["opticalDeduction"].Value = 0;
+                if (cbox_cafeteria.Checked == true)
+                {
+                   caf = Convert.ToDouble(tbox_cafeteria.Text);
+                }
                 owningForm.employeeDataGridView.ClearSelection();
                 owningForm.employeeTableAdapter.Insert(Convert.ToInt32(label_employeeID.Text), tbox_lastName.Text, tbox_firstName.Text, tbox_street.Text, tbox_city.Text, tbox_state.Text,
                    tbox_city.Text, Convert.ToDouble(tbox_zipCode.Text), Convert.ToDouble(tbox_pay.Text), Convert.ToDouble(tbox_taxes.Text), tbox_accountNum.Text, tbox_routingNum.Text, check, status, CompanyCombo.Text, PlanCombo.Text,
-                   insuranceID_tbox.Text, Convert.ToDouble(Price_Value.Text), DescriptionCombo.Text,0,0,0);
+                   insuranceID_tbox.Text, Convert.ToDouble(Price_Value.Text), DescriptionCombo.Text, caf, opt, den);
                 MessageBox.Show("Sucessfully Added");
                 owningForm.employeeDataGridView.Focus(); 
             }
