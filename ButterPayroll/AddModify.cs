@@ -44,10 +44,11 @@ namespace ButterPayroll
             }
         }
 
-        private void adjustTotalDeductionCost() {
-            totalDeductions.Text = (Convert.ToDouble(dental_price.Text) +
+        private void adjustTotalDeductionCost()
+        {
+            totalDeductions.Text = ((Convert.ToDouble(dental_price.Text) +
                 Convert.ToDouble(optical_price.Text) +
-                Convert.ToDouble(tbox_cafeteria.Text)).ToString();
+                Convert.ToDouble(tbox_cafeteria.Text))).ToString();
         }
 
         private void populateTxtBoxes(){
@@ -120,6 +121,7 @@ namespace ButterPayroll
                     cbox_cafeteria.Checked = true;
                     tbox_cafeteria.Text = Employee.cafe.ToString();
                 }
+                adjustTotalDeductionCost();
         }
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -263,23 +265,23 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_HMO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_HMO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_POS_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_POS_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_PPO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_PPO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_F);
                     }
                 }
                 else if (provider == "HIP")
@@ -287,23 +289,23 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_HMO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_HMO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_POS_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_POS_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_PPO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_PPO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_F);
                     }
                 }
                 else if (provider == "Aetna")
@@ -311,42 +313,42 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_HMO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_HMO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_POS_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_POS_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_PPO_I);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_PPO_F);
+                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_F);
                     }
                 }
             }
             else if (provider == "Medicare" && plan != "")
             {
                 if (plan == "A")
-                    Price_Value.Text = "$ " + Properties.InsuranceRates.Default.Medicare_A;
+                    Price_Value.Text = Properties.InsuranceRates.Default.Medicare_A;
                 else if (plan == "B")
-                    Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Medicare_B);
+                    Price_Value.Text = (Properties.InsuranceRates.Default.Medicare_B);
                 else if (plan == "A & B") {
-                    Price_Value.Text = "$ " + (Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_A) + Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_B)).ToString();
+                    Price_Value.Text = (Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_A) + Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_B)).ToString();
                 }
             }
             else if (provider == "Medicaid") {
-                Price_Value.Text = "$ " + "0";
+                Price_Value.Text =  "0";
             }
             else
             {
-                Price_Value.Text = "$ " + "-";
+                Price_Value.Text = "-";
             }
         }
 
@@ -448,6 +450,7 @@ namespace ButterPayroll
             if (rbutton_fulltime.Checked) {
                 //enable insurance info
                 groupBox6.Enabled = true;
+                Deductions.Enabled = true;
             }
             else if (radio_parttime.Checked) {
                 //disable insurance info
@@ -463,7 +466,9 @@ namespace ButterPayroll
             else if (!cbox_dental.Checked) {
                 combo_Dental.Visible = false;
                 dental_price.Visible = false;
+                dental_price.Text = "0";
             }
+            adjustTotalDeductionCost();
         }
 
         private void cbox_optical_CheckedChanged(object sender, EventArgs e)
@@ -474,7 +479,9 @@ namespace ButterPayroll
             else if (!cbox_optical.Checked) {
                 combo_optical.Visible = false;
                 optical_price.Visible = false;
+                optical_price.Text = "0";
             }
+            adjustTotalDeductionCost();
         }
 
         private void cbox_cafeteria_CheckedChanged(object sender, EventArgs e)
@@ -486,7 +493,9 @@ namespace ButterPayroll
             if (!cbox_cafeteria.Checked) {
                 tbox_cafeteria.Visible = false;
                 label6.Visible = false;
+                tbox_cafeteria.Text = "0";
             }
+            adjustTotalDeductionCost();
         }
 
         private void combo_Dental_SelectedIndexChanged(object sender, EventArgs e)
@@ -494,11 +503,11 @@ namespace ButterPayroll
             dental_price.Visible = true;
 
             if (combo_Dental.Text == "Individual") {
-                dental_price.Text = "$ " + Properties.InsuranceRates.Default.Dental_I;
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_I;
             }
             else if (combo_Dental.Text == "Family") {
-                dental_price.Text = "$ " + Properties.InsuranceRates.Default.Dental_F;
-            }
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_F;
+                }
             adjustTotalDeductionCost();
         }
 
@@ -507,9 +516,9 @@ namespace ButterPayroll
             optical_price.Visible = true;
 
             if (combo_optical.Text == "Individual")
-                optical_price.Text = "$ " + Properties.InsuranceRates.Default.Optical_I;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_I;
             else if (combo_optical.Text == "Family")
-                optical_price.Text = "$ " + Properties.InsuranceRates.Default.Optical_F;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_F;
             adjustTotalDeductionCost();
         }
 
@@ -518,7 +527,18 @@ namespace ButterPayroll
             adjustTotalDeductionCost();
         }
 
-        private void tbox_hours_worked_TextChanged(object sender, EventArgs e)
+        private void radio_parttime_CheckedChanged(object sender, EventArgs e)
+        {
+            Deductions.Enabled = false;
+            groupBox6.Enabled = false;
+            CompanyCombo.Text = " ";
+            PlanCombo.Text = " ";
+            insuranceID_tbox.Text = " ";
+            DescriptionCombo.Text = " ";
+            Price_Value.Text = "0";
+        }
+
+        private void tbox_hours_worked_TextChanged_1(object sender, EventArgs e)
         {
             if (tbox_hours_worked.Text == "")
             {
@@ -540,6 +560,95 @@ namespace ButterPayroll
             }
                
         }
+
+        private void tbox_firstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar)||e.KeyChar==32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_lastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_city_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_zipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_accountNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_routingNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_hours_worked_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_pay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_taxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void insuranceID_tbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbox_cafeteria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || e.KeyChar == 32)
+            {
+                e.Handled = true;
+            }
+        }
+        
 
         
     }

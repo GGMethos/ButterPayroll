@@ -162,10 +162,11 @@ namespace ButterPayroll
 
             }
             additionalInformation.Text += "\nDeductions:\n\t" +
-                "Optical: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
-                "\n\tDental: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
-                "\n\tCafeteria: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
-                "\n\tTotal Deductions: " + totalDeductions.ToString();
+                "Optical/yr: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
+                "\n\tDental/yr: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
+                "\n\tCafeteria/yr: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
+                "\n\tMedical/mth: " + (Convert.ToDouble(selectedRow.Cells["cost"].Value)).ToString("#.##")+
+                "\n\tTotal Deductions/mth: " + totalDeductions.ToString("#.##");
 
             additionalInformation.Text += "\nEarnings:" +
                 "\n\tHours: " + selectedRow.Cells["hours"].Value.ToString() +
@@ -178,7 +179,7 @@ namespace ButterPayroll
             else {
                 additionalInformation.Text += "\n\tStatus: Part-Time";
             }
-            additionalInformation.Text += "\n\tNet Pay: " + netPay;
+            additionalInformation.Text += "\n\tNet Pay: " + netPay.ToString("#.##");
         }
 
         //Text box Changed Searches our datagridview for a selected employee

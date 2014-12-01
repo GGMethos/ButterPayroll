@@ -74,6 +74,8 @@
             this.provider_label = new System.Windows.Forms.Label();
             this.CompanyCombo = new System.Windows.Forms.ComboBox();
             this.Deductions = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.totalDeductions = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.optical_price = new System.Windows.Forms.Label();
@@ -113,6 +115,7 @@
             this.tbox_lastName.Name = "tbox_lastName";
             this.tbox_lastName.Size = new System.Drawing.Size(100, 22);
             this.tbox_lastName.TabIndex = 2;
+            this.tbox_lastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_lastName_KeyPress);
             // 
             // label_firstName
             // 
@@ -131,6 +134,7 @@
             this.tbox_firstName.Name = "tbox_firstName";
             this.tbox_firstName.Size = new System.Drawing.Size(100, 22);
             this.tbox_firstName.TabIndex = 0;
+            this.tbox_firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_firstName_KeyPress);
             // 
             // groupBox2
             // 
@@ -169,6 +173,7 @@
             this.tbox_taxes.Name = "tbox_taxes";
             this.tbox_taxes.Size = new System.Drawing.Size(62, 22);
             this.tbox_taxes.TabIndex = 12;
+            this.tbox_taxes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_taxes_KeyPress);
             // 
             // tbox_pay
             // 
@@ -177,6 +182,7 @@
             this.tbox_pay.Name = "tbox_pay";
             this.tbox_pay.Size = new System.Drawing.Size(62, 22);
             this.tbox_pay.TabIndex = 11;
+            this.tbox_pay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_pay_KeyPress);
             // 
             // label2
             // 
@@ -205,6 +211,8 @@
             this.tbox_hours_worked.Name = "tbox_hours_worked";
             this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
             this.tbox_hours_worked.TabIndex = 8;
+            this.tbox_hours_worked.TextChanged += new System.EventHandler(this.tbox_hours_worked_TextChanged_1);
+            this.tbox_hours_worked.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_hours_worked_KeyPress);
             // 
             // label_routingNum
             // 
@@ -223,6 +231,7 @@
             this.tbox_routingNum.Name = "tbox_routingNum";
             this.tbox_routingNum.Size = new System.Drawing.Size(100, 22);
             this.tbox_routingNum.TabIndex = 6;
+            this.tbox_routingNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_routingNum_KeyPress);
             // 
             // label_accountNum
             // 
@@ -241,6 +250,7 @@
             this.tbox_accountNum.Name = "tbox_accountNum";
             this.tbox_accountNum.Size = new System.Drawing.Size(100, 22);
             this.tbox_accountNum.TabIndex = 4;
+            this.tbox_accountNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_accountNum_KeyPress);
             // 
             // groupBox5
             // 
@@ -278,6 +288,7 @@
             this.radio_parttime.TabIndex = 7;
             this.radio_parttime.Text = "Part-Time";
             this.radio_parttime.UseVisualStyleBackColor = true;
+            this.radio_parttime.CheckedChanged += new System.EventHandler(this.radio_parttime_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -401,6 +412,7 @@
             this.tbox_zipCode.Name = "tbox_zipCode";
             this.tbox_zipCode.Size = new System.Drawing.Size(80, 22);
             this.tbox_zipCode.TabIndex = 4;
+            this.tbox_zipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_zipCode_KeyPress);
             // 
             // label_city
             // 
@@ -419,6 +431,7 @@
             this.tbox_city.Name = "tbox_city";
             this.tbox_city.Size = new System.Drawing.Size(133, 22);
             this.tbox_city.TabIndex = 2;
+            this.tbox_city.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_city_KeyPress);
             // 
             // label_street
             // 
@@ -486,6 +499,7 @@
             this.insuranceID_tbox.Size = new System.Drawing.Size(121, 22);
             this.insuranceID_tbox.TabIndex = 4;
             this.insuranceID_tbox.Visible = false;
+            this.insuranceID_tbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.insuranceID_tbox_KeyPress);
             // 
             // insuranceID_label
             // 
@@ -505,7 +519,8 @@
             this.DescriptionCombo.FormattingEnabled = true;
             this.DescriptionCombo.Items.AddRange(new object[] {
             "Individual",
-            "Family"});
+            "Family",
+            " "});
             this.DescriptionCombo.Location = new System.Drawing.Point(134, 100);
             this.DescriptionCombo.Name = "DescriptionCombo";
             this.DescriptionCombo.Size = new System.Drawing.Size(121, 24);
@@ -546,7 +561,7 @@
             "HMO",
             "POS",
             "PPO",
-            "N/A"});
+            " "});
             this.PlanCombo.Location = new System.Drawing.Point(7, 100);
             this.PlanCombo.Name = "PlanCombo";
             this.PlanCombo.Size = new System.Drawing.Size(121, 24);
@@ -586,7 +601,7 @@
             "Blue Cross",
             "HIP",
             "Aetna",
-            "None"});
+            " "});
             this.CompanyCombo.Location = new System.Drawing.Point(6, 51);
             this.CompanyCombo.Name = "CompanyCombo";
             this.CompanyCombo.Size = new System.Drawing.Size(121, 24);
@@ -595,6 +610,8 @@
             // 
             // Deductions
             // 
+            this.Deductions.Controls.Add(this.label7);
+            this.Deductions.Controls.Add(this.label5);
             this.Deductions.Controls.Add(this.totalDeductions);
             this.Deductions.Controls.Add(this.label4);
             this.Deductions.Controls.Add(this.optical_price);
@@ -613,6 +630,28 @@
             this.Deductions.TabIndex = 15;
             this.Deductions.TabStop = false;
             this.Deductions.Text = "Other Deductions";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label7.Location = new System.Drawing.Point(232, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 16);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "$";
+            this.label7.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label5.Location = new System.Drawing.Point(232, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 16);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "$";
+            this.label5.Visible = false;
             // 
             // totalDeductions
             // 
@@ -638,7 +677,7 @@
             // 
             this.optical_price.AutoSize = true;
             this.optical_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optical_price.Location = new System.Drawing.Point(233, 69);
+            this.optical_price.Location = new System.Drawing.Point(253, 73);
             this.optical_price.Name = "optical_price";
             this.optical_price.Size = new System.Drawing.Size(15, 16);
             this.optical_price.TabIndex = 22;
@@ -649,7 +688,7 @@
             // 
             this.dental_price.AutoSize = true;
             this.dental_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dental_price.Location = new System.Drawing.Point(233, 38);
+            this.dental_price.Location = new System.Drawing.Point(253, 43);
             this.dental_price.Name = "dental_price";
             this.dental_price.Size = new System.Drawing.Size(15, 16);
             this.dental_price.TabIndex = 17;
@@ -677,6 +716,7 @@
             this.tbox_cafeteria.Text = "0";
             this.tbox_cafeteria.Visible = false;
             this.tbox_cafeteria.TextChanged += new System.EventHandler(this.tbox_cafeteria_TextChanged);
+            this.tbox_cafeteria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbox_cafeteria_KeyPress);
             // 
             // combo_optical
             // 
@@ -879,5 +919,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label totalDeductions;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }
