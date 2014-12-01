@@ -62,7 +62,6 @@
             this.label_street = new System.Windows.Forms.Label();
             this.tbox_street = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.MoneySign = new System.Windows.Forms.Label();
             this.Price_Value = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.insuranceID_tbox = new System.Windows.Forms.TextBox();
@@ -75,6 +74,10 @@
             this.provider_label = new System.Windows.Forms.Label();
             this.CompanyCombo = new System.Windows.Forms.ComboBox();
             this.Deductions = new System.Windows.Forms.GroupBox();
+            this.totalDeductions = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.optical_price = new System.Windows.Forms.Label();
+            this.dental_price = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbox_cafeteria = new System.Windows.Forms.TextBox();
             this.combo_optical = new System.Windows.Forms.ComboBox();
@@ -83,8 +86,6 @@
             this.cbox_optical = new System.Windows.Forms.CheckBox();
             this.cbox_dental = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dental_price = new System.Windows.Forms.Label();
-            this.optical_price = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -99,16 +100,16 @@
             // 
             this.label_lastName.AutoSize = true;
             this.label_lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_lastName.Location = new System.Drawing.Point(112, 31);
+            this.label_lastName.Location = new System.Drawing.Point(128, 25);
             this.label_lastName.Name = "label_lastName";
-            this.label_lastName.Size = new System.Drawing.Size(73, 16);
+            this.label_lastName.Size = new System.Drawing.Size(33, 16);
             this.label_lastName.TabIndex = 3;
-            this.label_lastName.Text = "Last Name";
+            this.label_lastName.Text = "Last";
             // 
             // tbox_lastName
             // 
             this.tbox_lastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_lastName.Location = new System.Drawing.Point(112, 50);
+            this.tbox_lastName.Location = new System.Drawing.Point(128, 44);
             this.tbox_lastName.Name = "tbox_lastName";
             this.tbox_lastName.Size = new System.Drawing.Size(100, 22);
             this.tbox_lastName.TabIndex = 2;
@@ -117,16 +118,16 @@
             // 
             this.label_firstName.AutoSize = true;
             this.label_firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_firstName.Location = new System.Drawing.Point(6, 31);
+            this.label_firstName.Location = new System.Drawing.Point(22, 25);
             this.label_firstName.Name = "label_firstName";
-            this.label_firstName.Size = new System.Drawing.Size(73, 16);
+            this.label_firstName.Size = new System.Drawing.Size(33, 16);
             this.label_firstName.TabIndex = 1;
-            this.label_firstName.Text = "First Name";
+            this.label_firstName.Text = "First";
             // 
             // tbox_firstName
             // 
             this.tbox_firstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_firstName.Location = new System.Drawing.Point(6, 50);
+            this.tbox_firstName.Location = new System.Drawing.Point(22, 44);
             this.tbox_firstName.Name = "tbox_firstName";
             this.tbox_firstName.Size = new System.Drawing.Size(100, 22);
             this.tbox_firstName.TabIndex = 0;
@@ -144,9 +145,9 @@
             this.groupBox2.Controls.Add(this.label_accountNum);
             this.groupBox2.Controls.Add(this.tbox_accountNum);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(319, 55);
+            this.groupBox2.Location = new System.Drawing.Point(12, 144);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(341, 143);
+            this.groupBox2.Size = new System.Drawing.Size(249, 143);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Information";
@@ -155,7 +156,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(142, 86);
+            this.label3.Location = new System.Drawing.Point(158, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 13;
@@ -164,7 +165,7 @@
             // tbox_taxes
             // 
             this.tbox_taxes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_taxes.Location = new System.Drawing.Point(142, 105);
+            this.tbox_taxes.Location = new System.Drawing.Point(158, 99);
             this.tbox_taxes.Name = "tbox_taxes";
             this.tbox_taxes.Size = new System.Drawing.Size(62, 22);
             this.tbox_taxes.TabIndex = 12;
@@ -172,7 +173,7 @@
             // tbox_pay
             // 
             this.tbox_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_pay.Location = new System.Drawing.Point(74, 105);
+            this.tbox_pay.Location = new System.Drawing.Point(90, 99);
             this.tbox_pay.Name = "tbox_pay";
             this.tbox_pay.Size = new System.Drawing.Size(62, 22);
             this.tbox_pay.TabIndex = 11;
@@ -181,7 +182,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 86);
+            this.label2.Location = new System.Drawing.Point(88, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 10;
@@ -191,7 +192,7 @@
             // 
             this.label_HoursWorked.AutoSize = true;
             this.label_HoursWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_HoursWorked.Location = new System.Drawing.Point(6, 86);
+            this.label_HoursWorked.Location = new System.Drawing.Point(22, 80);
             this.label_HoursWorked.Name = "label_HoursWorked";
             this.label_HoursWorked.Size = new System.Drawing.Size(44, 16);
             this.label_HoursWorked.TabIndex = 9;
@@ -200,7 +201,7 @@
             // tbox_hours_worked
             // 
             this.tbox_hours_worked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_hours_worked.Location = new System.Drawing.Point(6, 105);
+            this.tbox_hours_worked.Location = new System.Drawing.Point(22, 99);
             this.tbox_hours_worked.Name = "tbox_hours_worked";
             this.tbox_hours_worked.Size = new System.Drawing.Size(62, 22);
             this.tbox_hours_worked.TabIndex = 8;
@@ -209,7 +210,7 @@
             // 
             this.label_routingNum.AutoSize = true;
             this.label_routingNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_routingNum.Location = new System.Drawing.Point(112, 30);
+            this.label_routingNum.Location = new System.Drawing.Point(128, 31);
             this.label_routingNum.Name = "label_routingNum";
             this.label_routingNum.Size = new System.Drawing.Size(64, 16);
             this.label_routingNum.TabIndex = 7;
@@ -218,7 +219,7 @@
             // tbox_routingNum
             // 
             this.tbox_routingNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_routingNum.Location = new System.Drawing.Point(112, 49);
+            this.tbox_routingNum.Location = new System.Drawing.Point(128, 50);
             this.tbox_routingNum.Name = "tbox_routingNum";
             this.tbox_routingNum.Size = new System.Drawing.Size(100, 22);
             this.tbox_routingNum.TabIndex = 6;
@@ -227,7 +228,7 @@
             // 
             this.label_accountNum.AutoSize = true;
             this.label_accountNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_accountNum.Location = new System.Drawing.Point(6, 30);
+            this.label_accountNum.Location = new System.Drawing.Point(22, 31);
             this.label_accountNum.Name = "label_accountNum";
             this.label_accountNum.Size = new System.Drawing.Size(66, 16);
             this.label_accountNum.TabIndex = 5;
@@ -236,7 +237,7 @@
             // tbox_accountNum
             // 
             this.tbox_accountNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_accountNum.Location = new System.Drawing.Point(6, 49);
+            this.tbox_accountNum.Location = new System.Drawing.Point(22, 50);
             this.tbox_accountNum.Name = "tbox_accountNum";
             this.tbox_accountNum.Size = new System.Drawing.Size(100, 22);
             this.tbox_accountNum.TabIndex = 4;
@@ -246,7 +247,7 @@
             this.groupBox5.Controls.Add(this.rbutton_fulltime);
             this.groupBox5.Controls.Add(this.radio_parttime);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(493, 204);
+            this.groupBox5.Location = new System.Drawing.Point(440, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(167, 80);
             this.groupBox5.TabIndex = 11;
@@ -283,7 +284,7 @@
             this.groupBox4.Controls.Add(this.radio_directDeposit);
             this.groupBox4.Controls.Add(this.radio_check);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(319, 204);
+            this.groupBox4.Location = new System.Drawing.Point(267, 207);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(167, 80);
             this.groupBox4.TabIndex = 10;
@@ -320,7 +321,7 @@
             // 
             this.button_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancel.Location = new System.Drawing.Point(557, 12);
+            this.button_cancel.Location = new System.Drawing.Point(504, 12);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(103, 37);
             this.button_cancel.TabIndex = 3;
@@ -331,7 +332,7 @@
             // Done
             // 
             this.Done.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Done.Location = new System.Drawing.Point(448, 12);
+            this.Done.Location = new System.Drawing.Point(395, 12);
             this.Done.Name = "Done";
             this.Done.Size = new System.Drawing.Size(103, 37);
             this.Done.TabIndex = 4;
@@ -368,7 +369,7 @@
             "NJ",
             "NY",
             "PA"});
-            this.tbox_state.Location = new System.Drawing.Point(145, 101);
+            this.tbox_state.Location = new System.Drawing.Point(168, 95);
             this.tbox_state.Name = "tbox_state";
             this.tbox_state.Size = new System.Drawing.Size(56, 24);
             this.tbox_state.TabIndex = 7;
@@ -377,7 +378,7 @@
             // 
             this.label_state.AutoSize = true;
             this.label_state.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_state.Location = new System.Drawing.Point(145, 82);
+            this.label_state.Location = new System.Drawing.Point(168, 76);
             this.label_state.Name = "label_state";
             this.label_state.Size = new System.Drawing.Size(39, 16);
             this.label_state.TabIndex = 6;
@@ -387,7 +388,7 @@
             // 
             this.label_zipCode.AutoSize = true;
             this.label_zipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_zipCode.Location = new System.Drawing.Point(204, 82);
+            this.label_zipCode.Location = new System.Drawing.Point(227, 76);
             this.label_zipCode.Name = "label_zipCode";
             this.label_zipCode.Size = new System.Drawing.Size(63, 16);
             this.label_zipCode.TabIndex = 5;
@@ -396,7 +397,7 @@
             // tbox_zipCode
             // 
             this.tbox_zipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_zipCode.Location = new System.Drawing.Point(207, 101);
+            this.tbox_zipCode.Location = new System.Drawing.Point(230, 95);
             this.tbox_zipCode.Name = "tbox_zipCode";
             this.tbox_zipCode.Size = new System.Drawing.Size(80, 22);
             this.tbox_zipCode.TabIndex = 4;
@@ -405,7 +406,7 @@
             // 
             this.label_city.AutoSize = true;
             this.label_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_city.Location = new System.Drawing.Point(6, 82);
+            this.label_city.Location = new System.Drawing.Point(29, 76);
             this.label_city.Name = "label_city";
             this.label_city.Size = new System.Drawing.Size(30, 16);
             this.label_city.TabIndex = 3;
@@ -414,7 +415,7 @@
             // tbox_city
             // 
             this.tbox_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_city.Location = new System.Drawing.Point(6, 101);
+            this.tbox_city.Location = new System.Drawing.Point(29, 95);
             this.tbox_city.Name = "tbox_city";
             this.tbox_city.Size = new System.Drawing.Size(133, 22);
             this.tbox_city.TabIndex = 2;
@@ -423,7 +424,7 @@
             // 
             this.label_street.AutoSize = true;
             this.label_street.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_street.Location = new System.Drawing.Point(6, 31);
+            this.label_street.Location = new System.Drawing.Point(29, 25);
             this.label_street.Name = "label_street";
             this.label_street.Size = new System.Drawing.Size(43, 16);
             this.label_street.TabIndex = 1;
@@ -432,14 +433,13 @@
             // tbox_street
             // 
             this.tbox_street.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_street.Location = new System.Drawing.Point(6, 50);
+            this.tbox_street.Location = new System.Drawing.Point(29, 44);
             this.tbox_street.Name = "tbox_street";
             this.tbox_street.Size = new System.Drawing.Size(281, 22);
             this.tbox_street.TabIndex = 0;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.MoneySign);
             this.groupBox6.Controls.Add(this.Price_Value);
             this.groupBox6.Controls.Add(this.Price);
             this.groupBox6.Controls.Add(this.insuranceID_tbox);
@@ -452,36 +452,27 @@
             this.groupBox6.Controls.Add(this.provider_label);
             this.groupBox6.Controls.Add(this.CompanyCombo);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox6.Location = new System.Drawing.Point(12, 306);
+            this.groupBox6.Location = new System.Drawing.Point(12, 293);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(262, 174);
+            this.groupBox6.Size = new System.Drawing.Size(265, 171);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Medical Information";
-            // 
-            // MoneySign
-            // 
-            this.MoneySign.AutoSize = true;
-            this.MoneySign.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.MoneySign.Location = new System.Drawing.Point(50, 138);
-            this.MoneySign.Name = "MoneySign";
-            this.MoneySign.Size = new System.Drawing.Size(15, 16);
-            this.MoneySign.TabIndex = 16;
-            this.MoneySign.Text = "$";
             // 
             // Price_Value
             // 
             this.Price_Value.AutoSize = true;
             this.Price_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Price_Value.Location = new System.Drawing.Point(71, 138);
+            this.Price_Value.Location = new System.Drawing.Point(63, 141);
             this.Price_Value.Name = "Price_Value";
-            this.Price_Value.Size = new System.Drawing.Size(0, 16);
+            this.Price_Value.Size = new System.Drawing.Size(15, 16);
             this.Price_Value.TabIndex = 15;
+            this.Price_Value.Text = "0";
             // 
             // Price
             // 
             this.Price.AutoSize = true;
-            this.Price.Location = new System.Drawing.Point(54, 138);
+            this.Price.Location = new System.Drawing.Point(67, 141);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(0, 16);
             this.Price.TabIndex = 14;
@@ -537,11 +528,11 @@
             // 
             this.price_label.AutoSize = true;
             this.price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price_label.Location = new System.Drawing.Point(6, 138);
+            this.price_label.Location = new System.Drawing.Point(19, 141);
             this.price_label.Name = "price_label";
-            this.price_label.Size = new System.Drawing.Size(42, 16);
+            this.price_label.Size = new System.Drawing.Size(38, 16);
             this.price_label.TabIndex = 9;
-            this.price_label.Text = "Price:";
+            this.price_label.Text = "Cost:";
             // 
             // PlanCombo
             // 
@@ -604,6 +595,8 @@
             // 
             // Deductions
             // 
+            this.Deductions.Controls.Add(this.totalDeductions);
+            this.Deductions.Controls.Add(this.label4);
             this.Deductions.Controls.Add(this.optical_price);
             this.Deductions.Controls.Add(this.dental_price);
             this.Deductions.Controls.Add(this.label6);
@@ -614,18 +607,60 @@
             this.Deductions.Controls.Add(this.cbox_optical);
             this.Deductions.Controls.Add(this.cbox_dental);
             this.Deductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deductions.Location = new System.Drawing.Point(280, 306);
+            this.Deductions.Location = new System.Drawing.Point(283, 293);
             this.Deductions.Name = "Deductions";
-            this.Deductions.Size = new System.Drawing.Size(316, 174);
+            this.Deductions.Size = new System.Drawing.Size(324, 171);
             this.Deductions.TabIndex = 15;
             this.Deductions.TabStop = false;
             this.Deductions.Text = "Other Deductions";
+            // 
+            // totalDeductions
+            // 
+            this.totalDeductions.AutoSize = true;
+            this.totalDeductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.totalDeductions.Location = new System.Drawing.Point(233, 141);
+            this.totalDeductions.Name = "totalDeductions";
+            this.totalDeductions.Size = new System.Drawing.Size(15, 16);
+            this.totalDeductions.TabIndex = 16;
+            this.totalDeductions.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(185, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Total:";
+            // 
+            // optical_price
+            // 
+            this.optical_price.AutoSize = true;
+            this.optical_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optical_price.Location = new System.Drawing.Point(233, 69);
+            this.optical_price.Name = "optical_price";
+            this.optical_price.Size = new System.Drawing.Size(15, 16);
+            this.optical_price.TabIndex = 22;
+            this.optical_price.Text = "0";
+            this.optical_price.Visible = false;
+            // 
+            // dental_price
+            // 
+            this.dental_price.AutoSize = true;
+            this.dental_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dental_price.Location = new System.Drawing.Point(233, 38);
+            this.dental_price.Name = "dental_price";
+            this.dental_price.Size = new System.Drawing.Size(15, 16);
+            this.dental_price.TabIndex = 17;
+            this.dental_price.Text = "0";
+            this.dental_price.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.label6.Location = new System.Drawing.Point(190, 103);
+            this.label6.Location = new System.Drawing.Point(232, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 16);
             this.label6.TabIndex = 21;
@@ -634,11 +669,14 @@
             // 
             // tbox_cafeteria
             // 
-            this.tbox_cafeteria.Location = new System.Drawing.Point(210, 100);
+            this.tbox_cafeteria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbox_cafeteria.Location = new System.Drawing.Point(253, 95);
             this.tbox_cafeteria.Name = "tbox_cafeteria";
-            this.tbox_cafeteria.Size = new System.Drawing.Size(100, 22);
+            this.tbox_cafeteria.Size = new System.Drawing.Size(58, 22);
             this.tbox_cafeteria.TabIndex = 19;
+            this.tbox_cafeteria.Text = "0";
             this.tbox_cafeteria.Visible = false;
+            this.tbox_cafeteria.TextChanged += new System.EventHandler(this.tbox_cafeteria_TextChanged);
             // 
             // combo_optical
             // 
@@ -648,7 +686,7 @@
             this.combo_optical.Items.AddRange(new object[] {
             "Individual",
             "Family"});
-            this.combo_optical.Location = new System.Drawing.Point(84, 65);
+            this.combo_optical.Location = new System.Drawing.Point(94, 65);
             this.combo_optical.Name = "combo_optical";
             this.combo_optical.Size = new System.Drawing.Size(121, 24);
             this.combo_optical.TabIndex = 18;
@@ -663,7 +701,7 @@
             this.combo_Dental.Items.AddRange(new object[] {
             "Individual",
             "Family"});
-            this.combo_Dental.Location = new System.Drawing.Point(84, 35);
+            this.combo_Dental.Location = new System.Drawing.Point(94, 35);
             this.combo_Dental.Name = "combo_Dental";
             this.combo_Dental.Size = new System.Drawing.Size(121, 24);
             this.combo_Dental.TabIndex = 17;
@@ -673,7 +711,7 @@
             // cbox_cafeteria
             // 
             this.cbox_cafeteria.AutoSize = true;
-            this.cbox_cafeteria.Location = new System.Drawing.Point(6, 103);
+            this.cbox_cafeteria.Location = new System.Drawing.Point(6, 98);
             this.cbox_cafeteria.Name = "cbox_cafeteria";
             this.cbox_cafeteria.Size = new System.Drawing.Size(90, 20);
             this.cbox_cafeteria.TabIndex = 2;
@@ -684,7 +722,7 @@
             // cbox_optical
             // 
             this.cbox_optical.AutoSize = true;
-            this.cbox_optical.Location = new System.Drawing.Point(6, 65);
+            this.cbox_optical.Location = new System.Drawing.Point(6, 68);
             this.cbox_optical.Name = "cbox_optical";
             this.cbox_optical.Size = new System.Drawing.Size(76, 20);
             this.cbox_optical.TabIndex = 1;
@@ -712,32 +750,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(226, 83);
+            this.groupBox1.Size = new System.Drawing.Size(249, 83);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Personal Information";
-            // 
-            // dental_price
-            // 
-            this.dental_price.AutoSize = true;
-            this.dental_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dental_price.Location = new System.Drawing.Point(232, 38);
-            this.dental_price.Name = "dental_price";
-            this.dental_price.Size = new System.Drawing.Size(62, 16);
-            this.dental_price.TabIndex = 17;
-            this.dental_price.Text = "(remove)";
-            this.dental_price.Visible = false;
-            // 
-            // optical_price
-            // 
-            this.optical_price.AutoSize = true;
-            this.optical_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optical_price.Location = new System.Drawing.Point(232, 68);
-            this.optical_price.Name = "optical_price";
-            this.optical_price.Size = new System.Drawing.Size(62, 16);
-            this.optical_price.TabIndex = 22;
-            this.optical_price.Text = "(remove)";
-            this.optical_price.Visible = false;
+            this.groupBox1.Text = "Name";
             // 
             // groupBox3
             // 
@@ -750,12 +766,12 @@
             this.groupBox3.Controls.Add(this.label_street);
             this.groupBox3.Controls.Add(this.tbox_street);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 144);
+            this.groupBox3.Location = new System.Drawing.Point(270, 55);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(301, 154);
+            this.groupBox3.Size = new System.Drawing.Size(337, 146);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Address";
+            this.groupBox3.Text = "Billing Address";
             // 
             // AddModify
             // 
@@ -763,7 +779,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.button_cancel;
-            this.ClientSize = new System.Drawing.Size(668, 488);
+            this.ClientSize = new System.Drawing.Size(619, 476);
             this.Controls.Add(this.Deductions);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -854,7 +870,6 @@
         private System.Windows.Forms.Label Price;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label Price_Value;
-        private System.Windows.Forms.Label MoneySign;
         private System.Windows.Forms.ComboBox combo_optical;
         private System.Windows.Forms.ComboBox combo_Dental;
         private System.Windows.Forms.TextBox tbox_cafeteria;
@@ -862,5 +877,7 @@
         private System.Windows.Forms.Label optical_price;
         private System.Windows.Forms.Label dental_price;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label totalDeductions;
+        private System.Windows.Forms.Label label4;
     }
 }

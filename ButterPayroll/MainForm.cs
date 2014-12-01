@@ -272,5 +272,76 @@ namespace ButterPayroll
             settings.ShowDialog();
         }
 
+        private void button_generate_Click(object sender, EventArgs e)
+        {
+            System.DateTime dateTime;
+
+            double hours, rate, taxes, taxAmount, pay, cents;
+            int payInt, checkNumber = 0;
+            string paymentString;
+
+            string directDepositPrintString = "";
+            string checkPrintString = "";
+            //generate print strings for checks and direct deposits
+            foreach(DataGridViewRow row in employeeDataGridView.Rows) {
+                //get current date
+                dateTime = DateTime.Now;
+
+                //calculate net pay
+                //current net pay algorithm 
+                //
+
+                hours = Convert.ToDouble(row.Cells["hours"].Value);
+                rate = Convert.ToDouble(row.Cells["rate"].Value);
+                taxes = Convert.ToDouble(row.Cells["taxes"].Value) / 100;
+                taxAmount = hours * rate * taxes;
+                payInt = Convert.ToInt32(hours * rate - taxAmount);
+                pay = hours * rate - taxAmount;
+
+                pay = 
+                cents = pay - payInt;
+
+                paymentString = payToWords(pay.ToString());
+
+                if ((bool)row.Cells["directdeposit"].Value)
+                {
+                    directDepositPrintString += "Last Name: " + row.Cells["lname"].Value.ToString() +
+                        "\nFirst Name: " + row.Cells["fname"].Value.ToString() +
+                        "\nAddress: " + row.Cells["street"].Value.ToString() +
+                        ", " + row.Cells["city"].Value.ToString() + " " + row.Cells["state"].Value.ToString() + " " + row.Cells["zip"].Value.ToString() +
+                        "\nAccount Number: " + row.Cells["accountNum"].Value.ToString() +
+                        "\nRouting Number: " + row.Cells["routingNum"].Value.ToString() +
+                        "\nWeekly Hours: " + row.Cells["hours"].Value.ToString() +
+                        "\nTax Withholdings: $" + taxAmount +
+                        "\nHourly Rate: $" + row.Cells["rate"].Value.ToString() +
+                        "\nPay: $" + pay + "\nProcessing Date and Time: " + dateTime +
+                        "\n_________________________________\n\n";
+                }
+                else if (!(bool)row.Cells["directdeposit"].Value)
+                {
+                    checkNumber++;
+                    checkPrintString += "____________________________\n\n" +
+                        "Company Name \t\t\t\t\t\tCheck Number: " + checkNumber +
+                        "\nCompany Address" + 
+                        "\nCompany City, State, Zip Code\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
+                        "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay +
+                        "\n" + paymentString + " " + cents + "/100" + "---------------" + 
+                        "\n\nMemo _______________" + "\t\t\t\t\t\t\t\tSig _________________________" +
+                        "\n_______________________________________________\n\n";
+                }
+            }
+            PrintPreview preview = new PrintPreview();
+            preview.setPrintStrings(directDepositPrintString, checkPrintString);
+            preview.ShowDialog();
+        }
+
+        private string payToWords(string pay) {
+            string result = "";
+
+
+            return result;
+        }
+
+
     }
 }

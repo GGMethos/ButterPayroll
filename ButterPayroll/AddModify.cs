@@ -44,6 +44,12 @@ namespace ButterPayroll
             }
         }
 
+        private void adjustTotalDeductionCost() {
+            totalDeductions.Text = (Convert.ToDouble(dental_price.Text) +
+                Convert.ToDouble(optical_price.Text) +
+                Convert.ToDouble(tbox_cafeteria.Text)).ToString();
+        }
+
         private void populateTxtBoxes(){
             label_employeeID.Text = Employee.employeeID;
             tbox_firstName.Text = Employee.firstName;
@@ -216,23 +222,23 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_HMO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_POS_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.BlueCross_PPO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.BlueCross_PPO_F);
                     }
                 }
                 else if (provider == "HIP")
@@ -240,23 +246,23 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_HMO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_POS_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.HIP_PPO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.HIP_PPO_F);
                     }
                 }
                 else if (provider == "Aetna")
@@ -264,42 +270,42 @@ namespace ButterPayroll
                     if (plan == "HMO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_HMO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_HMO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_HMO_F);
                     }
                     else if (plan == "POS")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_POS_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_POS_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_POS_F);
                     }
                     else if (plan == "PPO")
                     {
                         if (description == "Individual")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_I);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_PPO_I);
                         else if (description == "Family")
-                            Price_Value.Text = (Properties.InsuranceRates.Default.Aetna_PPO_F);
+                            Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Aetna_PPO_F);
                     }
                 }
             }
             else if (provider == "Medicare" && plan != "")
             {
                 if (plan == "A")
-                    Price_Value.Text = Properties.InsuranceRates.Default.Medicare_A;
+                    Price_Value.Text = "$ " + Properties.InsuranceRates.Default.Medicare_A;
                 else if (plan == "B")
-                    Price_Value.Text = (Properties.InsuranceRates.Default.Medicare_B);
+                    Price_Value.Text = "$ " + (Properties.InsuranceRates.Default.Medicare_B);
                 else if (plan == "A & B") {
-                    Price_Value.Text = (Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_A) + Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_B)).ToString();
+                    Price_Value.Text = "$ " + (Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_A) + Convert.ToDouble(Properties.InsuranceRates.Default.Medicare_B)).ToString();
                 }
             }
             else if (provider == "Medicaid") {
-                Price_Value.Text = "0";
+                Price_Value.Text = "$ " + "0";
             }
             else
             {
-                Price_Value.Text = "-";
+                Price_Value.Text = "$ " + "-";
             }
         }
 
@@ -447,11 +453,12 @@ namespace ButterPayroll
             dental_price.Visible = true;
 
             if (combo_Dental.Text == "Individual") {
-                dental_price.Text = Properties.InsuranceRates.Default.Dental_I;
+                dental_price.Text = "$ " + Properties.InsuranceRates.Default.Dental_I;
             }
             else if (combo_Dental.Text == "Family") {
-                dental_price.Text = Properties.InsuranceRates.Default.Dental_F;
+                dental_price.Text = "$ " + Properties.InsuranceRates.Default.Dental_F;
             }
+            adjustTotalDeductionCost();
         }
 
         private void combo_optical_SelectedIndexChanged(object sender, EventArgs e)
@@ -459,9 +466,15 @@ namespace ButterPayroll
             optical_price.Visible = true;
 
             if (combo_optical.Text == "Individual")
-                optical_price.Text = Properties.InsuranceRates.Default.Optical_I;
+                optical_price.Text = "$ " + Properties.InsuranceRates.Default.Optical_I;
             else if (combo_optical.Text == "Family")
-                optical_price.Text = Properties.InsuranceRates.Default.Optical_F;
+                optical_price.Text = "$ " + Properties.InsuranceRates.Default.Optical_F;
+            adjustTotalDeductionCost();
+        }
+
+        private void tbox_cafeteria_TextChanged(object sender, EventArgs e)
+        {
+            adjustTotalDeductionCost();
         }
 
         

@@ -33,7 +33,6 @@
             this.button_modify = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.button_generate = new System.Windows.Forms.Button();
-            this.Update = new System.Windows.Forms.Button();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
             this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +85,8 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insuranceDeductionRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalInformation = new System.Windows.Forms.RichTextBox();
+            this.Update = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -96,9 +97,9 @@
             // button_add
             // 
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.Location = new System.Drawing.Point(12, 57);
+            this.button_add.Location = new System.Drawing.Point(648, 27);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(240, 37);
+            this.button_add.Size = new System.Drawing.Size(156, 37);
             this.button_add.TabIndex = 2;
             this.button_add.Text = "Add";
             this.button_add.UseVisualStyleBackColor = true;
@@ -107,9 +108,9 @@
             // button_modify
             // 
             this.button_modify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modify.Location = new System.Drawing.Point(13, 100);
+            this.button_modify.Location = new System.Drawing.Point(810, 27);
             this.button_modify.Name = "button_modify";
-            this.button_modify.Size = new System.Drawing.Size(239, 37);
+            this.button_modify.Size = new System.Drawing.Size(155, 37);
             this.button_modify.TabIndex = 3;
             this.button_modify.Text = "Modify";
             this.button_modify.UseVisualStyleBackColor = true;
@@ -118,9 +119,9 @@
             // btn_delete
             // 
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(12, 143);
+            this.btn_delete.Location = new System.Drawing.Point(971, 27);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(240, 37);
+            this.btn_delete.Size = new System.Drawing.Size(156, 37);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -128,25 +129,15 @@
             // 
             // button_generate
             // 
+            this.button_generate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_generate.Location = new System.Drawing.Point(13, 186);
+            this.button_generate.Location = new System.Drawing.Point(1462, 27);
             this.button_generate.Name = "button_generate";
-            this.button_generate.Size = new System.Drawing.Size(239, 37);
+            this.button_generate.Size = new System.Drawing.Size(155, 37);
             this.button_generate.TabIndex = 5;
-            this.button_generate.Text = "Generate";
+            this.button_generate.Text = "Generate and Print";
             this.button_generate.UseVisualStyleBackColor = true;
-            // 
-            // Update
-            // 
-            this.Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update.Location = new System.Drawing.Point(705, 408);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(103, 37);
-            this.Update.TabIndex = 6;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.Update_Click);
+            this.button_generate.Click += new System.EventHandler(this.button_generate_Click);
             // 
             // employeeDataGridView
             // 
@@ -180,12 +171,12 @@
             this.dentalDeduction,
             this.planId});
             this.employeeDataGridView.DataSource = this.employee1BindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(258, 57);
+            this.employeeDataGridView.Location = new System.Drawing.Point(258, 70);
             this.employeeDataGridView.MultiSelect = false;
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.ReadOnly = true;
             this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeDataGridView.Size = new System.Drawing.Size(659, 345);
+            this.employeeDataGridView.Size = new System.Drawing.Size(1359, 469);
             this.employeeDataGridView.TabIndex = 6;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged);
             // 
@@ -355,9 +346,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(736, 27);
+            this.textBox1.Location = new System.Drawing.Point(461, 36);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 22);
             this.textBox1.TabIndex = 7;
@@ -365,9 +355,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(530, 33);
+            this.label1.Location = new System.Drawing.Point(255, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 8;
@@ -375,7 +364,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -383,7 +371,7 @@
             "First Name",
             "Last Name",
             "State"});
-            this.comboBox1.Location = new System.Drawing.Point(609, 27);
+            this.comboBox1.Location = new System.Drawing.Point(334, 36);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 9;
@@ -507,7 +495,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(929, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1629, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -538,19 +526,42 @@
             // 
             this.additionalInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.additionalInformation.Location = new System.Drawing.Point(13, 229);
+            this.additionalInformation.Location = new System.Drawing.Point(12, 70);
             this.additionalInformation.Name = "additionalInformation";
             this.additionalInformation.ReadOnly = true;
             this.additionalInformation.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.additionalInformation.Size = new System.Drawing.Size(239, 173);
+            this.additionalInformation.Size = new System.Drawing.Size(239, 469);
             this.additionalInformation.TabIndex = 11;
             this.additionalInformation.Text = "Select an employee to view additional information...";
+            // 
+            // Update
+            // 
+            this.Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.Location = new System.Drawing.Point(1301, 27);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(155, 37);
+            this.Update.TabIndex = 6;
+            this.Update.Text = "Update List";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 29);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Employee Details";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 457);
+            this.ClientSize = new System.Drawing.Size(1629, 551);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.additionalInformation);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -588,7 +599,6 @@
         private System.Windows.Forms.Button button_modify;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button button_generate;
-        private System.Windows.Forms.Button Update;
         private GoodDataBase goodDataBase;
         private GoodDataBaseTableAdapters.TableAdapterManager tableAdapterManager;
         public System.Windows.Forms.BindingSource employeeBindingSource;
@@ -641,6 +651,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insuranceDeductionRatesToolStripMenuItem;
+        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Label label2;
 
     }
 }
