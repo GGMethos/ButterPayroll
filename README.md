@@ -1,8 +1,8 @@
-ButterPayroll, A Payroll System
+<h1>ButterPayroll, A Payroll System</h1>
 =============
-Created By Michael Ruffe, Jelzon Melzon, William Diaz, Kevin Mac
-This project is a Payroll system that uses a local database to store, modify and view employees for a buisness
-Fuctionality Includes:
+<p>Created By Michael Ruffe, Jelzon Melzon, William Diaz, Kevin Mac</p?
+<p>This project is a Payroll system that uses a local database to store, modify and view employees for a buisness</p>
+<h2>Fuctionality Includes:</h2>
   Adding an Employee.
   Modifing an Employee.
   Deleting an Employee.
