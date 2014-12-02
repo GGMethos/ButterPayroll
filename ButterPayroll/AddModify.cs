@@ -512,10 +512,10 @@ namespace ButterPayroll
             dental_price.Visible = true;
 
             if (combo_Dental.Text == "Individual") {
-                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_I;
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_I;
             }
             else if (combo_Dental.Text == "Family") {
-                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_F;
+                dental_price.Text = Properties.InsuranceRates.Default.Dental_F;
                 }
             adjustTotalDeductionCost();
         }
@@ -525,9 +525,9 @@ namespace ButterPayroll
             optical_price.Visible = true;
 
             if (combo_optical.Text == "Individual")
-                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_I;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_I;
             else if (combo_optical.Text == "Family")
-                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_F;
+                optical_price.Text = Properties.InsuranceRates.Default.Optical_F;
             adjustTotalDeductionCost();
         }
 
