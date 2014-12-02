@@ -38,9 +38,12 @@ namespace ButterPayroll
             }
             if (Mode == "Add")
             {
+                if (owningForm.employeeDataGridView.RowCount == 0) { }
+                else{
                 int MaxID = owningForm.employeeDataGridView.Rows.Cast<DataGridViewRow>()
                         .Max(r => Convert.ToInt32(r.Cells["employeeId"].Value));
                 label_employeeID.Text = (MaxID + 1).ToString();
+                }
             }
         }
 
