@@ -273,7 +273,7 @@ namespace ButterPayroll
             System.DateTime dateTime;
 
             double hours, rate, taxes, taxAmount, pay, cents;
-            int payInt, checkNumber = 0;
+            double payInt, checkNumber = 0;
             string paymentString;
 
             string directDepositPrintString = "";
@@ -291,8 +291,8 @@ namespace ButterPayroll
                 rate = Convert.ToDouble(row.Cells["rate"].Value);
                 taxes = Convert.ToDouble(row.Cells["taxes"].Value) / 100;
                 taxAmount = hours * rate * taxes;
-                payInt = Convert.ToInt32(hours * rate - taxAmount);
                 double deductions=((Convert.ToDouble(row.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(row.Cells["cost"].Value.ToString())/2));
+                payInt = Math.Floor(Convert.ToDouble((hours * rate - taxAmount) - (deductions)));
                 pay = (hours * rate - taxAmount)-( deductions);
                 cents = pay - payInt;
 
