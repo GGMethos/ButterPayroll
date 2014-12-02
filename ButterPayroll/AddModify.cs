@@ -454,10 +454,13 @@ namespace ButterPayroll
                 //enable insurance info
                 groupBox6.Enabled = true;
                 Deductions.Enabled = true;
+                ineligible_label.Visible = false;
             }
             else if (radio_parttime.Checked) {
                 //disable insurance info
                 groupBox6.Enabled = false;
+                ineligible_label.Visible = true;
+
             }
         }
 

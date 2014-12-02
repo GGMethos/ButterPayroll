@@ -108,7 +108,6 @@ namespace ButterPayroll
         {
             employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
-            this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
         }
         //Deletes the selected value from the datagridview and database
         private void btn_delete_Click(object sender, EventArgs e)
@@ -297,8 +296,6 @@ namespace ButterPayroll
                 pay = (hours * rate - taxAmount)-( deductions);
                 cents = pay - payInt;
 
-                paymentString = payToWords(pay.ToString());
-
                 if ((bool)row.Cells["directdeposit"].Value)
                 {
                     directDepositPrintString += "Last Name: " + row.Cells["lname"].Value.ToString() +
@@ -322,7 +319,7 @@ namespace ButterPayroll
                         Properties.CompanyInfo.Default.Street + "\n" +
                         Properties.CompanyInfo.Default.City + ", " + Properties.CompanyInfo.Default.State + " " + Properties.CompanyInfo.Default.ZipCode +"\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
                         "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay +
-                        "\n" + paymentString + " " + cents + "/100" + "---------------" + 
+                        //"\n" + paymentString + " " + cents + "/100" + "---------------" + 
                         "\n\nMemo _______________" + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSig _________________________" +
                         "\n____________________________________________________________________________________________\n\n";
                 }
@@ -332,17 +329,15 @@ namespace ButterPayroll
             preview.ShowDialog();
         }
 
-        private string payToWords(string pay) {
-            string result = "";
-
-
-            return result;
-        }
-
         private void companyInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CompanyInformation companyInfo = new CompanyInformation();
             companyInfo.ShowDialog();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Butter Payroll\nVersion 2.0.0.1\nPublished by: Butter Payroll Systems Inc. | Group 3\nJelzon Monzon, Michael Ruffe, William Diaz, Kevin Mak","About");
         }
 
 

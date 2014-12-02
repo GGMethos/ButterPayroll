@@ -115,6 +115,7 @@
             this.Controls.Add(this.checks_rtb);
             this.Controls.Add(this.directDeposit_rtb);
             this.Name = "PrintPreview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print Preview";
             this.Load += new System.EventHandler(this.PrintPreview_Load);
             this.ResumeLayout(false);
