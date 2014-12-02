@@ -135,51 +135,57 @@ namespace ButterPayroll
         //gets current row information and updates employee details sidebar
         private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            selectedRow = employeeDataGridView.CurrentRow;
-            //Pay checks are every 2 weeks so divide optical and dental by 24 because yearly price and by two on insurance price (monthly value)
-            double totalDeductions = ((Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString())/2));
-            double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()))) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString()))/100);
-            double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - taxes)) -totalDeductions;
-
-            //populate additionalinformation richtextbox with information
-            additionalInformation.Text = "Name:\n\t" + selectedRow.Cells["lname"].Value.ToString() + "," + selectedRow.Cells["fname"].Value.ToString() +
-                "\nAddress:\n\t" + selectedRow.Cells["street"].Value.ToString() + "\n\t" + selectedRow.Cells["city"].Value.ToString() + ", " + selectedRow.Cells["state"].Value.ToString() + " " + selectedRow.Cells["zip"].Value.ToString() +
-                "\nBank Information:\n\t" + "Account #: " + selectedRow.Cells["accountNum"].Value.ToString() + "\n\tRouting #: " + selectedRow.Cells["routingNum"].Value.ToString();
-            if ((bool)selectedRow.Cells["directdeposit"].Value)
+            if (employeeDataGridView.RowCount != 0)
             {
-                additionalInformation.Text += "\n\tMethod: Direct Deposit\n";
-            }
-            else {
-                additionalInformation.Text += "\n\tMethod: Check\n";
-            }
-            if (selectedRow.Cells["companyname"].Value.ToString() != "")
-            {
-                additionalInformation.Text += "Insurance Information:\n\t" + "Provider: " + selectedRow.Cells["companyName"].Value.ToString() + "\n\tID: " + selectedRow.Cells["planId"].Value.ToString() + "\n\tPlan: "+ selectedRow.Cells["planName"].Value.ToString() + "\n\tType: "+ selectedRow.Cells["description"].Value.ToString();
+                selectedRow = employeeDataGridView.CurrentRow;
+                //Pay checks are every 2 weeks so divide optical and dental by 24 because yearly price and by two on insurance price (monthly value)
+                double totalDeductions = ((Convert.ToDouble(selectedRow.Cells["opticalDeduction"].Value.ToString()) / 24) + (Convert.ToDouble(selectedRow.Cells["dentalDeduction"].Value.ToString()) / 24) + (Convert.ToDouble(selectedRow.Cells["cafeteriaBenifits"].Value.ToString()) / 12) + (Convert.ToDouble(selectedRow.Cells["cost"].Value.ToString()) / 2));
+                double taxes = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()))) * ((Convert.ToDouble(selectedRow.Cells["taxes"].Value.ToString())) / 100);
+                double netPay = ((Convert.ToDouble(selectedRow.Cells["hours"].Value.ToString()) * Convert.ToDouble(selectedRow.Cells["rate"].Value.ToString()) - taxes)) - totalDeductions;
 
-            }
-            else {
-                additionalInformation.Text += "Insurance Information:\n\tNot Available\n\n\n";
+                //populate additionalinformation richtextbox with information
+                additionalInformation.Text = "Name:\n\t" + selectedRow.Cells["lname"].Value.ToString() + "," + selectedRow.Cells["fname"].Value.ToString() +
+                    "\nAddress:\n\t" + selectedRow.Cells["street"].Value.ToString() + "\n\t" + selectedRow.Cells["city"].Value.ToString() + ", " + selectedRow.Cells["state"].Value.ToString() + " " + selectedRow.Cells["zip"].Value.ToString() +
+                    "\nBank Information:\n\t" + "Account #: " + selectedRow.Cells["accountNum"].Value.ToString() + "\n\tRouting #: " + selectedRow.Cells["routingNum"].Value.ToString();
+                if ((bool)selectedRow.Cells["directdeposit"].Value)
+                {
+                    additionalInformation.Text += "\n\tMethod: Direct Deposit\n";
+                }
+                else
+                {
+                    additionalInformation.Text += "\n\tMethod: Check\n";
+                }
+                if (selectedRow.Cells["companyname"].Value.ToString() != "")
+                {
+                    additionalInformation.Text += "Insurance Information:\n\t" + "Provider: " + selectedRow.Cells["companyName"].Value.ToString() + "\n\tID: " + selectedRow.Cells["planId"].Value.ToString() + "\n\tPlan: " + selectedRow.Cells["planName"].Value.ToString() + "\n\tType: " + selectedRow.Cells["description"].Value.ToString();
 
-            }
-            additionalInformation.Text += "\nDeductions:\n\t" +
-                "Optical/yr: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
-                "\n\tDental/yr: " + selectedRow.Cells["dentalDeduction"].Value.ToString()+
-                "\n\tCafeteria/yr: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
-                "\n\tMedical/mth: " + (Convert.ToDouble(selectedRow.Cells["cost"].Value)).ToString("#.##")+
-                "\n\tTotal Deductions/mth: " + totalDeductions.ToString("#.##");
+                }
+                else
+                {
+                    additionalInformation.Text += "Insurance Information:\n\tNot Available\n\n\n";
 
-            additionalInformation.Text += "\nEarnings:" +
-                "\n\tHours: " + selectedRow.Cells["hours"].Value.ToString() +
-                "\n\tRate: " + selectedRow.Cells["rate"].Value.ToString() +
-                "\n\tTaxes: " + selectedRow.Cells["taxes"].Value.ToString();
-            if ((bool)selectedRow.Cells["status"].Value)
-            {
-                additionalInformation.Text += "\n\tStatus: Full-Time";
+                }
+                additionalInformation.Text += "\nDeductions:\n\t" +
+                    "Optical/yr: " + selectedRow.Cells["opticalDeduction"].Value.ToString() +
+                    "\n\tDental/yr: " + selectedRow.Cells["dentalDeduction"].Value.ToString() +
+                    "\n\tCafeteria/yr: " + selectedRow.Cells["cafeteriaBenifits"].Value.ToString() +
+                    "\n\tMedical/mth: " + (Convert.ToDouble(selectedRow.Cells["cost"].Value)).ToString("#.##") +
+                    "\n\tTotal Deductions/mth: " + totalDeductions.ToString("#.##");
+
+                additionalInformation.Text += "\nEarnings:" +
+                    "\n\tHours: " + selectedRow.Cells["hours"].Value.ToString() +
+                    "\n\tRate: " + selectedRow.Cells["rate"].Value.ToString() +
+                    "\n\tTaxes: " + selectedRow.Cells["taxes"].Value.ToString();
+                if ((bool)selectedRow.Cells["status"].Value)
+                {
+                    additionalInformation.Text += "\n\tStatus: Full-Time";
+                }
+                else
+                {
+                    additionalInformation.Text += "\n\tStatus: Part-Time";
+                }
+                additionalInformation.Text += "\n\tNet Pay: " + netPay.ToString("#.##");
             }
-            else {
-                additionalInformation.Text += "\n\tStatus: Part-Time";
-            }
-            additionalInformation.Text += "\n\tNet Pay: " + netPay.ToString("#.##");
         }
 
         //Text box Changed Searches our datagridview for a selected employee
