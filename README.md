@@ -17,6 +17,6 @@
   SRS requirements for documented and formalized by Kevin Mac</p>
 <h2>Inception:</h2>
  <p>This Payroll system was given as a term project for a Software Engineering class in the College of Staten Island. 
-  During early devolopment, when nothing seemed to run as espected, a joke was made about how smooth the Close(); 
+  During early devolopment, when nothing seemed to run as exspected, a joke was made about how smooth the Close(); 
     function was in c#. The joke continued with that fuction being "buttery smooth" and our name of a system was found
-    ButtePayroll.</p>
+    ButterPayroll.</p>
