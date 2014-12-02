@@ -46,7 +46,7 @@ namespace ButterPayroll
 
         private void adjustTotalDeductionCost()
         {
-            totalDeductions.Text = ((Convert.ToDouble(dental_price.Text) +
+            totalDeductions.Text = "$" + ((Convert.ToDouble(dental_price.Text) +
                 Convert.ToDouble(optical_price.Text) +
                 Convert.ToDouble(tbox_cafeteria.Text))).ToString();
         }
@@ -115,6 +115,8 @@ namespace ButterPayroll
                     groupBox6.Enabled = false;
                     rbutton_fulltime.Checked = false;
                     Deductions.Enabled = false;
+                    ineligible_label.BackColor = Color.Transparent;
+                    ineligible_label.Visible = true;
                 }
                 if(Convert.ToInt32(Employee.cafe)>0)
                 {
@@ -123,6 +125,7 @@ namespace ButterPayroll
                 }
                 adjustTotalDeductionCost();
         }
+
         private void button_save_Click(object sender, EventArgs e)
         {
             if (this.Mode == "Modify")
@@ -503,10 +506,10 @@ namespace ButterPayroll
             dental_price.Visible = true;
 
             if (combo_Dental.Text == "Individual") {
-                dental_price.Text = Properties.InsuranceRates.Default.Dental_I;
+                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_I;
             }
             else if (combo_Dental.Text == "Family") {
-                dental_price.Text = Properties.InsuranceRates.Default.Dental_F;
+                dental_price.Text = "$" + Properties.InsuranceRates.Default.Dental_F;
                 }
             adjustTotalDeductionCost();
         }
@@ -516,9 +519,9 @@ namespace ButterPayroll
             optical_price.Visible = true;
 
             if (combo_optical.Text == "Individual")
-                optical_price.Text = Properties.InsuranceRates.Default.Optical_I;
+                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_I;
             else if (combo_optical.Text == "Family")
-                optical_price.Text = Properties.InsuranceRates.Default.Optical_F;
+                optical_price.Text = "$" + Properties.InsuranceRates.Default.Optical_F;
             adjustTotalDeductionCost();
         }
 

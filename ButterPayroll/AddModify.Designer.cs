@@ -89,6 +89,7 @@
             this.cbox_dental = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ineligible_label = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -813,6 +814,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Billing Address";
             // 
+            // ineligible_label
+            // 
+            this.ineligible_label.AutoSize = true;
+            this.ineligible_label.BackColor = System.Drawing.Color.Transparent;
+            this.ineligible_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ineligible_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ineligible_label.ImageKey = "(none)";
+            this.ineligible_label.Location = new System.Drawing.Point(166, 348);
+            this.ineligible_label.Name = "ineligible_label";
+            this.ineligible_label.Size = new System.Drawing.Size(296, 73);
+            this.ineligible_label.TabIndex = 16;
+            this.ineligible_label.Text = "Ineligible";
+            this.ineligible_label.Visible = false;
+            // 
             // AddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -820,6 +835,7 @@
             this.AutoSize = true;
             this.CancelButton = this.button_cancel;
             this.ClientSize = new System.Drawing.Size(619, 476);
+            this.Controls.Add(this.ineligible_label);
             this.Controls.Add(this.Deductions);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -921,5 +937,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ineligible_label;
     }
 }
