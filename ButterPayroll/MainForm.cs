@@ -274,7 +274,7 @@ namespace ButterPayroll
             System.DateTime dateTime;
 
             double hours, rate, taxes, taxAmount, pay, cents;
-            int payInt, checkNumber = 0;
+            double payInt, checkNumber = 0;
             string paymentString;
 
             string directDepositPrintString = "";
@@ -292,8 +292,8 @@ namespace ButterPayroll
                 rate = Convert.ToDouble(row.Cells["rate"].Value);
                 taxes = Convert.ToDouble(row.Cells["taxes"].Value) / 100;
                 taxAmount = hours * rate * taxes;
-                payInt = Convert.ToInt32(hours * rate - taxAmount);
                 double deductions=((Convert.ToDouble(row.Cells["opticalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["dentalDeduction"].Value.ToString())/24) + (Convert.ToDouble(row.Cells["cafeteriaBenifits"].Value.ToString())/12) + (Convert.ToDouble(row.Cells["cost"].Value.ToString())/2));
+                payInt = Math.Floor(Convert.ToDouble((hours * rate - taxAmount) - (deductions)));
                 pay = (hours * rate - taxAmount)-( deductions);
                 cents = pay - payInt;
 
@@ -321,8 +321,8 @@ namespace ButterPayroll
                         Properties.CompanyInfo.Default.Name + "\t\t\t\t\t\tCheck Number: " + checkNumber + "\n" +
                         Properties.CompanyInfo.Default.Street + "\n" +
                         Properties.CompanyInfo.Default.City + ", " + Properties.CompanyInfo.Default.State + " " + Properties.CompanyInfo.Default.ZipCode +"\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
-                        "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay +
-                        "\n" + paymentString + " " + cents + "/100" + "---------------" + 
+                        "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay.ToString("#.##") +
+                        "\n" + paymentString + " " + cents.ToString(".##") + "/100" + "---------------" + 
                         "\n\nMemo _______________" + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSig _________________________" +
                         "\n____________________________________________________________________________________________\n\n";
                 }
