@@ -55,6 +55,7 @@ namespace ButterPayroll
         }
 
         private void populateTxtBoxes(){
+            //From database to class
             label_employeeID.Text = Employee.employeeID;
             tbox_firstName.Text = Employee.firstName;
             tbox_lastName.Text = Employee.lastName;
