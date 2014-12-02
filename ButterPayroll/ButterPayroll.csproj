@@ -67,6 +67,17 @@
     <Compile Include="AddModify.Designer.cs">
       <DependentUpon>AddModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\CompanyInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>CompanyInfo.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyInformation.Designer.cs">
+      <DependentUpon>CompanyInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +130,9 @@
     <EmbeddedResource Include="AddModify.resx">
       <DependentUpon>AddModify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompanyInformation.resx">
+      <DependentUpon>CompanyInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +151,10 @@
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\CompanyInfo.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CompanyInfo.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

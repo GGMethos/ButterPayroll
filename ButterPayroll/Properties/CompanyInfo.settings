@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ButterPayroll.Properties" GeneratedClassName="CompanyInfo">
+  <Profiles />
+  <Settings>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sample Inc</Value>
+    </Setting>
+    <Setting Name="Street" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1234 Sample Street</Value>
+    </Setting>
+    <Setting Name="City" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sample City</Value>
+    </Setting>
+    <Setting Name="State" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NY</Value>
+    </Setting>
+    <Setting Name="ZipCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12345</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

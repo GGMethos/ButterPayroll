@@ -31,8 +31,9 @@ namespace ButterPayroll
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            //change
+            //create new instance of AddModify form
             addForm = new AddModify(this);
+            //sets the mode of the Form
             addForm.Mode = "Add";
             addForm.Show();
             
@@ -75,13 +76,8 @@ namespace ButterPayroll
             // TODO: This line of code loads data into the 'goodDataBase.Employee1' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.goodDataBase.Employee1);
             // TODO: This line of code loads data into the 'goodDataBase.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
+            //this.employeeTableAdapter1.Fill(this.goodDataBase.Employee);
 
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Version: 2.0.0.1 Alpha","");
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -89,20 +85,21 @@ namespace ButterPayroll
             employeeDataGridView.Focus();
             employeeTableAdapter.Update(goodDataBase);
             ExitProgramSequence();
-
         }
-        //Askes the user if they want to leave the program
+
+        //Askes the user if they want to save the database before exiting
         private void ExitProgramSequence()
         {
             DialogResult dr = MessageBox.Show("Do you want to save?", "Goodbye", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
+                employeeTableAdapter.Update(goodDataBase);
+                employeeTableAdapter.Fill(this.goodDataBase.Employee1);
                 this.Close();
             }
             else
             {
                 this.Close();
-                
             }
         }
 
@@ -127,12 +124,15 @@ namespace ButterPayroll
                 }
             }
         }
+
         //Updates the database on the Form Closing
         private void MainForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             employeeTableAdapter.Update(goodDataBase);
         }
-        //Gets the current selected row and puts it into cell
+
+        //upon selection change
+        //gets current row information and updates employee details sidebar
         private void employeeDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             selectedRow = employeeDataGridView.CurrentRow;
@@ -191,11 +191,11 @@ namespace ButterPayroll
             {
                 foreach (DataGridViewRow row in employeeDataGridView.Rows)
                 {
-                    if (row.Cells[1].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    if (row.Cells[1].Value.ToString().ToUpper().Contains(search_textBox.Text.ToUpper()) && search_textBox.Text != "")
                     {
                         row.Visible = true;
                     }
-                    else if (textBox1.Text != "")
+                    else if (search_textBox.Text != "")
                         row.Visible = false;
                     else
                     {
@@ -208,11 +208,11 @@ namespace ButterPayroll
             {
                 foreach (DataGridViewRow row in employeeDataGridView.Rows)
                 {
-                    if (row.Cells[0].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    if (row.Cells[0].Value.ToString().ToUpper().Contains(search_textBox.Text.ToUpper()) && search_textBox.Text != "")
                     {
                         row.Visible = true;
                     }
-                    else if (textBox1.Text != "")
+                    else if (search_textBox.Text != "")
                         row.Visible = false;
                     else
                     {
@@ -225,11 +225,11 @@ namespace ButterPayroll
             {
                 foreach (DataGridViewRow row in employeeDataGridView.Rows)
                 {
-                    if (row.Cells[2].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    if (row.Cells[2].Value.ToString().ToUpper().Contains(search_textBox.Text.ToUpper()) && search_textBox.Text != "")
                     {
                         row.Visible = true;
                     }
-                    else if (textBox1.Text != "")
+                    else if (search_textBox.Text != "")
                         row.Visible = false;
                     else
                     {
@@ -242,11 +242,11 @@ namespace ButterPayroll
             {
                 foreach (DataGridViewRow row in employeeDataGridView.Rows)
                 {
-                    if (row.Cells[5].Value.ToString().ToUpper().Contains(textBox1.Text.ToUpper()) && textBox1.Text != "")
+                    if (row.Cells[5].Value.ToString().ToUpper().Contains(search_textBox.Text.ToUpper()) && search_textBox.Text != "")
                     {
                         row.Visible = true;
                     }
-                    else if (textBox1.Text != "")
+                    else if (search_textBox.Text != "")
                         row.Visible = false;
                     else
                     {
@@ -256,15 +256,11 @@ namespace ButterPayroll
                 }
             }
         }
+
         //Enables the textbox when a value is chosen
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            textBox1.Enabled = true;
-        }
-
-        private void additionalInformation_TextChanged(object sender, EventArgs e)
-        {
-
+            search_textBox.Enabled = true;
         }
 
         private void insuranceDeductionRatesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -322,9 +318,9 @@ namespace ButterPayroll
                 {
                     checkNumber++;
                     checkPrintString += "____________________________________________________________________________________________\n\n" +
-                        "Company Name \t\t\t\t\t\tCheck Number: " + checkNumber +
-                        "\nCompany Address" + 
-                        "\nCompany City, State, Zip Code\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
+                        Properties.CompanyInfo.Default.Name + "\t\t\t\t\t\tCheck Number: " + checkNumber + "\n" +
+                        Properties.CompanyInfo.Default.Street + "\n" +
+                        Properties.CompanyInfo.Default.City + ", " + Properties.CompanyInfo.Default.State + " " + Properties.CompanyInfo.Default.ZipCode +"\t\t\t\t Date: " + dateTime.Month+ "/" + dateTime.Day + "/" + dateTime.Year +
                         "\nPay to the order of: " + row.Cells["fname"].Value.ToString() + " " + row.Cells["lname"].Value.ToString() + "\t\t\t\t$" + pay +
                         "\n" + paymentString + " " + cents + "/100" + "---------------" + 
                         "\n\nMemo _______________" + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSig _________________________" +
@@ -341,6 +337,12 @@ namespace ButterPayroll
 
 
             return result;
+        }
+
+        private void companyInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompanyInformation companyInfo = new CompanyInformation();
+            companyInfo.ShowDialog();
         }
 
 

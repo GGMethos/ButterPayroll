@@ -58,7 +58,7 @@
             this.planId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employee1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodDataBase = new ButterPayroll.GoodDataBase();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +87,7 @@
             this.additionalInformation = new System.Windows.Forms.RichTextBox();
             this.Update = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.companyInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodDataBase)).BeginInit();
@@ -99,7 +100,7 @@
             this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.Location = new System.Drawing.Point(648, 27);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(156, 37);
+            this.button_add.Size = new System.Drawing.Size(85, 37);
             this.button_add.TabIndex = 2;
             this.button_add.Text = "Add";
             this.button_add.UseVisualStyleBackColor = true;
@@ -108,9 +109,9 @@
             // button_modify
             // 
             this.button_modify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modify.Location = new System.Drawing.Point(810, 27);
+            this.button_modify.Location = new System.Drawing.Point(739, 27);
             this.button_modify.Name = "button_modify";
-            this.button_modify.Size = new System.Drawing.Size(155, 37);
+            this.button_modify.Size = new System.Drawing.Size(85, 37);
             this.button_modify.TabIndex = 3;
             this.button_modify.Text = "Modify";
             this.button_modify.UseVisualStyleBackColor = true;
@@ -119,9 +120,9 @@
             // btn_delete
             // 
             this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(971, 27);
+            this.btn_delete.Location = new System.Drawing.Point(830, 27);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(156, 37);
+            this.btn_delete.Size = new System.Drawing.Size(85, 37);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -129,13 +130,12 @@
             // 
             // button_generate
             // 
-            this.button_generate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_generate.Location = new System.Drawing.Point(1462, 27);
+            this.button_generate.Location = new System.Drawing.Point(921, 27);
             this.button_generate.Name = "button_generate";
-            this.button_generate.Size = new System.Drawing.Size(155, 37);
+            this.button_generate.Size = new System.Drawing.Size(85, 37);
             this.button_generate.TabIndex = 5;
-            this.button_generate.Text = "Generate and Print";
+            this.button_generate.Text = "Print";
             this.button_generate.UseVisualStyleBackColor = true;
             this.button_generate.Click += new System.EventHandler(this.button_generate_Click);
             // 
@@ -176,7 +176,7 @@
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.ReadOnly = true;
             this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeDataGridView.Size = new System.Drawing.Size(1359, 469);
+            this.employeeDataGridView.Size = new System.Drawing.Size(910, 469);
             this.employeeDataGridView.TabIndex = 6;
             this.employeeDataGridView.SelectionChanged += new System.EventHandler(this.employeeDataGridView_SelectionChanged);
             // 
@@ -344,14 +344,14 @@
             this.goodDataBase.DataSetName = "GoodDataBase";
             this.goodDataBase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox1
+            // search_textBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(461, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 22);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.search_textBox.Enabled = false;
+            this.search_textBox.Location = new System.Drawing.Point(461, 36);
+            this.search_textBox.Name = "search_textBox";
+            this.search_textBox.Size = new System.Drawing.Size(181, 22);
+            this.search_textBox.TabIndex = 7;
+            this.search_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -490,12 +490,12 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1629, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1180, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -510,9 +510,10 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.companyInformationToolStripMenuItem,
             this.insuranceDeductionRatesToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // insuranceDeductionRatesToolStripMenuItem
@@ -538,11 +539,11 @@
             // 
             this.Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update.Location = new System.Drawing.Point(1301, 27);
+            this.Update.Location = new System.Drawing.Point(1083, 27);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(155, 37);
+            this.Update.Size = new System.Drawing.Size(85, 37);
             this.Update.TabIndex = 6;
-            this.Update.Text = "Update List";
+            this.Update.Text = "Refresh";
             this.Update.UseVisualStyleBackColor = true;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
@@ -550,22 +551,29 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 31);
+            this.label2.Location = new System.Drawing.Point(22, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 29);
             this.label2.TabIndex = 12;
             this.label2.Text = "Employee Details";
             // 
+            // companyInformationToolStripMenuItem
+            // 
+            this.companyInformationToolStripMenuItem.Name = "companyInformationToolStripMenuItem";
+            this.companyInformationToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.companyInformationToolStripMenuItem.Text = "Company Information";
+            this.companyInformationToolStripMenuItem.Click += new System.EventHandler(this.companyInformationToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 551);
+            this.ClientSize = new System.Drawing.Size(1180, 551);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.additionalInformation);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search_textBox);
             this.Controls.Add(this.employeeDataGridView);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.button_generate);
@@ -605,7 +613,7 @@
         private System.Windows.Forms.BindingSource employee1BindingSource;
         public System.Windows.Forms.DataGridView employeeDataGridView;
         public GoodDataBaseTableAdapters.Employee1TableAdapter employeeTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search_textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private GoodDataBaseTableAdapters.EmployeeTableAdapter employeeTableAdapter1;
@@ -653,6 +661,7 @@
         private System.Windows.Forms.ToolStripMenuItem insuranceDeductionRatesToolStripMenuItem;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem companyInformationToolStripMenuItem;
 
     }
 }

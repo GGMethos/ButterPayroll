@@ -347,7 +347,7 @@
             this.Done.Name = "Done";
             this.Done.Size = new System.Drawing.Size(103, 37);
             this.Done.TabIndex = 4;
-            this.Done.Text = "Done";
+            this.Done.Text = "Save";
             this.Done.UseVisualStyleBackColor = true;
             this.Done.Click += new System.EventHandler(this.button_save_Click);
             // 
