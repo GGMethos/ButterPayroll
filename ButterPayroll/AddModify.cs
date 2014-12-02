@@ -225,7 +225,7 @@ namespace ButterPayroll
                         den = Convert.ToDouble(dental_price.Text.ToString());
                 }
                 else
-                    owningForm.selectedRow.Cells["dentalDeduction"].Value = 0;
+                    den = 0;
                 if (cbox_optical.Checked == true)
                 {
                     if (combo_optical.Text == "Individual")
@@ -234,7 +234,7 @@ namespace ButterPayroll
                         opt = Convert.ToDouble(optical_price.Text.ToString());
                 }
                 else
-                    owningForm.selectedRow.Cells["opticalDeduction"].Value = 0;
+                    opt = 0;
                 if (cbox_cafeteria.Checked == true)
                 {
                    caf = Convert.ToDouble(tbox_cafeteria.Text);
