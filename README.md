@@ -1,7 +1,8 @@
 <h1>ButterPayroll, A Payroll System</h1>
 =============
 <p>Created By Michael Ruffe, Jelzon Monzon, William Diaz, Kevin Mac</p>
-<p>This project is a Payroll system that uses a local database to store, modify and view employees for a buisness</p>
+<p>This project is a Payroll system that uses a local database to store, modify and view employees for a buisness
+This project was created in Visual Studio 2013 using c#</p>
 <h2>Fuctionality Includes:</h2>
   <h6>Adding an Employee.</h6>
   <h6>Modifing an Employee.</h6>
