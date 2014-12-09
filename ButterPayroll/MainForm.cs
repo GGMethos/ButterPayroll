@@ -346,6 +346,11 @@ namespace ButterPayroll
             MessageBox.Show("Butter Payroll\nVersion 2.0.0.1\nPublished by: Butter Payroll Systems Inc. | Group 3\nJelzon Monzon, Michael Ruffe, William Diaz, Kevin Mak","About");
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
